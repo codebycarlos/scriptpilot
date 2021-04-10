@@ -1,0 +1,1 @@
+REMINDER: global css files must be imported into /pages/_app.js.

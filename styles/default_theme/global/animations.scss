@@ -1,0 +1,4 @@
+@use '../partials.module.scss';
+.page > *, body, main {
+	@include partials.mix_animations_quick-fade-in;
+}

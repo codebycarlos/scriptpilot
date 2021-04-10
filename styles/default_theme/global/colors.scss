@@ -1,0 +1,40 @@
+@use '../partials/functions/_colors.module.scss' as *;
+
+button.contained {
+	&.primary {
+		$palette: palette("primary");
+		background-color: $palette;
+		color: contrast-text(darken($palette));
+		&:hover,
+		:focus {
+			background-color: lighten-10($palette);
+		}
+	}
+	&.secondary {
+		$palette: palette("secondary");
+		background-color: $palette;
+		color: contrast-text(darken($palette));
+		&:hover,
+		:focus {
+			background-color: lighten-10($palette);
+		}
+	}
+	&.tertiary {
+		$palette: palette("tertiary");
+		background-color: $palette;
+		color: contrast-text(darken($palette));
+		&:hover,
+		:focus {
+			background-color: darken-10($palette);
+		}
+	}
+	&.quaternary {
+		$palette: palette("quaternary");
+		background-color: $palette;
+		color: contrast-text(darken($palette));
+		&:hover,
+		:focus {
+			background-color: lighten-10($palette);
+		}
+	}
+}

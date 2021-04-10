@@ -1,0 +1,21 @@
+// FUNCTIONS
+@forward './partials/functions/_colors.module.scss' as func_colors_*;
+
+// MIXINS
+@forward './partials/mixins/_animations.module.scss' as mix_animations_*;
+@forward './partials/mixins/_buttons.module.scss' as mix_buttons_*;
+@forward './partials/mixins/_colors.module.scss' as mix_colors_*;
+@forward './partials/mixins/_containers.module.scss' as mix_containers_*;
+@forward './partials/mixins/_forms.module.scss' as mix_forms_*;
+@forward './partials/mixins/_spacing.module.scss' as mix_spacing_*;
+@forward './partials/mixins/_tables.module.scss' as mix_tables_*;
+@forward './partials/mixins/_transitions.module.scss' as mix_transitions_*;
+@forward './partials/mixins/_typography.module.scss' as mix_typography_*;
+@forward './partials/mixins/_utilities.module.scss' as mix_utilities_*;
+
+// VARIABLES
+@forward './partials/variables/_breakpoints.module.scss' as var_breakpoints_*;
+@forward './partials/variables/_colors.module.scss' as var_colors_*;
+@forward './partials/variables/_spacing.module.scss' as var_spacing_*;
+@forward './partials/variables/_transitions.module.scss' as var_transitions*;
+@forward './partials/variables/_typography.module.scss' as var_typography*;
