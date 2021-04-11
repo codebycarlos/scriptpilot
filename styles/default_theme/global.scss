@@ -2,8 +2,12 @@
 @forward './global/animations.scss';
 @forward './global/breakpoints.scss';
 @forward './global/colors.scss';
-@forward './global/miscellaneous.scss';
+@forward './global/dimensions.scss';
+@forward './global/layout.scss';
+@forward './global/reset.scss';
 @forward './global/normalize.css';
+@forward './global/position.scss';
 @forward './global/spacing.scss';
 @forward './global/transitions.scss';
 @forward './global/typography.scss';
+@forward './global/z-index.scss';

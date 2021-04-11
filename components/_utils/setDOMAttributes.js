@@ -1,4 +1,6 @@
 export function setDOMAttributes(props, styleDefault) {
+	if (!props) return props;
+
 	const acceptedDOMAttributes = [
 		"accessKey",
 		"contentEditable",

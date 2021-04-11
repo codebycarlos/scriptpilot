@@ -8,7 +8,7 @@ export async function get(req, res) {
 	let token;
 
 	try {
-		token = AccessToken.getAccessCode(orgId);
+		token = await AccessToken.getAccessCode(orgId);
 		return JSendResponse(res).success({ data: { token: token } });
 	}
 	catch(e) {

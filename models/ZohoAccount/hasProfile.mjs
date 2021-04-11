@@ -1,11 +1,11 @@
 import { ZohoAccount } from './ZohoAccount.mjs';
 import { validateArguments } from "../../_utils/validation/validateArguments.mjs";
-export function hasProfile(account, targetProfiles) {
-	validateArguments([...arguments]);
+export async function hasProfile(account, targetProfiles) {
+	validateArguments([...arguments, account.api_domain, account.id]);
 	let profile;
 
 	try {
-		profile = ZohoAccount.fetchProfile(account);
+		profile = await ZohoAccount.fetchProfile(account);
 	} catch (e) {
 		throw Error(`Unable to get profile. ${e}`);
 	}

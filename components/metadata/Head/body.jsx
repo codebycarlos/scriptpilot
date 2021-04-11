@@ -1,4 +1,4 @@
-export function body(imports, props, styleDefault, data, Root = null) {
+export function body(imports, props, styleDefault, Root = null) {
 	const { title, keywords, description } = props;
 	Root = imports.Head;
 	return (

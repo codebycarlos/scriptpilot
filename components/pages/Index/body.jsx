@@ -1,6 +1,7 @@
-export function body(imports, props, styleDefault, data, Root = "main") {
+export function body(imports, props, styleDefault, Root = "main") {
 	const [session, loading] = imports.useSession();
 	const { Link, ButtonDefault } = imports;
+	console.log(props.hey);
 	return (
 		<Root {...props.DOMAttributes}>
 			{!session && !loading && (

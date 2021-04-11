@@ -1,12 +1,12 @@
 const consola = require("consola");
 import { validateArguments } from "../../_utils/validation/validateArguments.mjs";
 import { fetchNewHTTPCall } from "./helper/fetchNewHTTPCall.mjs";
-export function fetchNew(refreshToken) {
+export async function fetchNew(refreshToken) {
 	validateArguments([...arguments, refreshToken.refresh_token]);
 	let HTTPCallResponse = undefined;
 
 	try {
-		HTTPCallResponse = fetchNewHTTPCall({
+		HTTPCallResponse = await fetchNewHTTPCall({
 			refreshTokenCode: refreshToken.refresh_token
 		});
 	} catch (e) {

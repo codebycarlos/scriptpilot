@@ -2,15 +2,21 @@ import { validateArguments } from "../../_utils/validation/validateArguments.mjs
 import { getCurrentAccessCodeIfActive } from "./helper/getCurrentAccessCodeIfActive.mjs";
 import { getNewAccessCode } from "./helper/getNewAccessCode.mjs";
 import path from "path";
-export function getAccessCode(orgId) {
+export async function getAccessCode(orgId) {
 	validateArguments([...arguments]);
-	const tokenPath = path.resolve(_dirname,`../../secrets/zoho/org${orgId}/tokens/access.json`);
-	const refreshTokenPath = `../../secrets/zoho/org${orgId}/tokens/refresh.json`;
+	const tokenPath = path.resolve(
+		process.cwd(),
+		`./secrets/zoho/org${orgId}/tokens/access.json`
+	);
+	const refreshTokenPath = path.resolve(
+		process.cwd(),
+		`./secrets/zoho/org${orgId}/tokens/refresh.json`
+	);
 	let currentAccessCode;
 	let newAccessCode;
 
 	try {
-		currentAccessCode = getCurrentAccessCodeIfActive(tokenPath);
+		currentAccessCode = await getCurrentAccessCodeIfActive(tokenPath);
 	} catch (e) {
 		consola.warn(`Unable to check current access code. ${e}`);
 	}
@@ -18,7 +24,7 @@ export function getAccessCode(orgId) {
 	if (currentAccessCode) return currentAccessCode;
 
 	try {
-		newAccessCode = getNewAccessCode(tokenPath, refreshTokenPath);
+		newAccessCode = await getNewAccessCode(tokenPath, refreshTokenPath);
 	} catch (e) {
 		throw Error(`Unable to get new access code. ${e}`);
 	}

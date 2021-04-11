@@ -1,17 +1,17 @@
 import { validateArguments } from "../../../_utils/validation/validateArguments.mjs";
 import { AccessToken } from "../AccessToken.mjs";
-export function getCurrentAccessCodeIfActive(tokenPath) {
+export async function getCurrentAccessCodeIfActive(tokenPath) {
 	validateArguments([...arguments]);
 	let token;
 
 	try {
-		token =  AccessToken.load(tokenPath);
+		token = await AccessToken.load(tokenPath);
 	} catch (e) {
 		throw Error(`Unable to load current access token: ${e}`);
 	}
 
 	try {
-		if (!AccessToken.isActive(token)) return null;
+		if (await !AccessToken.isActive(token)) return null;
 	} catch (e) {
 		throw Error(`Unable to determine if current access token is active. ${e}`);
 	}

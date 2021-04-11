@@ -20,15 +20,22 @@ import { createReactComponentFunction } from "../../_utils/createReactComponentF
 import PropTypes from "prop-types";
 
 const componentFunctionDefinition = {
-  imports,
-  propsDefinition: propsDefinition(PropTypes),
-  styleDefault,
-  logic,
-  body,
+	imports,
+	propsDefinition: propsDefinition(PropTypes),
+	styleDefault,
+	logic,
+	body,
 };
 
-export const Component = createReactComponentFunction(
-  componentFunctionDefinition
-);
+export const Component = createReactComponentFunction(componentFunctionDefinition);
 
 export default Component;
+
+/* Data fetching functions may be defined for pages only. 
+The function must be exported to the corresponding /pages/* routing file
+and exported with one of the following names:
+-getStaticProps
+-getStaticPaths
+-getServerSideProps
+For more info: https://nextjs.org/docs/basic-features/data-fetching */
+export { default as dataFetching } from "./dataFetching.js";

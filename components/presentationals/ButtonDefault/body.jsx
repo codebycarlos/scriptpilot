@@ -1,4 +1,4 @@
-export function body(imports, props, styleDefault, data, Root = "button") {
+export function body(imports, props, styleDefault, Root = "button") {
 	Root = imports.MaterialButton;
 	return <Root {...props.DOMAttributes}>{props.children}</Root>;
 }

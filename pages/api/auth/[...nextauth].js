@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import { Session } from "../../../models/Session/Session.mjs";
-import consola from "consola";
+import { NextAuthCallbacks } from "../../../models/NextAuthCallbacks/NextAuthCallbacks.mjs";
 
 const options = {
 	providers: [
@@ -24,14 +23,8 @@ const options = {
 		maxAge: 1 * 1 * 15 * 60,
 	},
 	callbacks: {
-		async signIn(user, account, profile) {
-			try {
-				return Session.checkSignIn(user, account, profile);
-			} catch (e) {
-				consola.error(`Checking of sign in failed. ${e}`);
-				return false;
-			}
-		}
+		signIn: NextAuthCallbacks.session,
+		session: NextAuthCallbacks.session,
 	},
 	debug: true,
 };

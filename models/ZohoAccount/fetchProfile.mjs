@@ -1,11 +1,11 @@
 import { validateArguments } from "../../_utils/validation/validateArguments.mjs";
 import { ZohoAccount } from "./ZohoAccount.mjs";
-export function fetchProfile(account) {
+export async function fetchProfile(account) {
 	validateArguments([...arguments, account.api_domain, account.id]);
 	let user;
 
 	try {
-		user = ZohoAccount.fetchUser(account);
+		user = await ZohoAccount.fetchUser(account);
 	} catch (e) {
 		throw Error(`Unable to fetch user. ${e}`);
 	}

@@ -1,25 +1,25 @@
 import { validateArguments } from "../../../_utils/validation/validateArguments.mjs";
 import { AccessToken } from "../AccessToken.mjs";
 import { ensureTokenIsNotLocked } from "./ensureTokenIsNotLocked.mjs";
-export function getNewAccessCode(tokenPath, refreshTokenPath) {
+export async function getNewAccessCode(tokenPath, refreshTokenPath) {
 	validateArguments([...arguments]);
 	let refreshToken;
 	let newToken;
 
 	try {
-		ensureTokenIsNotLocked(tokenPath);
+		await ensureTokenIsNotLocked(tokenPath);
 	} catch (e) {
 		throw Error(`Unable to ensure token access file is not locked. ${e}`);
 	}
 	
 	try {
-		refreshToken = AccessToken.load(refreshTokenPath);
+		refreshToken = await AccessToken.load(refreshTokenPath);
 	} catch (e) {
 		throw Error(`Unable to load refresh token. ${e}`);
 	}
 
 	try {
-		newToken = AccessToken.fetchNew(refreshToken);
+		newToken = await AccessToken.fetchNew(refreshToken);
 	} catch (e) {
 		throw Error(`Unable to fetch new access token. ${e}`);
 	}

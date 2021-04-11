@@ -1,9 +1,12 @@
 import { validateArguments } from "../../../_utils/validation/validateArguments.mjs";
 import { AccessToken } from "../AccessToken.mjs";
 import { triggerDelayedFileUnlock } from "../../../_utils/file-handling/JSON/fileLock/triggerDelayedFileUnlock.js";
+import fs from "fs";
 export function ensureTokenIsNotLocked(tokenPath) {
-    validateArguments([...arguments]);
+	validateArguments([...arguments]);
 	let fileIsLocked;
+
+	if (!fs.existsSync(tokenPath)) return;
 
 	try {
 		fileIsLocked = AccessToken.isLocked(tokenPath);

@@ -1,7 +1,7 @@
 import { validateArguments } from "../../_utils/validation/validateArguments.mjs";
 import { ZohoAccount } from "../ZohoAccount/ZohoAccount.mjs";
-export function checkSignIn(user, account, profile) {
-	validateArguments([...arguments]);
+export async function checkPermissions(account) {
+	validateArguments([...arguments, account.api_domain, account.id]);
 	let authorisedProfiles;
 
 	try {
@@ -11,8 +11,10 @@ export function checkSignIn(user, account, profile) {
 	}
 
 	try {
-		if (ZohoAccount.hasProfile(account, authorisedProfiles)) return true;
+		if (await ZohoAccount.hasProfile(account, authorisedProfiles)) return true;
 	} catch (e) {
 		throw Error(`Unable to check if account has profile. ${e}`);
 	}
+
+	return false;
 }
