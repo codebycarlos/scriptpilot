@@ -4,18 +4,17 @@ export function body(imports, props, styleDefault, Root = "div") {
 	return (
 		<Root {...props.DOMAttributes}>
 			<LogoWithByline src={props.src} byline={props.byline} />
-			<form
-				method="post"
-				action="/api/auth/signin/zoho"
-				style={{ display: "contents" }}
-			>
+			<form method="post" action="/api/auth/signin/zoho" style={{ display: "contents" }}>
 				<input name="csrfToken" type="hidden" defaultValue={props.csrfToken} />
+				<input
+					type="hidden"
+					name="callbackUrl"
+					value={`${process.env.NEXT_PUBLIC_LOGIN_CALLBACK_URL}`}
+				/>
 				<ButtonDefault
+					className="contained primary"
 					style={{
-						margin: styles["var_margins_local-margins-small"],
-						color: styles["var_colors_palette-white"],
 						width: "100%",
-						backgroundColor: styles["var_colors_palette-primary"],
 					}}
 					type="submit"
 				>

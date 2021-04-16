@@ -17,7 +17,7 @@ module.exports = {
 	compilerOptions: {
 		baseUrl: ".",
 		paths: {
-			"@/components/*": ["components/*"],
+			"@/components/*": ["/components/*"],
 		},
 	},
 	reactStrictMode: true,
