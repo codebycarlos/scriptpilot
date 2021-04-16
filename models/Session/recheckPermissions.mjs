@@ -3,7 +3,6 @@ import { MongoDB } from "../MongoDB/MongoDB.mjs";
 import { SessionAccount } from "../SessionAccount/SessionAccount.mjs";
 import { Session } from "./Session.mjs";
 export async function recheckPermissions(userId) {
-    console.log("🚀 ~ file: recheckPermissions.mjs ~ line 6 ~ recheckPermissions ~ userId", userId)
 	validateArguments([...arguments]);
 	let account;
 

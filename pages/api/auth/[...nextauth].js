@@ -12,6 +12,8 @@ const options = {
 	database: {
 		type: "mongodb",
 		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		// Ensure network allows outbound connections to port 27017
 		url: process.env.MONGODB_CONNECT_URL,
 	},
 	// Used for randomising hashing
@@ -23,11 +25,11 @@ const options = {
 		maxAge: 1 * 1 * 15 * 60,
 	},
 	callbacks: {
-		signIn: NextAuthCallbacks.session,
+		signIn: NextAuthCallbacks.signIn,
 		session: NextAuthCallbacks.session,
 	},
 	pages: {
-		signIn: '/login'
+		signIn: "/login",
 	},
 	debug: true,
 };

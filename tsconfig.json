@@ -1,0 +1,19 @@
+{
+    "typeAcquisition": {
+        "exclude": [ "dotenv" ]
+      },
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/_utils/*": ["_utils/*"],
+            "@/api/*": ["api/*"],
+            "@/components/*": ["components/*"],
+            "@/hooks/*": ["hooks/*"],
+            "@/models/*": ["models/*"],
+            "@/pages/*": ["pages/*"],
+            "@/public/*": ["public/*"],
+            "@/secrets/*": ["secrets/*"],
+            "@/styles/*": ["styles/*"],
+        },
+    }
+}
