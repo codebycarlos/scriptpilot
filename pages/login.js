@@ -1,1 +1,1 @@
-export { default } from "../components/pages/Login";
+export { default, dataFetching as getServerSideProps } from "@/components/unique/pages/LoginPage";

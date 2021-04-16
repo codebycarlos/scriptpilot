@@ -1,8 +1,10 @@
-/*
-  Description:
-  This file brings together all the parts of a component. 
-  To define the component you can edit its individual files (imports, props, style, logic, body)
-  */
+const name = "Component";
+
+/* 
+	Set a component name.
+	Component root HTML elements are automatically tagged with a "react-ComponentName" prefixed class.
+	All other aspects of the component can be defined in their specific file (imports, props, style, logic, body, data fetching).
+*/
 
 // Declare dependencies
 import { imports } from "./imports";
@@ -15,7 +17,7 @@ import { logic } from "./logic";
 // Create a JSX object to represent data processed by logic function:
 import { body } from "./body.jsx";
 // Create a react component function:
-import { createReactComponentFunction } from "../../_utils/createReactComponentFunction.js";
+import { createReactComponentFunction } from "@/components/_utils/createReactComponentFunction";
 // Get PropTypes
 import PropTypes from "prop-types";
 
@@ -25,11 +27,11 @@ const componentFunctionDefinition = {
 	styleDefault,
 	logic,
 	body,
+	name,
 };
 
-export const Component = createReactComponentFunction(componentFunctionDefinition);
-
-export default Component;
+// Export Component
+export default createReactComponentFunction(componentFunctionDefinition);
 
 /* Data fetching functions may be defined for pages only. 
 The function must be exported to the corresponding /pages/* routing file

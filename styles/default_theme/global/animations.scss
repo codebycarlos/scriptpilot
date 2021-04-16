@@ -1,4 +1,12 @@
-@use '../partials.module.scss';
-html, body, .page > *, main {
-	@include partials.mix_animations_quick-fade-in;
+@use '../partials.module.scss' as *;
+html,
+body,
+.page > *,
+main {
+	@include mix_animations_quick-fade-in;
+}
+
+.quick-fade-in,
+.react-BackgroundImage {
+	@include mix_animations_quick-fade-in;
 }

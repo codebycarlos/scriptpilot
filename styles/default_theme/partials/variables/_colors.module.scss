@@ -1,9 +1,27 @@
+$primary: #f39200;
+$secondary: #373737;
+$tertiary: #ffffff;
+$quaternary: #000000;
+$white: white;
+$black: black;
+$gray: #373737;
+
 $palette: (
-	"primary": #f39200,
-	"secondary": #373737,
-	"tertiary": #ffffff,
-	"quaternary": #000000,
-	"white": white,
-	"black": black,
-	"gray": #373737,
+	"primary": $primary,
+	"secondary": $secondary,
+	"tertiary": $tertiary,
+	"quaternary": $quaternary,
+	"white": $white,
+	"black": $black,
+	"gray": $gray,
 );
+
+:export {
+	var_colors_palette-primary: $primary;
+	var_colors_palette-secondary: $secondary;
+	var_colors_palette-tertiary: $tertiary;
+	var_colors_palette-quaternary: $quaternary;
+	var_colors_palette-white: $white;
+	var_colors_palette-black: $black;
+	var_colors_palette-gray: $gray;
+}

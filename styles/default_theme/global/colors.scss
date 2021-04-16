@@ -1,40 +1,58 @@
-@use '../partials/functions/_colors.module.scss' as *;
+@use '../partials.module.scss' as *;
+
+.page {
+	background-color: func_colors_palette("secondary");
+}
 
 button.contained {
 	&.primary {
-		$palette: palette("primary");
+		$palette: func_colors_palette("primary");
 		background-color: $palette;
-		color: contrast-text(darken($palette));
+		color: func_colors_contrast-text(func_colors_darken($palette));
 		&:hover,
 		:focus {
-			background-color: lighten-10($palette);
+			background-color: func_colors_lighten-10($palette);
 		}
 	}
 	&.secondary {
-		$palette: palette("secondary");
+		$palette: func_colors_palette("secondary");
 		background-color: $palette;
-		color: contrast-text(darken($palette));
+		color: func_colors_contrast-text(func_colors_darken($palette));
 		&:hover,
 		:focus {
-			background-color: lighten-10($palette);
+			background-color: func_colors_lighten-10($palette);
 		}
 	}
 	&.tertiary {
-		$palette: palette("tertiary");
+		$palette: func_colors_palette("tertiary");
 		background-color: $palette;
-		color: contrast-text(darken($palette));
+		color: func_colors_contrast-text(func_colors_darken($palette));
 		&:hover,
 		:focus {
-			background-color: darken-10($palette);
+			background-color: func_colors_darken-10($palette);
 		}
 	}
 	&.quaternary {
-		$palette: palette("quaternary");
+		$palette: func_colors_palette("quaternary");
 		background-color: $palette;
-		color: contrast-text(darken($palette));
+		color: func_colors_contrast-text(func_colors_darken($palette));
 		&:hover,
 		:focus {
-			background-color: lighten-10($palette);
+			background-color: func_colors_lighten-10($palette);
 		}
 	}
+}
+
+.frosted-glass-style-helper {
+	min-width: 100vw !important;
+	left: unset !important;
+	filter: blur(20px) brightness(1.5) saturate(1.5) contrast(0.7)
+		drop-shadow(rgb(55, 55, 55) 0px 0px 1px);
+}
+
+.white {
+	color: func_colors_palette("white");
+}
+.black {
+	color: func_colors_palette("black");
 }

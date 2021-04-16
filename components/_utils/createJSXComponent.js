@@ -1,6 +1,8 @@
-export function createJSXComponent(props, componentJSXDefinition, setDOMAttributes) {
+import { setDOMAttributes } from "./setDOMAttributes.js";
+export function createJSXComponent(props, componentJSXDefinition) {
 	const { imports, styleDefault, logic, body } = componentJSXDefinition;
-	if(logic(imports, props)) props = logic(imports, props);
+	const modifiedProps = logic(imports, props, styleDefault);
+	if (modifiedProps) props = modifiedProps;
 	props = setDOMAttributes(props, styleDefault);
 	return body(imports, props, styleDefault);
 }

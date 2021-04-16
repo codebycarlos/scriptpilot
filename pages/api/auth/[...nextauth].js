@@ -26,6 +26,9 @@ const options = {
 		signIn: NextAuthCallbacks.session,
 		session: NextAuthCallbacks.session,
 	},
+	pages: {
+		signIn: '/login'
+	},
 	debug: true,
 };
 

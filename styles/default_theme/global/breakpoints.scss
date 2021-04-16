@@ -1,0 +1,6 @@
+@use '../partials/functions/_breakpoints.module.scss' as func_breakpoints_;
+@media (max-width: func_breakpoints_.breakpoints("small")) {
+	.expand-width-on-small-100, .expand-width-on-small-100 > * {
+		width: 100%;
+	}
+}

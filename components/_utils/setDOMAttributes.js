@@ -22,17 +22,18 @@ export function setDOMAttributes(props, styleDefault) {
 
 	// Class
 	if (props.className) newProps["DOMAttributes"]["className"] = props.className;
-	for (let className in styleDefault) {
+	if ("root" in styleDefault)
 		newProps["DOMAttributes"]["className"] = [
 			newProps["DOMAttributes"]["className"],
-			styleDefault[className],
+			styleDefault["root"],
 		].join(" ");
-	}
 
 	// Others
 	while (propsNum--) {
-		if (acceptedDOMAttributes.includes(propsNames[propsNum]))
-			newProps["DOMAttributes"][propsNames[propsNum]] = props[propsNames[propsNum]];
+		let propName = propsNames[propsNum];
+		if (acceptedDOMAttributes.includes(propName))
+			newProps["DOMAttributes"][propName] = props[propName];
+		if (propName.startsWith("data-")) newProps["DOMAttributes"][propName] = props[propName];
 	}
 	return newProps;
 }

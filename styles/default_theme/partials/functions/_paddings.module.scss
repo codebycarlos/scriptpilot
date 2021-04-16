@@ -1,0 +1,9 @@
+@use "../variables/_paddings.module.scss" as var_paddings_;
+
+@function global-paddings($target-size) {
+	@return map-get(var_paddings_.$global-paddings, $target-size);
+}
+
+@function local-paddings($target-size) {
+	@return map-get(var_paddings_.$local-paddings, $target-size);
+}

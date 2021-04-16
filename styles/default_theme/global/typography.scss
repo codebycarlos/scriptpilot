@@ -1,0 +1,50 @@
+@use "../partials.module.scss" as *;
+
+// Font families
+
+@use "./font-face/Assistant.scss" as *;
+@use "./font-face/Roboto.scss" as *;
+
+p,
+a,
+span,
+small,
+textarea {
+	font-family: func_typography_fonts("primary");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: func_typography_fonts("secondary");
+}
+
+// Font scaling - non-mobile
+
+h1 {
+	@include mix_typography_responsive-font-size(7);
+}
+h2 {
+	@include mix_typography_responsive-font-size(6);
+}
+h3 {
+	@include mix_typography_responsive-font-size(5);
+}
+h4 {
+	@include mix_typography_responsive-font-size(4);
+}
+h5 {
+	@include mix_typography_responsive-font-size(3);
+}
+h6 {
+	@include mix_typography_responsive-font-size(2);
+}
+p {
+	@include mix_typography_responsive-font-size(1);
+}
+p.small {
+	@include mix_typography_responsive-font-size(-1);
+}
