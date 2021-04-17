@@ -1,11 +1,10 @@
-import { JSendResponse } from "../../../../../_utils/api/JSendResponse.mjs";
-import { TokenRequest } from "../../../../../api/requestHandlers/zoho/auth/token/TokenRequest.mjs";
-import consola from "consola";
+import { JSend } from "@models/common/JSend/JSend.mjs";
+import { TokenRequestHandler } from "@models/server/TokenRequestHandler/TokenRequestHandler.mjs";
 export default async function handler(req, res) {
 	if (req.method == "GET") {
-		return await TokenRequest.get(req, res);
+		return await TokenRequestHandler.get(req, res);
 	}
-	return JSendResponse(res).failDetailed({
+	return JSend(res).failDetailed({
 		message: "Method not allowed.",
 		status: 405,
 	});

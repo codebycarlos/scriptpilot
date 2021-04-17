@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import { NextAuthCallbacks } from "../../../models/NextAuthCallbacks/NextAuthCallbacks.mjs";
+import { NextAuthCallbacks } from "@models/server/NextAuthCallbacks/NextAuthCallbacks.mjs";
 
 const options = {
 	providers: [

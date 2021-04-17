@@ -1,0 +1,16 @@
+import { ArgumentValidator } from "./_dependencies.mjs";
+import { SessionAccount } from "./SessionAccount.mjs";
+export async function findByUserId(targetUserId) {
+	ArgumentValidator.check([...arguments]);
+	let document;
+
+	try {
+		document = await SessionAccount.findOne({
+			userId: targetUserId,
+		}).exec();
+	} catch (e) {
+		throw Error(`Unable to search for document with target user id: ${targetUserId}. ${e}`);
+	}
+
+	return document;
+}

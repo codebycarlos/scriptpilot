@@ -1,19 +1,64 @@
 {
-    "typeAcquisition": {
-        "exclude": [ "dotenv" ]
-      },
-    "compilerOptions": {
-        "baseUrl": "./",
-        "paths": {
-            "@/_utils/*": ["_utils/*"],
-            "@/api/*": ["api/*"],
-            "@/components/*": ["components/*"],
-            "@/hooks/*": ["hooks/*"],
-            "@/models/*": ["models/*"],
-            "@/pages/*": ["pages/*"],
-            "@/public/*": ["public/*"],
-            "@/secrets/*": ["secrets/*"],
-            "@/styles/*": ["styles/*"],
-        },
-    }
+  "typeAcquisition": {
+    "exclude": [
+      "dotenv"
+    ]
+  },
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@_utils/*": [
+        "_utils/*"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@secrets/*": [
+        "secrets/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ]
+    },
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

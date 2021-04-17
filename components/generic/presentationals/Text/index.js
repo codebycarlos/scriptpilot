@@ -17,7 +17,7 @@ import { logic } from "./logic";
 // Create a JSX object to represent data processed by logic function:
 import { body } from "./body.jsx";
 // Create a react component function:
-import { createReactComponentFunction } from "@/components/_utils/createReactComponentFunction";
+import { createReactComponentFunction } from "@components/_utils/createReactComponentFunction";
 // Get PropTypes
 import PropTypes from "prop-types";
 
