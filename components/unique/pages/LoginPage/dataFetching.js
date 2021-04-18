@@ -1,17 +1,10 @@
-import { getCsrfToken } from "next-auth/client";
 import { getSession } from "next-auth/client";
-export default async function dataFetching(context) {
-	const req = context.req;
-	const session = await getSession({ req });
+import { getCsrfToken } from "next-auth/client";
+import { ClientSession } from 'models/common/ClientSession/ClientSession.js';
+export async function dataFetching(context) {
+	const session = await getSession(context);
 
-	if (session) {
-		return {
-			redirect: {
-				destination: "/",
-				permanent: false,
-			},
-		};
-	}
+	if (session) return ClientSession.getRedirect("landing");
 	return {
 		props: {
 			csrfToken: await getCsrfToken(context),

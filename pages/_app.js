@@ -1,5 +1,5 @@
-import "@styles/default_theme/global.scss";
-import Head from "@components/unique/abstractions/Head";
+import "styles/default_theme/global.scss";
+import Head from "components/unique/abstractions/Head";
 import { Provider as SessionProvider } from "next-auth/client";
 import { StylesProvider } from "@material-ui/core/styles";
 import { useEffect } from "react";

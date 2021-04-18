@@ -1,3 +1,3 @@
-export default async function dataFetching() {
+export async function dataFetching() {
 	return { props: {} };
 }

@@ -1,5 +1,4 @@
 import { filterObjectByChildObjectParameter } from "./filterObjectByChildObjectParameter";
-
 export function setComponentPropDefaultsAndTypes(component, props) {
   if (typeof component !== "function") return;
   if (props === null || props === {} || typeof props !== "object") return;

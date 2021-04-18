@@ -6,19 +6,19 @@ export function logic(imports, props) {
 
 	if (smallScreen) {
 		backgroundImageResponsiveProperties = {
-			quality: 25,
+			quality: 1,
 			objectFit: "cover",
 			objectPosition: "center right",
 		};
 	} else if (mediumScreen) {
 		backgroundImageResponsiveProperties = {
-			quality: 50,
+			quality: 85,
 			objectFit: "cover",
 			objectPosition: "center right",
 		};
 	} else {
 		backgroundImageResponsiveProperties = {
-			quality: 75,
+			quality: 100,
 			objectFit: "fill",
 			objectPosition: "bottom right",
 		};

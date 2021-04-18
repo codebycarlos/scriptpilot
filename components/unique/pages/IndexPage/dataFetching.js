@@ -1,9 +1,8 @@
 import { getSession } from "next-auth/client";
-import { Session } from "@models/common/Session/Session.mjs";
-export default async function dataFetching(context) {
-	const req = context.req;
-	const session = await getSession({ req });
+import { ClientSession } from "models/common/ClientSession/ClientSession.js";
+export async function dataFetching(context) {
+	const session = await getSession(context);
 
-	if (Session.isAuthorised(session)) return Session.getRedirect("landing");
-	return Session.getRedirect("login");
+	if (session) return ClientSession.getRedirect("landing");
+	return ClientSession.getRedirect("login");
 }

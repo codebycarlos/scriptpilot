@@ -1,5 +1,5 @@
-import { JSend } from "@models/common/JSend/JSend.mjs";
-import { TokenRequestHandler } from "@models/server/TokenRequestHandler/TokenRequestHandler.mjs";
+import { JSend } from "models/common/JSend/JSend.js";
+import { TokenRequestHandler } from "models/server/TokenRequestHandler/TokenRequestHandler.js";
 export default async function handler(req, res) {
 	if (req.method == "GET") {
 		return await TokenRequestHandler.get(req, res);

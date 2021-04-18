@@ -40,4 +40,4 @@ and exported with one of the following names:
 -getStaticPaths
 -getServerSideProps
 For more info: https://nextjs.org/docs/basic-features/data-fetching */
-export { default as dataFetching } from "./dataFetching.js";
+export { dataFetching } from "./dataFetching.js";
