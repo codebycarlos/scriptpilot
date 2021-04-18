@@ -1,6 +1,6 @@
-export { ArgumentValidator } from "models/common/ArgumentValidator/ArgumentValidator.js";
-export { JSONFile } from "models/server/JSONFile/JSONFile.js";
-export { File } from "models/server/File/File.js";
+export { ArgumentValidator } from "indigozest_modules/ArgumentValidator";
+export { JSONFile } from "indigozest_modules/JSONFile";
+export { File } from "indigozest_modules/File";
 export { default as path } from "path";
 export { default as consola } from "consola";
 export { default as axios } from "axios";

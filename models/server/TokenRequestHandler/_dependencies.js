@@ -1,4 +1,4 @@
-export { AccessToken } from "models/server/AccessToken/AccessToken.js";
-export { JSend } from "models/common/JSend/JSend.js";
-export { ArgumentValidator } from "models/common/ArgumentValidator/ArgumentValidator.js";
+export { AccessToken } from "models/server/AccessToken";
+export { JSend } from "indigozest_modules/JSend";
+export { ArgumentValidator } from "indigozest_modules/ArgumentValidator";
 export { default as consola } from "consola";

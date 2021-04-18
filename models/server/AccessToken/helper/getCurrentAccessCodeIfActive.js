@@ -1,5 +1,5 @@
 import { ArgumentValidator } from "../_dependencies.js";
-import { AccessToken } from "../AccessToken.js";
+import { AccessToken } from "../index.js";
 export async function getCurrentAccessCodeIfActive(tokenPath) {
 	ArgumentValidator.check([...arguments]);
 	let token;

@@ -1,5 +1,5 @@
 import { ArgumentValidator } from "./_dependencies.js";
-import { SessionAccount } from "./SessionAccount.js";
+import { SessionAccount } from "./index.js";
 export async function findByUserId(targetUserId) {
 	ArgumentValidator.check([...arguments]);
 	let document;

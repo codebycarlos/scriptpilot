@@ -1,1 +1,1 @@
-export { default, dataFetching as getServerSideProps } from "components/unique/pages/IndexPage";
+export { default, dataFetching as getServerSideProps } from "components/pages/IndexPage";

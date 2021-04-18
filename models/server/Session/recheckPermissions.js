@@ -1,11 +1,11 @@
 import { ArgumentValidator, MongoDB, SessionAccount } from "./_dependencies.js";
-import { Session } from "./Session.js";
+import { Session } from "./index.js";
 export async function recheckPermissions(userId) {
 	ArgumentValidator.check([...arguments]);
 	let account;
 
 	try {
-		await MongoDB.connectIfNotConnected();
+		await MongoDB.connectIfNotConnected(process.env.MONGODB_CONNECT_URL);
 	} catch (e) {
 		throw Error(`Unable to connect to database in order to check permissions. ${e}`);
 	}

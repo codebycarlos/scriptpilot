@@ -1,5 +1,5 @@
 import { ArgumentValidator } from "./_dependencies.js";
-import { ZohoAccount } from "./ZohoAccount.js";
+import { ZohoAccount } from "./index.js";
 import { fetchUserHTTPCall } from "./helper/fetchUserHTTPCall.js";
 export async function hasProfile(account, targetProfiles) {
 	ArgumentValidator.check([...arguments, account.api_domain, account.id]);

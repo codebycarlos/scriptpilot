@@ -1,3 +1,3 @@
-export { ArgumentValidator } from "models/common/ArgumentValidator/ArgumentValidator.js";
+export { ArgumentValidator } from "indigozest_modules/ArgumentValidator";
 export { default as axios } from "axios";
-export { AccessToken } from "models/server/AccessToken/AccessToken.js";
+export { AccessToken } from "models/server/AccessToken";

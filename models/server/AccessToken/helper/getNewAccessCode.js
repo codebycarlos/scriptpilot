@@ -1,5 +1,5 @@
 import { ArgumentValidator } from "../_dependencies.js";
-import { AccessToken } from "../AccessToken.js";
+import { AccessToken } from "../index.js";
 import { ensureTokenIsNotLocked } from "./ensureTokenIsNotLocked.js";
 export async function getNewAccessCode(tokenPath, refreshTokenPath) {
 	ArgumentValidator.check([...arguments]);

@@ -1,5 +1,5 @@
 import { ArgumentValidator } from "./_dependencies.js";
-import { ZohoAccount } from "./ZohoAccount.js";
+import { ZohoAccount } from "./index.js";
 export async function fetchProfile(account) {
 	ArgumentValidator.check([...arguments, account.api_domain, account.id]);
 	let user;

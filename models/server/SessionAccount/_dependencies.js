@@ -1,3 +1,3 @@
-export { ArgumentValidator } from "models/common/ArgumentValidator/ArgumentValidator.js";
+export { ArgumentValidator } from "indigozest_modules/ArgumentValidator";
 export { default as mongoose } from "mongoose";
 export { default as Int32 } from "mongoose-int32";

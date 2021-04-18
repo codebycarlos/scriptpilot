@@ -1,5 +1,5 @@
 import { ArgumentValidator, File, fs } from "../_dependencies.js";
-import { AccessToken } from "../AccessToken.js";
+import { AccessToken } from "../index.js";
 export function ensureTokenIsNotLocked(tokenPath) {
 	ArgumentValidator.check([...arguments]);
 	let fileIsLocked;
