@@ -13,18 +13,20 @@
 	@return color.adjust($color, $lightness: $change);
 }
 
-@function darken($color, $change: -25%) {
+@function darken($color, $change: 25%) {
+	$change: $change * -1;
 	@return color.adjust($color, $lightness: $change);
 }
-@function darken-10($color, $change: -10%) {
+@function darken-10($color, $change: 10%) {
+	$change: $change * -1;
 	@return color.adjust($color, $lightness: $change);
 }
 
-@function translucent($color, $change: -25%) {
+@function translucent($color, $change: -.25%) {
 	@return color.adjust($color, $alpha: $change);
 }
 
-@function very-translucent($color, $change: -50%) {
+@function very-translucent($color, $change: -.50%) {
 	@return color.adjust($color, $alpha: $change);
 }
 
@@ -67,6 +69,7 @@
 		@return black;
 	}
 }
+
 // Copyright 2017 Google Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy

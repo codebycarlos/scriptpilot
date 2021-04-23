@@ -1,12 +1,11 @@
-export function body(imports, props, styleDefault, Root = "div") {
+export function body(imports, props, styleDefault, Root = "main") {
 	const { MediaQuery, BackgroundImage, Text, FlexPanel, LoginArea, breakpoints } = imports;
 	return (
 		<Root {...props.DOMAttributes}>
 			<MediaQuery query={`(min-width:${breakpoints.var_breakpoints_medium}`}>
 				<Text
-					type="h3"
-					className="white horizontal-center"
-					style={{ textShadow: "0px 0px 4px rgba(0, 0, 0, 0.7)" }}
+					type="h1"
+					className="color-white horizontal-center small-text-shadow"
 				>
 					{props.welcomeText}
 				</Text>

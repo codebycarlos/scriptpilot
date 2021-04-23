@@ -7,14 +7,15 @@
 	$multiplier-factor: var_typography_.$base-scale-ratio
 ) {
 	$unresponsive-font-size: $font-size * func_math_.pow($multiplier-factor, $multiplier);
-	$min-max-variance-multiplier: 0.25;
+	$min-max-variance-multiplier: 0.05;
 	$min: $unresponsive-font-size * (1 - $min-max-variance-multiplier);
 	$max: $unresponsive-font-size * (1 + $min-max-variance-multiplier);
-	$responsive-factor: 5vw;
+	$responsive-factor: 3vw;
 	font-size: clamp(#{$min}, #{$responsive-factor}, #{$max});
-	//	@debug "----";
-	//	@debug $min;
-	//	@debug $responsive-factor;
-	//	@debug $max;
-	//	@debug "----";
+	// @debug "----";
+	// @debug $multiplier-factor;
+	// @debug $min;
+	// @debug $responsive-factor;
+	// @debug $max;
+	// @debug "----";
 }

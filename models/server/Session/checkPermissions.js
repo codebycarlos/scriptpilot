@@ -8,7 +8,7 @@ export async function checkPermissions(account) {
 	} catch (e) {
 		throw Error(`Unable to read list of authorised profiles. ${e}`);
 	}
-
+	
 	try {
 		if (await ZohoAccount.hasProfile(account, authorisedProfiles)) return true;
 	} catch (e) {

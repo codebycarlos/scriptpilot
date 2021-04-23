@@ -3,6 +3,6 @@
 //import { useSession, getSession, getCsrfToken, signIn } as nextAuth from 'next-auth/client';
 
 import ContentGroup from "indigozest_modules/components/containers/ContentGroup";
-import LogoImage from "indigozest_modules/components/presentationals/LogoImage";
+import ImageLogo from "indigozest_modules/components/presentationals/ImageLogo";
 
-export const imports = { ContentGroup, LogoImage };
+export const imports = { ContentGroup, ImageLogo };

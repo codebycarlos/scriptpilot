@@ -1,0 +1,17 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	display: contents;
+}
+
+.ListItem {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.ListItemText span:first-letter {
+	text-transform: capitalize;
+}

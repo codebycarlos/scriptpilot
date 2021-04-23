@@ -3,7 +3,7 @@ export function propsDefinition(PropTypes) {
 		BackgroundImage: {
 			propType: PropTypes.object.isRequired,
 			defaultProp: {
-				src: "/assets/images/Space.jpg",
+				src: process.env.NEXT_PUBLIC_BACKGROUND_IMAGE_PATH,
 				alt: "Rocket tacking off into space.",
 				priority: true,
 			},

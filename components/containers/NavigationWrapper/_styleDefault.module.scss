@@ -1,0 +1,14 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+.Footer {
+	background-color: grey;
+	position: relative;
+	bottom: 50px;
+}

@@ -31,7 +31,7 @@ const options = {
 	pages: {
 		signIn: "/login",
 	},
-	debug: true,
+	debug: false,
 };
 
 export default (req, res) => NextAuth(req, res, options);

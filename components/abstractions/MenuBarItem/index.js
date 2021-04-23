@@ -1,4 +1,4 @@
-const name = "LogoImage";
+const name = "MenuBarItem";
 
 /* 
 	Set a component name.

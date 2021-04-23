@@ -1,4 +1,5 @@
 // GLOBAL RULES
+@forward './global/accessibility.scss';
 @forward './global/animations.scss';
 @forward './global/breakpoints.scss';
 @forward './global/colors.scss';

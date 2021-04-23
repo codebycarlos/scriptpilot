@@ -22,10 +22,10 @@ export function setDOMAttributes(props, styleDefault) {
 
 	// Class
 	if (props.className) newProps["DOMAttributes"]["className"] = props.className;
-	if ("root" in styleDefault)
+	if ("Root" in styleDefault)
 		newProps["DOMAttributes"]["className"] = [
 			newProps["DOMAttributes"]["className"],
-			styleDefault["root"],
+			styleDefault["Root"],
 		].join(" ");
 
 	// Others

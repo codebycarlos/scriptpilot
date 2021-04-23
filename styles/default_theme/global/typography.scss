@@ -1,9 +1,16 @@
 @use "../partials.module.scss" as *;
 
-// Font families
+// Load font families
 
 @use "./font-face/Assistant.scss" as *;
 @use "./font-face/Roboto.scss" as *;
+
+// Base font size
+
+html,
+body {
+	font-size: $var_typography_root-font-size;
+}
 
 p,
 a,
@@ -22,29 +29,51 @@ h6 {
 	font-family: func_typography_fonts("secondary");
 }
 
-// Font scaling - non-mobile
-
-h1 {
-	@include mix_typography_responsive-font-size(7);
-}
-h2 {
+// Font scaling
+h1,
+.responsive-font-size-7,
+.MuiTypography-h1 {
 	@include mix_typography_responsive-font-size(6);
 }
-h3 {
+h2,
+.responsive-font-size-6,
+.MuiTypography-h2 {
 	@include mix_typography_responsive-font-size(5);
 }
-h4 {
+h3,
+.responsive-font-size-5,
+.MuiTypography-h3 {
 	@include mix_typography_responsive-font-size(4);
 }
-h5 {
+h4,
+.responsive-font-size-4,
+.MuiTypography-h4 {
 	@include mix_typography_responsive-font-size(3);
 }
-h6 {
+h5,
+.responsive-font-size-3,
+.MuiTypography-h5 {
 	@include mix_typography_responsive-font-size(2);
 }
-p {
+h6,
+.responsive-font-size-2,
+.MuiTypography-h6 {
 	@include mix_typography_responsive-font-size(1);
 }
-p.small {
+p,
+a,
+span,
+.responsive-font-size-1,
+.MuiTypography-body1,
+.MuiTypography-body2 {
+	@include mix_typography_responsive-font-size(0);
+}
+p.small,
+a.small,
+.responsive-font-size-negative-1 {
+	@include mix_typography_responsive-font-size(-1);
+}
+
+.react-Footer * {
 	@include mix_typography_responsive-font-size(-1);
 }

@@ -10,15 +10,18 @@ export function build(componentFunctionDefinition) {
 		name,
 	} = componentFunctionDefinition;
 	const componentJSXDefinition = { imports, styleDefault, logic, body };
+
 	// Create component function
-	const Component = function (props) {
-		return createJSXComponent(
+	function Component (props) {
+		return createJSXComponent (
 			{ ...props, className: [`react-${name}`, props["className"]].join(" ") },
 			componentJSXDefinition
 		);
 	};
+
 	// Initialise prop defaults and types
 	setComponentPropDefaultsAndTypes(Component, propsDefinition);
+	
 	// Return component
 	return Component;
 }

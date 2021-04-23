@@ -1,0 +1,29 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	padding-top: 2.5%;
+	min-width: 20vw;
+	align-items: flex-end;
+}
+
+.Logo {
+	width: 25%;
+	position: relative;
+	padding-right: 65%;
+	padding-left: 15%;
+	padding-bottom: 15px;
+	box-sizing: content-box;
+}
+
+.Divider {
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 100%;
+}
+
+.MenuDrawer {
+	display: contents;
+	& * {
+		color: white;
+	}
+}

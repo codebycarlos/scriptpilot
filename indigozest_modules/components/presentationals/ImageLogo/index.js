@@ -1,4 +1,4 @@
-const name = "Component";
+const name = "ImageLogo";
 
 /* 
 	Set a component name.
@@ -17,7 +17,7 @@ import { logic } from "./logic";
 // Create a JSX object to represent data processed by logic function:
 import { body } from "./body.jsx";
 // Create a react component function:
-import { ReactComponentBuilder } from "../../models/common/ReactComponentBuilder";
+import { ReactComponentBuilder } from "indigozest_modules/ReactComponentBuilder";
 // Get PropTypes
 import PropTypes from "prop-types";
 

@@ -2,11 +2,9 @@
 html,
 body,
 .page > *,
-main {
-	@include mix_animations_quick-fade-in;
-}
-
+main,
 .quick-fade-in,
-.react-BackgroundImage {
+.react-BackgroundImage,
+.react-MenuResponsive > * {
 	@include mix_animations_quick-fade-in;
 }

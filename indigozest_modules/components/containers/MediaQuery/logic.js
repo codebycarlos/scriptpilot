@@ -1,8 +1,7 @@
 export function logic(imports, props, styleDefault) {
 	// Imports
-	const { React } = imports;
-	const { useMediaQuery } = imports;
-
+	const { React, useMediaQuery } = imports;
+	
 	// Create state to track whether or not to render, pass as prop to body
 	const [render, setRender] = React.useState(true);
 	const [delay, setDelay] = React.useState(false);

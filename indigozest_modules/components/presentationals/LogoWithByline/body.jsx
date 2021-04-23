@@ -1,9 +1,9 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { LogoImage, ContentGroup } = imports;
+	const { ImageLogo, ContentGroup } = imports;
 	Root = ContentGroup;
 	return (
 		<Root {...props.DOMAttributes}>
-			<LogoImage
+			<ImageLogo
 				src={props.src}
 				style={{ height: `${props.height}px`, width: `${props.width}px` }}
 				height={props.height}

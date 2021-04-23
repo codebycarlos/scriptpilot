@@ -2,8 +2,12 @@ $primary: #f39200;
 $secondary: #373737;
 $tertiary: #ffffff;
 $quaternary: #000000;
-$white: white;
-$black: black;
+$quintenary: #16253e;
+$senary: #472d4c;
+$white: #ffffff;
+$off-white: #f6f6f6;
+$black: #000000;
+$off-black: #282828;
 $gray: #373737;
 
 $palette: (
@@ -11,8 +15,12 @@ $palette: (
 	"secondary": $secondary,
 	"tertiary": $tertiary,
 	"quaternary": $quaternary,
+	"quintenary": $quintenary,
+	"senary": $senary,
 	"white": $white,
+	"off-white":$off-white,
 	"black": $black,
+	"off-black":$off-black,
 	"gray": $gray,
 );
 
@@ -21,7 +29,11 @@ $palette: (
 	var_colors_palette-secondary: $secondary;
 	var_colors_palette-tertiary: $tertiary;
 	var_colors_palette-quaternary: $quaternary;
+	var_colors_palette-quintenary: $quintenary;
+	var_colors_palette-senary: $senary;
 	var_colors_palette-white: $white;
+	var_colors_palette-off-white: $off-white;
 	var_colors_palette-black: $black;
+	var_colors_palette-off-black: $off-black;
 	var_colors_palette-gray: $gray;
 }
