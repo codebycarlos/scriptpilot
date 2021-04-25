@@ -1,0 +1,101 @@
+@use '../../_partial.module.scss' as *;
+
+.big-white-text {
+	@include mixin_color_palette("white");
+}
+
+.react-Content {
+	@include mixin_color_background-color-palette("off-white");
+}
+
+.react-Content .react-Footer {
+	@include mixin_color_background-color-palette("gray");
+}
+
+.react-LoginPage {
+	@include mixin_color_background-linear-gradient-palette("senary", "quintenary");
+}
+
+.react-MenuPanel,
+.react-MenuBar {
+	@include mixin_color_background-linear-gradient-palette("quintenary", "senary", 200deg);
+}
+
+.react-MenuDrawerContents .MuiListItem-root {
+	&:hover {
+		@include mixin_color_background-color-palette-darken("quintenary", 3%);
+	}
+	&:active {
+		@include mixin_color_background-color-palette("primary");
+	}
+	&.Mui-selected {
+		@include mixin_color_background-color-palette-darken("quintenary", 3%);
+		&:hover {
+			@include mixin_color_background-color-palette-darken("quintenary", 5%);
+		}
+		&:active {
+			@include mixin_color_background-color-palette("primary");
+		}
+	}
+}
+
+.react-MenuBar .MuiBottomNavigationAction-root {
+	&:hover {
+		@include mixin_color_background-color-palette-darken("quintenary", 3%);
+	}
+	&:active {
+		@include mixin_color_background-color-palette("primary");
+	}
+	&.Mui-selected {
+		&:active {
+			@include mixin_color_background-color-palette("primary");
+		}
+	}
+}
+
+button.contained {
+	&.primary {
+		$palette: function_color_palette("primary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_lighten-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+	&.secondary {
+		$palette: function_color_palette("secondary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_lighten-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+	&.tertiary {
+		$palette: function_color_palette("tertiary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_darken-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+	&.quaternary {
+		$palette: function_color_palette("quaternary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_lighten-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+}

@@ -2,7 +2,7 @@
 // Default styles should be encapsulated to each component.
 // To expand styles use classes and/or in-line declarations.
 .Root {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	bottom: 0;
 	& * {

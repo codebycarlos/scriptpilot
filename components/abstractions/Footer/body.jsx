@@ -3,8 +3,8 @@ export function body(imports, props, styleDefault, Root = "div") {
 	return (
 		<Root {...props.DOMAttributes}>
 			<a>Terms</a>
-			<p>•</p>
-			<a className="signOutLink" onClick={() => signOut()}>
+			<p className={styleDefault.separator}>•</p>
+			<a className="log-out-link" onClick={() => signOut()}>
 				Log out
 			</a>
 		</Root>

@@ -1,0 +1,53 @@
+@use '../../_partial.module.scss' as *;
+
+html,
+body {
+	@include mixin_typography_font-size-root;
+}
+
+p,
+a,
+span,
+small,
+textarea {
+	@include mixin_typography_font-family("primary");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include mixin_typography_font-family("secondary");
+}
+
+// Font scaling
+h1 {
+	@include mixin_typography_responsive-font-size(6);
+}
+
+h2 {
+	@include mixin_typography_responsive-font-size(5);
+}
+
+h3 {
+	@include mixin_typography_responsive-font-size(4);
+}
+
+h4 {
+	@include mixin_typography_responsive-font-size(3);
+}
+
+h5 {
+	@include mixin_typography_responsive-font-size(2);
+}
+
+h6 {
+	@include mixin_typography_responsive-font-size(1);
+}
+p,
+a,
+span {
+	@include mixin_typography_responsive-font-size(0);
+}

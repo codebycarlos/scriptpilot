@@ -1,0 +1,14 @@
+@use '../../_partial.module.scss' as *;
+
+.react-MenuDrawerContents .MuiListItem-root {
+	&.Mui-selected {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "right");
+	}
+}
+
+.react-MenuBar .MuiBottomNavigationAction-root {
+	@include mixin_border_solid-with-color-palette("quintenary", 3px, "bottom");
+	&.Mui-selected {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "bottom");
+	}
+}

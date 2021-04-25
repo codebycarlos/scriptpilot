@@ -11,6 +11,6 @@ export function propsDefinition(PropTypes) {
 		welcomeText: {
 			propType: PropTypes.string.isRequired,
 			defaultProp: "LET YOUR CODE TAKE OFF",
-		},
+		}
 	};
 }

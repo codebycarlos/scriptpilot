@@ -12,10 +12,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 					value={`${process.env.NEXT_PUBLIC_LOGIN_CALLBACK_URL}`}
 				/>
 				<ButtonDefault
-					className="contained primary"
-					style={{
-						width: "100%",
-					}}
+					className={`${styleDefault.ButtonDefault} contained primary`}
 					type="submit"
 				>
 					Log In

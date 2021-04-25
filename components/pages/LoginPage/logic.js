@@ -1,11 +1,11 @@
 export function logic(imports, props) {
-	const { useMediaQuery, breakpoints } = imports;
-	const mediumScreen = useMediaQuery(`(max-width:${breakpoints.var_breakpoints_medium})`);
-	const smallScreen = useMediaQuery(`(max-width:${breakpoints.var_breakpoints_small})`);
+	const { useMediaQuery, breakpoint } = imports;
+	const mediumScreen = useMediaQuery(`(max-width:${breakpoint.variable_breakpoint_medium})`);
+	const smallScreen = useMediaQuery(`(max-width:${breakpoint.variable_breakpoint_small})`);
 
 	const backgroundImageResponsiveProperties = smallScreen
 		? {
-				quality: 1,
+				quality: 50,
 				objectFit: "cover",
 				objectPosition: "center right",
 		  }

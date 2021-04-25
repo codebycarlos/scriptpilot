@@ -1,0 +1,21 @@
+@use "../function/_color.module.scss" as function_color_;
+
+@mixin palette($color) {
+	color: function_color_.palette($color);
+}
+
+@mixin background-color-palette($color) {
+	background-color: function_color_.palette($color);
+}
+
+@mixin background-color-palette-darken($color, $change) {
+	background-color: function_color_.darken(function_color_.palette($color), $change);
+}
+
+@mixin background-linear-gradient-palette($color1, $color2, $direction: 0deg) {
+	background: linear-gradient(
+		$direction,
+		function_color_.palette($color1),
+		function_color_.palette($color2)
+	);
+}

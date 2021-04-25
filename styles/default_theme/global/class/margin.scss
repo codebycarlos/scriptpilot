@@ -1,0 +1,5 @@
+@use '../../_partial.module.scss' as *;
+
+button.contained {
+	@include mixin_margin_local("small");
+}

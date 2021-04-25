@@ -1,0 +1,35 @@
+@use "../function/_padding.module.scss" as function_padding_;
+
+@mixin global-vertical($magnitude) {
+	@include global($magnitude,"top","bottom");
+}
+
+@mixin global-horizontal($magnitude) {
+	@include global($magnitude,"left","right");
+}
+
+@mixin global($magnitude, $sides...) {
+	@if length($sides) == 0 {
+		padding: function_padding_.global-padding($magnitude);
+	}
+	@each $side in $sides {
+		padding-#{$side}: function_padding_.global-padding($magnitude);
+	}
+}
+
+@mixin local-vertical($magnitude) {
+	@include local($magnitude,"top","bottom");
+}
+
+@mixin local-horizontal($magnitude) {
+	@include local($magnitude,"left","right");
+}
+
+@mixin local($magnitude, $sides...) {
+	@if length($sides) == 0 {
+		padding: function_padding_.local-padding($magnitude);
+	}
+	@each $side in $sides {
+		padding-#{$side}: function_padding_.local-padding($magnitude);
+	}
+}

@@ -1,0 +1,48 @@
+@use '../../_partial.module.scss' as *;
+
+.MuiTypography-body1,
+.MuiTypography-body2 {
+	@include mixin_typography_font-family("primary");
+}
+
+.MuiTypography-h1 ,
+.MuiTypography-h2 ,
+.MuiTypography-h3 ,
+.MuiTypography-h4 ,
+.MuiTypography-h5 ,
+.MuiTypography-h6 {
+	@include mixin_typography_font-family("secondary");
+}
+
+.MuiTypography-h1 {
+	@include mixin_typography_responsive-font-size(6);
+}
+
+.MuiTypography-h2 {
+	@include mixin_typography_responsive-font-size(5);
+}
+
+.MuiTypography-h3 {
+	@include mixin_typography_responsive-font-size(4);
+}
+
+.MuiTypography-h4 {
+	@include mixin_typography_responsive-font-size(3);
+}
+
+.MuiTypography-h5 {
+	@include mixin_typography_responsive-font-size(2);
+}
+
+.MuiTypography-h6 {
+	@include mixin_typography_responsive-font-size(1);
+}
+
+.MuiTypography-body1,
+.MuiTypography-body2 {
+	@include mixin_typography_responsive-font-size(0);
+}
+
+.react-Footer * {
+	@include mixin_typography_responsive-font-size(-1);
+}

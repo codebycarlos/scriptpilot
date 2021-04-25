@@ -1,0 +1,10 @@
+@use "../function/_color.module.scss" as function_color_;
+
+@mixin solid-with-color-palette($color, $width, $side: "all") {
+	@if $side == "all" {
+		border: solid $width function_color_.palette($color);
+	}
+	@if $side != "all" {
+		border-#{$side}: solid $width function_color_.palette($color);
+	}
+}

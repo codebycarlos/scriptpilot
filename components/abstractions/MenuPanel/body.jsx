@@ -13,7 +13,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 				<Divider className={styleDefault.Divider} />
 			</MediaQuery>
 			<MenuDrawer className={styleDefault.MenuDrawer} />
-			<Footer />
+			<Footer className={`${styleDefault.Footer}`} />
 		</FlexPanel>
 	);
 }

@@ -1,0 +1,39 @@
+$primary: #f39200;
+$secondary: #373737;
+$tertiary: #ffffff;
+$quaternary: #000000;
+$quintenary: #16253e;
+$senary: #472d4c;
+$white: #ffffff;
+$off-white: #f6f6f6;
+$black: #000000;
+$off-black: #282828;
+$gray: #373737;
+
+$palette: (
+	"primary": $primary,
+	"secondary": $secondary,
+	"tertiary": $tertiary,
+	"quaternary": $quaternary,
+	"quintenary": $quintenary,
+	"senary": $senary,
+	"white": $white,
+	"off-white": $off-white,
+	"black": $black,
+	"off-black": $off-black,
+	"gray": $gray,
+);
+
+:export {
+	variable_color_palette-primary: $primary;
+	variable_color_palette-secondary: $secondary;
+	variable_color_palette-tertiary: $tertiary;
+	variable_color_palette-quaternary: $quaternary;
+	variable_color_palette-quintenary: $quintenary;
+	variable_color_palette-senary: $senary;
+	variable_color_palette-white: $white;
+	variable_color_palette-off-white: $off-white;
+	variable_color_palette-black: $black;
+	variable_color_palette-off-black: $off-black;
+	variable_color_palette-gray: $gray;
+}

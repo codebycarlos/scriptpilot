@@ -1,0 +1,5 @@
+@use '../../_partial.module.scss' as *;
+
+.react-LoginPanel .react-BackgroundImage {
+	@include mixin_filter_frosted-glass-blur-cross-browser(function_color_palette("quintenary"));
+}

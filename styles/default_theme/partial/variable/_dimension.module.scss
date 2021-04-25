@@ -1,0 +1,9 @@
+$smallest-viewport-height: 450px;
+
+$preset-heights: (
+	"smallest-viewport": $smallest-viewport-height,
+);
+
+:export {
+	variable_dimension_preset-heights-smallest-viewport: $smallest-viewport-height;
+}

@@ -1,4 +1,0 @@
-@use '../variables/_breakpoints.module.scss' as var_breakpoints_;
-@function breakpoints($target-breakpoint) {
-	@return map-get(var_breakpoints_.$breakpoints, $target-breakpoint);
-}

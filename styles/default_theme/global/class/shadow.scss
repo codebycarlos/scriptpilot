@@ -1,0 +1,5 @@
+@use '../../_partial.module.scss' as *;
+
+.big-white-text {
+	@include mixin_shadow_text-shadow-barely-dark;
+}

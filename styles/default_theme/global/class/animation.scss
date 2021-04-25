@@ -1,0 +1,5 @@
+@use '../../_partial.module.scss' as *;
+
+.react-App {
+	@include mixin_animation_quick-fade-in;
+}

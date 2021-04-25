@@ -5,7 +5,7 @@ import MenuResponsive from "components/abstractions/MenuResponsive";
 import Content from "components/containers/Content";
 import MediaQuery from "indigozest_modules/components/containers/MediaQuery";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import breakpoints from "styles/default_theme/partials.module.scss";
+import breakpoint from "styles/default_theme/_partial.module.scss";
 import Footer from "components/abstractions/Footer";
 import { useIsMounted } from "indigozest_modules/hooks/useIsMounted";
 export const imports = {
@@ -14,6 +14,6 @@ export const imports = {
 	Footer,
 	MediaQuery,
 	useMediaQuery,
-	breakpoints,
+	breakpoint,
 	useIsMounted,
 };

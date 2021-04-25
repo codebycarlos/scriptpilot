@@ -1,5 +1,0 @@
-@use "../variables/_typography.module.scss" as var_typography_;
-
-@function fonts($target-font) {
-	@return map-get(var_typography_.$fonts, $target-font);
-}

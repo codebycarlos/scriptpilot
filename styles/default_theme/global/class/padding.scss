@@ -1,0 +1,19 @@
+@use '../../_partial.module.scss' as *;
+
+.react-LoginPanel > .react-FlexPanel {
+	@include mixin_padding_global-horizontal("medium");
+}
+
+.react-Footer {
+	@include mixin_padding_local-vertical("small");
+}
+
+.react-Content .react-Footer {
+	@include mixin_padding_local-vertical("extraSmall");
+}
+
+@media (min-width: function_breakpoint_breakpoint("small")) {
+	.react-Content {
+		@include mixin_padding_global("extraSmall","left");
+	}
+}

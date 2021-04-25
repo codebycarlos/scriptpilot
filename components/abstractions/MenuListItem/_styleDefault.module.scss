@@ -12,6 +12,10 @@
 	padding-right: 50px;
 }
 
+.ListItem span {
+	text-overflow: ellipsis;
+}
+
 .ListItemText span:first-letter {
 	text-transform: capitalize;
 }

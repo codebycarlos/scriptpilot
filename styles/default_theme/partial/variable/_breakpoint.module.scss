@@ -1,0 +1,21 @@
+$extraSmall: 320px;
+$small: 600px;
+$medium: 960px;
+$large: 1280px;
+$extraLarge: 1920px;
+
+$breakpoint: (
+	"extraSmall": $extraSmall,
+	"small": $small,
+	"medium": $medium,
+	"large": $large,
+	"extra-large": $extraLarge,
+);
+
+:export {
+	variable_breakpoint_extraSmall: $extraSmall;
+	variable_breakpoint_small: $small;
+	variable_breakpoint_medium: $medium;
+	variable_breakpoint_large: $large;
+	variable_breakpoint_extraLarge: $extraLarge;
+}

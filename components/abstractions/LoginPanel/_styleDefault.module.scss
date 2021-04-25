@@ -1,0 +1,16 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.FlexPanel {
+	position: relative;
+	height: 100%;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.BackgroundImage {
+	top: 0px;
+	right: 0px;
+	overflow: hidden;
+	min-width: 100vw;
+}
