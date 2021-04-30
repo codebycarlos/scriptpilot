@@ -1,6 +1,5 @@
+@use '../../_partial.module.scss' as *;
+
 .react-MenuPanel {
-	scrollbar-width: none;
-	&::-webkit-scrollbar {
-		width: 0px;
-	}
+	@include mixin_scrollbar_width-none;
 }

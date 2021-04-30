@@ -51,3 +51,7 @@ a,
 span {
 	@include mixin_typography_responsive-font-size(0);
 }
+
+p {
+	text-align: justify;
+}

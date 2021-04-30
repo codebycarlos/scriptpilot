@@ -41,7 +41,9 @@ export default function App({ Component, pageProps }) {
 					/* Rendering of components delayed until server-side injected CSS 
 					is removed to prevent flickering and layout shifting. */
 					jssRemoved && (
-						<Component {...pageProps} className="react-App" />
+						<div className="react-App">
+							<Component {...pageProps} className="react-Page"/>
+						</div>
 					)
 				}
 			</StylesProvider>

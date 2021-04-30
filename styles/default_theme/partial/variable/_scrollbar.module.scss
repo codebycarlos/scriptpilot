@@ -1,0 +1,20 @@
+@use "../function/_color.module.scss" as function_color_;
+
+$thumb-color: function_color_.lighten-10(function_color_.palette("quintenary"));
+$track-color: transparent;
+$width-name: thin;
+$width-pixels: 10px;
+
+$default: (
+	"thumb-color": $thumb-color,
+	"track-color": $track-color,
+	"width-name": $width-name,
+	"width-pixels": $width-pixels,
+);
+
+:export {
+	variable_scrollbar_thumb-color: $thumb-color;
+	variable_scrollbar_track-color: $track-color;
+	variable_scrollbar_width-name: $width-name;
+	variable_scrollbar_width-pixels: $width-pixels;
+}

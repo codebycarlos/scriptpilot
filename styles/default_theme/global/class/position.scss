@@ -1,9 +1,9 @@
 @use '../../_partial.module.scss' as *;
 
-.big-white-text {
-	@include mixin_position_horizontal-center;
+.react-App > * {
+	position: relative;
 }
 
-.react-App {
-	position: relative;
+.big-white-text {
+	@include mixin_position_horizontal-center;
 }

@@ -3,3 +3,7 @@
 .react-LoginPanel .react-BackgroundImage {
 	@include mixin_filter_frosted-glass-blur-cross-browser(function_color_palette("quintenary"));
 }
+
+.react-BackgroundImage {
+	filter: saturate(1.1);
+}

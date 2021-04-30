@@ -1,6 +1,6 @@
 @use '../../_partial.module.scss' as *;
 
-.react-App {
+.react-App > * {
 	z-index: 0;
 }
 

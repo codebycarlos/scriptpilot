@@ -9,7 +9,7 @@
 }
 
 .react-Content .react-Footer {
-	@include mixin_color_background-color-palette("gray");
+	@include mixin_color_background-color-palette("dark-quintenary");
 }
 
 .react-LoginPage {
@@ -62,7 +62,7 @@ button.contained {
 			background-color: function_color_lighten-10($palette);
 		}
 		span {
-			color: function_color_contrast-text(function_color_darken($palette));
+			color: function_color_contrast-text(function_color_darken($palette, 15%));
 		}
 	}
 	&.secondary {

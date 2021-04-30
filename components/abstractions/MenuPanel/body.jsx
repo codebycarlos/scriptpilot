@@ -2,7 +2,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 	const { FlexPanel, Logo, Divider, MenuDrawer, MediaQuery, Footer } = imports;
 	return (
 		<FlexPanel {...props.DOMAttributes} type="vertical">
-			<MediaQuery query="(min-height:300px)">
+			<MediaQuery query="(min-height:350px)">
 				<Logo
 					text={false}
 					layout="responsive"

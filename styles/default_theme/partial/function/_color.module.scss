@@ -1,11 +1,21 @@
 @use "sass:color";
+@use "sass:map";
+@use "sass:string";
 @use "../variable/_color.module.scss" as variable_color_;
 
 @function palette($target-color) {
-	@return map-get(variable_color_.$palette, $target-color);
+	@if map.has-key(variable_color_.$palette, $target-color) {
+		@return map-get(variable_color_.$palette, $target-color);
+	}
+	@if (string.slice($target-color, 1, 5) == "dark-") {
+		@return darken(map-get(variable_color_.$palette, string.slice($target-color, 6)));
+	}
+	@if (string.slice($target-color, 1, 6) == "light-") {
+		@return lighten(map-get(variable_color_.$palette, string.slice($target-color, 7)));
+	}
 }
 
-@function lighten($color, $change: 25%) {
+@function lighten($color, $change: 5%) {
 	@return color.adjust($color, $lightness: $change);
 }
 
@@ -13,7 +23,7 @@
 	@return color.adjust($color, $lightness: $change);
 }
 
-@function darken($color, $change: 25%) {
+@function darken($color, $change: 5%) {
 	$change: $change * -1;
 	@return color.adjust($color, $lightness: $change);
 }

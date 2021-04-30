@@ -1,0 +1,5 @@
+@use "../variable/_scrollbar.module.scss" as variable_scrollbar_;
+
+@function default($target-property) {
+	@return map-get(variable_scrollbar_.$default, $target-property);
+}

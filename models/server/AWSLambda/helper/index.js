@@ -1,0 +1,1 @@
+export { throwErrorIfHttpStatusUnsuccessful } from "./throwErrorIfHttpStatusUnsuccessful";
