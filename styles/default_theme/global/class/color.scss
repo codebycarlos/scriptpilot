@@ -53,6 +53,16 @@
 	}
 }
 
+.react-DataGrid {
+	@include mixin_color_background-color-palette("white");
+	& .MuiDataGrid-row:hover {
+		@include mixin_color_background-color-palette-lighten("primary", 45%);
+	}
+	& .MuiDataGrid-cell:focus-within {
+		outline: unset;
+	}
+}
+
 button.contained {
 	&.primary {
 		$palette: function_color_palette("primary");

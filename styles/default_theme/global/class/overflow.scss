@@ -5,3 +5,13 @@
 .react-Page {
 	overflow: visible;
 }
+
+.react-DataGrid .MuiDataGrid-viewport {
+	overflow: unset;
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-MenuResponsive * {
+		overflow: hidden;
+	}
+}

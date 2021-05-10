@@ -3,7 +3,7 @@ import { fetchNew } from "./fetchNew.js";
 import { getAccessCode } from "./getAccessCode.js";
 import { isActive } from "./isActive.js";
 import { save } from "./save.js";
-import { Token } from "../Token/index.js";
+import { Token } from "./_dependencies";
 
 export const AccessToken = {
 	addExpiryTime,

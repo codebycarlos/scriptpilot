@@ -15,3 +15,13 @@
 .react-Content > .react-Page {
 	@include mixin_padding_global("extraSmall");
 }
+
+.react-ActionsPanel button {
+	@include mixin_padding_global-horizontal("extraSmall");
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-Content {
+		@include mixin_padding_global("extraSmall", "top");
+	}
+}

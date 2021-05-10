@@ -1,15 +1,17 @@
-import { ArgumentValidator, AccessToken, JSend, consola } from "./_dependencies.js";
-export async function get(req, res) {
-	ArgumentValidator.check([...arguments]);
+import { ArgumentValidator, RequestHandler, AccessToken, JSend, consola } from "./_dependencies";
+export async function GET({req, res}) {
+	ArgumentValidator.check([req, res]);
+
 	const orgId = req.query.orgId.replace(/\D/g, "");
 	let token;
 
 	try {
 		token = await AccessToken.getAccessCode(orgId);
-		return JSend(res).success({ data: { token: token } });
 	} catch (e) {
 		const errorMessage = "Request for new token failed.";
 		consola.error(`${errorMessage} ${e}`);
 		return JSend(res).error({ message: `${errorMessage}` });
 	}
+
+	return JSend(res).success({ data: { token } });
 }

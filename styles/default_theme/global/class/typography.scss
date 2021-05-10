@@ -5,11 +5,11 @@
 	@include mixin_typography_font-family("primary");
 }
 
-.MuiTypography-h1 ,
-.MuiTypography-h2 ,
-.MuiTypography-h3 ,
-.MuiTypography-h4 ,
-.MuiTypography-h5 ,
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
 .MuiTypography-h6 {
 	@include mixin_typography_font-family("secondary");
 }
@@ -45,4 +45,10 @@
 
 .react-Footer * {
 	@include mixin_typography_responsive-font-size(-1);
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-PageDescription {
+		line-height: 1;
+	}
 }

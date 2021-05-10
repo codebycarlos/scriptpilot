@@ -12,3 +12,16 @@
 		@include mixin_border_solid-with-color-palette("primary", 3px, "bottom");
 	}
 }
+
+.react-HorizontalSeparator {
+	border-color: function_color_palette("light-gray");
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-Content {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "left");
+	}
+	.react-MenuResponsive:hover ~ .react-Content {
+		border-left: solid 3px transparent;
+	}
+}

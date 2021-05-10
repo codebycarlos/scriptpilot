@@ -1,12 +1,11 @@
 import { ArgumentValidator } from "./_dependencies.js";
-import { ZohoAccount } from "./index.js";
-import { fetchUserHTTPCall } from "./helper/fetchUserHTTPCall.js";
+import { fetchProfile } from "./fetchProfile.js";
 export async function hasProfile(account, targetProfiles) {
 	ArgumentValidator.check([...arguments, account.api_domain, account.id]);
 	let profile;
 
 	try {
-		profile = await ZohoAccount.fetchProfile(account);
+		profile = await fetchProfile(account);
 	} catch (e) {
 		throw Error(`Unable to get profile. ${e}`);
 	}

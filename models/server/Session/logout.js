@@ -4,7 +4,7 @@ export async function logout() {
 	let CSRFToken;
 
 	try {
-		CSRFToken = await Session.fetchCSRFToken();
+		CSRFToken = await Session.fetchCsrfToken();
 	} catch (e) {
 		throw Error(`Unable to fetch CSRF token necessary for logout. ${e}`);
 	}

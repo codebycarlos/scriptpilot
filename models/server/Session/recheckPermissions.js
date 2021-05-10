@@ -1,5 +1,5 @@
 import { ArgumentValidator, MongoDB, SessionAccount } from "./_dependencies.js";
-import { Session } from "./index.js";
+import { checkPermissions } from "./checkPermissions.js";
 export async function recheckPermissions(userId) {
 	ArgumentValidator.check([...arguments]);
 	let account;
@@ -21,7 +21,7 @@ export async function recheckPermissions(userId) {
 
 	try {
 		if (
-			await Session.checkPermissions({
+			await checkPermissions({
 				api_domain: process.env.ZOHO_API_DOMAIN_DEFAULT,
 				id: account.providerAccountId,
 			})

@@ -3,3 +3,20 @@
 .big-white-text {
 	@include mixin_shadow_text-shadow-barely-dark;
 }
+
+@media (max-width: function_breakpoint_breakpoint("M")) {
+	.react-ActionsPanel button {
+		@include mixin_shadow_box-shadow-barely-dark;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-MenuResponsive:hover {
+		@include mixin_shadow_box-shadow-very-dark;
+	}
+}
+
+.react-MenuBar {
+	@include mixin_shadow_box-shadow-regular-dark;
+}
+

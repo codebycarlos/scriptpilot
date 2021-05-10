@@ -1,11 +1,16 @@
-import "styles/default_theme/global.scss";
-import Head from "components/abstractions/Head";
-import { Provider as SessionProvider } from "next-auth/client";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { StylesProvider } from "@material-ui/core/styles";
+// Core
 import { useState, useEffect } from "react";
-import LogRocket from "components/abstractions/LogRocket";
+import Head from "components/abstractions/Head";
 import Router from "next/router";
+
+// Style
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { StylesProvider as MaterialUIStylesProvider } from "@material-ui/core/styles";
+import "styles/default_theme/global.scss";
+
+// Extensions
+import { Provider as SessionProvider } from "next-auth/client";
+import LogRocket from "components/abstractions/LogRocket";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
@@ -35,7 +40,7 @@ export default function App({ Component, pageProps }) {
 		>
 			<LogRocket />
 			<CssBaseline />
-			<StylesProvider injectFirst>
+			<MaterialUIStylesProvider injectFirst>
 				<Head />
 				{
 					/* Rendering of components delayed until server-side injected CSS 
@@ -46,7 +51,7 @@ export default function App({ Component, pageProps }) {
 						</div>
 					)
 				}
-			</StylesProvider>
+			</MaterialUIStylesProvider>
 		</SessionProvider>
 	);
 }

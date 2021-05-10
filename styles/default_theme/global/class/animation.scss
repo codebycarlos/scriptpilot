@@ -3,3 +3,12 @@
 .react-App > * {
 	@include mixin_animation_quick-fade-in;
 }
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-MenuResponsive {
+		@include mixin_animation_smooth-width-decrease;
+	}
+	.react-MenuResponsive:hover {
+		@include mixin_animation_smooth-width-increase;
+	}
+}

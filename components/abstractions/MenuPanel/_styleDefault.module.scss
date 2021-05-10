@@ -2,7 +2,7 @@
 // Default styles should be encapsulated to each component.
 // To expand styles use classes and/or in-line declarations.
 .Root {
-	padding-top: 15px;
+	padding-top: 2em;
 	align-items: flex-end;
 	overflow-y: auto;
 }
@@ -10,7 +10,7 @@
 .Logo {
 	width: 25%;
 	position: relative;
-	padding-right: 65%;
+	padding-right: 63%;
 	padding-left: 17%;
 	padding-bottom: 20px;
 	box-sizing: content-box;

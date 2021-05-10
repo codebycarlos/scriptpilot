@@ -1,21 +1,27 @@
-$extraSmall: 320px;
-$small: 600px;
-$medium: 960px;
-$large: 1280px;
-$extraLarge: 1920px;
+$XS: 360px;
+$S: 595px;
+$M: 830px;
+$L: 1065px;
+$XL: 1300px;
+$XXL: 1535px;
+$XXXL: 1770px;
 
 $breakpoint: (
-	"extraSmall": $extraSmall,
-	"small": $small,
-	"medium": $medium,
-	"large": $large,
-	"extra-large": $extraLarge,
+	"XS": $XS,
+	"S": $S,
+	"M": $M,
+	"L": $L,
+	"XL": $XL,
+	"XXL": $XXL,
+	"XXXL": $XXXL,
 );
 
 :export {
-	variable_breakpoint_extraSmall: $extraSmall;
-	variable_breakpoint_small: $small;
-	variable_breakpoint_medium: $medium;
-	variable_breakpoint_large: $large;
-	variable_breakpoint_extraLarge: $extraLarge;
+	variable_breakpoint_XS: $XS;
+	variable_breakpoint_S: $S;
+	variable_breakpoint_M: $M;
+	variable_breakpoint_L: $L;
+	variable_breakpoint_XL: $XL;
+	variable_breakpoint_XXL: $XXL;
+	variable_breakpoint_XXXL: $XXXL;
 }

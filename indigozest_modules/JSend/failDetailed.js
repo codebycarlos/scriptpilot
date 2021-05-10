@@ -1,4 +1,7 @@
-export function failDetailed({ message = "", code = "", status = 400 } = {}, responseObject) {
-	const formattedResponse = JSON.stringify({ status: "fail", data: { message: message, code: code } });
+export function failDetailed(responseObject, { message = "" } = {}, status = 400) {
+	const formattedResponse = JSON.stringify({
+		status: "fail",
+		data: { message: message, code: status },
+	});
 	responseObject.status(status).json(formattedResponse);
 }

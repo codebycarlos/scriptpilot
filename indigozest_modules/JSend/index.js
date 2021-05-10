@@ -6,18 +6,15 @@ import { error } from "./error.js";
 
 export function JSend(responseObject) {
 	ArgumentValidator.check([...arguments]);
+
 	return {
-		success(responseDefinition) {
-			success(responseDefinition, responseObject);
-		},
-		fail(responseDefinition) {
-			fail(responseDefinition, responseObject);
-		},
-		failDetailed(responseDefinition) {
-			failDetailed(responseDefinition, responseObject);
-		},
-		error(responseDefinition) {
-			error(responseDefinition, responseObject);
-		},
+		success: (responseDefinition, status) =>
+			success(responseObject, responseDefinition, status),
+		fail: (responseDefinition, status) => 
+			fail(responseObject, responseDefinition, status),
+		failDetailed: (responseDefinition, status) =>
+			failDetailed(responseObject, responseDefinition, status),
+		error: (responseDefinition, status) => 
+			error(responseObject, responseDefinition, status),
 	};
 }

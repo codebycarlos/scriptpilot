@@ -5,10 +5,8 @@ export function body(imports, props, styleDefault, Root = "div") {
 			<MenuResponsive />
 			<Content style={{ order: props.order }}>
 				{props.children}
-				<MediaQuery query={`(max-width:${breakpoint.variable_breakpoint_small})`}>
-					<Footer
-						className={styleDefault.Footer}
-					/>
+				<MediaQuery query={`(max-width:${breakpoint.variable_breakpoint_S})`}>
+					<Footer className={styleDefault.Footer} />
 				</MediaQuery>
 			</Content>
 		</Root>

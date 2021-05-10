@@ -1,5 +1,25 @@
 @use '../../_partial.module.scss' as *;
 
 button.contained {
-	@include mixin_margin_local("small");
+	@include mixin_margin_local-vertical("extraSmall");
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
+	.react-LoginPage button.contained {
+		@include mixin_margin_local("small");
+	}
+}
+
+.react-Page .react-PageDescription {
+	@include mixin_margin_global-vertical("extraSmall");
+}
+
+.react-ActionsPanel button {
+	@include mixin_margin_global-vertical("extraSmall");
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-Content {
+		margin-left: max(7.5vw, 75px);
+	}
 }

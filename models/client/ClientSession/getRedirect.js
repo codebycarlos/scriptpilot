@@ -14,6 +14,7 @@ export function getRedirect(redirectName) {
 					permanent: false,
 				},
 			};
+		case "default":
 		default:
 			return {
 				redirect: {

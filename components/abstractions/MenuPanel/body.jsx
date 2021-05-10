@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { FlexPanel, Logo, Divider, MenuDrawer, MediaQuery, Footer } = imports;
+	const { FlexPanel, Logo, MenuDrawer, MediaQuery, Footer } = imports;
 	return (
 		<FlexPanel {...props.DOMAttributes} type="vertical">
 			<MediaQuery query="(min-height:350px)">
@@ -10,7 +10,6 @@ export function body(imports, props, styleDefault, Root = "div") {
 					height={50}
 					className={styleDefault.Logo}
 				/>
-				<Divider className={styleDefault.Divider} />
 			</MediaQuery>
 			<MenuDrawer className={styleDefault.MenuDrawer} />
 			<Footer className={`${styleDefault.Footer}`} />

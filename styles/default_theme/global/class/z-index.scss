@@ -7,3 +7,9 @@
 .react-LoginPanel {
 	z-index: 0;
 }
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-MenuResponsive {
+		z-index: 999999;
+	}
+}

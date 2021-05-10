@@ -1,5 +1,5 @@
 import { ArgumentValidator, axios } from "../_dependencies.js";
-export async function fetchCSRFTokenHTTPCall(requestDefinition) {
+export async function fetchCsrfTokenHTTPCall(requestDefinition) {
 	ArgumentValidator.check([...arguments, requestDefinition.host]);
 	const { host } = requestDefinition;
 

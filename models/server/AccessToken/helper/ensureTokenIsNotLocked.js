@@ -1,5 +1,4 @@
-import { ArgumentValidator, File, fs } from "../_dependencies.js";
-import { AccessToken } from "../index.js";
+import { ArgumentValidator, File, fs, Token } from "../_dependencies.js";
 export function ensureTokenIsNotLocked(tokenPath) {
 	ArgumentValidator.check([...arguments]);
 	let fileIsLocked;
@@ -7,7 +6,7 @@ export function ensureTokenIsNotLocked(tokenPath) {
 	if (!fs.existsSync(tokenPath)) return;
 
 	try {
-		fileIsLocked = AccessToken.isLocked(tokenPath);
+		fileIsLocked = Token.isLocked(tokenPath);
 	} catch (e) {
 		throw Error(`Unable to check if current access token file is locked. ${e}`);
 	}

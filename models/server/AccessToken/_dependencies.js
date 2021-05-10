@@ -5,3 +5,4 @@ export { default as path } from "path";
 export { default as consola } from "consola";
 export { default as axios } from "axios";
 export { default as fs } from "fs";
+export { Token } from "../Token/index.js";

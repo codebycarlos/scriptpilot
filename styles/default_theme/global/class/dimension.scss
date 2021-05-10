@@ -4,13 +4,31 @@
 	@include mixin_dimension_height-width-100;
 }
 
-@media (max-width: function_breakpoint_breakpoint("small")) {
+.react-Page .react-PageDescription {
+	height: max-content;
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
 	.react-LoginPanel,
 	.react-LoginPanel > * {
 		width: 100%;
 	}
 }
 
-.react-MenuPanel {
-	min-width: 20vw;
+@media (min-width: function_breakpoint_breakpoint("L")) {
+	.react-Page .react-PageDescription {
+		max-width: function_breakpoint_breakpoint("L");
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-FlexPanel {
+		min-width: max(10vw, 220px);
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-MenuResponsive {
+		height: 100%;
+	}
 }

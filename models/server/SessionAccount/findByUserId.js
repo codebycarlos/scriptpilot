@@ -1,11 +1,10 @@
 import { ArgumentValidator } from "./_dependencies.js";
-import { SessionAccount } from "./index.js";
-export async function findByUserId(targetUserId) {
+export async function findByUserId(model, targetUserId) {
 	ArgumentValidator.check([...arguments]);
 	let document;
 
 	try {
-		document = await SessionAccount.findOne({
+		document = await model.findOne({
 			userId: targetUserId,
 		}).exec();
 	} catch (e) {

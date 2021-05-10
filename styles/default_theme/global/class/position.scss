@@ -7,3 +7,15 @@
 .big-white-text {
 	@include mixin_position_horizontal-center;
 }
+
+@media (max-width: function_breakpoint_breakpoint("M")) {
+	.react-ScriptsPage .react-ActionsPanel {
+		bottom: 0px;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-MenuResponsive {
+		position: absolute;
+	}
+}

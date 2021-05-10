@@ -1,8 +1,8 @@
 export function body(imports, props, styleDefault, Root = "button") {
-	Root = imports.MaterialButton;
+	const { MaterialButton } = imports;
 	return (
-		<Root {...props.DOMAttributes} type={props.type}>
+		<MaterialButton {...props.DOMAttributes} type={props.type}>
 			{props.children}
-		</Root>
+		</MaterialButton>
 	);
 }

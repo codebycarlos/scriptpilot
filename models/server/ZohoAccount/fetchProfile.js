@@ -1,11 +1,11 @@
 import { ArgumentValidator } from "./_dependencies.js";
-import { ZohoAccount } from "./index.js";
+import { fetchUser } from "./fetchUser.js";
 export async function fetchProfile(account) {
 	ArgumentValidator.check([...arguments, account.api_domain, account.id]);
 	let user;
 
 	try {
-		user = await ZohoAccount.fetchUser(account);
+		user = await fetchUser(account);
 	} catch (e) {
 		throw Error(`Unable to fetch user. ${e}`);
 	}

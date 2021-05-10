@@ -1,9 +1,9 @@
-import { fetchCSRFTokenHTTPCall } from "./helper/fetchCSRFTokenHTTPCall.js";
-export async function fetchCSRFToken() {
+import { fetchCsrfTokenHTTPCall } from "./helper/fetchCsrfTokenHTTPCall.js";
+export async function fetchCsrfToken() {
 	let response;
 
 	try {
-		response = await fetchCSRFTokenHTTPCall({ host: process.env.HOST });
+		response = await fetchCsrfTokenHTTPCall({ host: process.env.HOST });
 	} catch (e) {
 		throw Error(`Issues making call to fetch CSRF token. ${e}`);
 	}

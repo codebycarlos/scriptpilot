@@ -4,7 +4,7 @@
 	display: none;
 }
 
-@media (max-width: function_breakpoint_breakpoint("small")) {
+@media (max-width: function_breakpoint_breakpoint("S")) {
 	.react-Content .react-Footer {
 		display: flex;
 	}
@@ -12,4 +12,25 @@
 
 .react-App {
 	display: contents;
+}
+
+.react-Page {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (max-width: function_breakpoint_breakpoint("M")) {
+	.react-ScriptsPage .react-HorizontalSeparator {
+		display: none;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	nav.react-MenuResponsive {
+		display: block;
+	}
+}
+
+.MuiDataGrid-row .MuiIconButton-sizeSmall {
+	display: unset;
 }

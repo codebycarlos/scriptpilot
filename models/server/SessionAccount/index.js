@@ -1,14 +1,15 @@
-import { mongoose } from "./_dependencies.js";
-import { schema } from "./schema.js";
-import { findByUserId } from "./findByUserId.js";
+import { Mongoose } from "./_dependencies";
+import { schemaDefinition } from "./schemaDefinition";
+import { findByUserId } from "./findByUserId";
 
+const modelName = "account";
 let SessionAccount;
 
-if (mongoose.models.account) {
-	SessionAccount = mongoose.model("account");
+if (Mongoose.modelExists(modelName)) {
+	SessionAccount = Mongoose.getModel(modelName);
 } else {
-	SessionAccount = mongoose.model("account", schema);
-	SessionAccount["findByUserId"] = findByUserId;
+	SessionAccount = Mongoose.createModel(modelName, Mongoose.createSchema(schemaDefinition));
+	SessionAccount["findByUserId"] = (targetUserId) => findByUserId(SessionAccount, targetUserId);
 }
 
 export { SessionAccount };
