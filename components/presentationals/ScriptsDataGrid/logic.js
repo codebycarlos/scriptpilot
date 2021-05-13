@@ -1,7 +1,7 @@
 export function logic(imports, props, styleDefault) {
-	const { useMediaQuery, breakpoint, useContext, ScriptsContext, ScriptNameGridCell } = imports;
-	const largeScreen = useMediaQuery(`(max-width:${breakpoint.variable_breakpoint_L})`);
-	const scripts = useContext(ScriptsContext);
+	const { useMediaQuery, breakpoint, useContext, ScriptsContext, ScriptNameGridCell } = imports
+	const largeScreen = useMediaQuery(`(max-width:${breakpoint.variable_breakpoint_L})`)
+	const scripts = useContext(ScriptsContext)
 
 	props.DataGrid = {
 		density: largeScreen ? "compact" : "standard",
@@ -36,6 +36,6 @@ export function logic(imports, props, styleDefault) {
 			},
 		],
 		rows: scripts,
-	};
-	return props;
+	}
+	return props
 }

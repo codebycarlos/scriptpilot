@@ -1,5 +1,5 @@
-import { fetchUser } from "./fetchUser.js";
-import { fetchProfile } from "./fetchProfile.js";
-import { hasProfile } from "./hasProfile.js";
+import { fetchUser } from "./fetchUser"
+import { fetchProfile } from "./fetchProfile"
+import { hasAnyOfProfiles } from "./hasAnyOfProfiles"
 
-export const ZohoAccount = { fetchUser, fetchProfile, hasProfile };
+export const ZohoAccount = { fetchUser, fetchProfile, hasAnyOfProfiles }

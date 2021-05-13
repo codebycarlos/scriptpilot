@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { List, MenuListItems, MenuListItem } = imports;
+	const { List, MenuListItems, MenuListItem } = imports
 	return (
 		<List {...props.DOMAttributes}>
 			{MenuListItems.map((item) => (
@@ -12,5 +12,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				/>
 			))}
 		</List>
-	);
+	)
 }

@@ -1,4 +1,9 @@
-import { ClientSession } from "models/client/ClientSession";
+import { PreparePage } from "models/client/PreparePage"
+import { Settings } from "models/server/Settings"
 export async function dataFetching(context) {
-	return await ClientSession.getPropsIfSessionInactiveOrRedirect(context, "landing");
+	const props = await PreparePage(context).getDefaultProps()
+	props.loginCallbackUrl = await Settings.Core.loginCallbackUrl
+	props.logoPath = await Settings.Brand.logoPath
+
+	return PreparePage(context).returnPropsIfAccessNotGrantedOrRedirect(props, "landing", 1)
 }

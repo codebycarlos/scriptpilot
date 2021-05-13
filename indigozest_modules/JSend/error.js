@@ -4,6 +4,6 @@ export function error(responseObject, { message = "", code = "", data = "" } = {
 		message: message,
 		code: code,
 		data: data,
-	});
-	responseObject.status(status).json(formattedResponse);
+	})
+	responseObject.status(status).json(formattedResponse)
 }

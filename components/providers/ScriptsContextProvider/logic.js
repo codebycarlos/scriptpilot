@@ -1,30 +1,30 @@
 export function logic(imports, props, styleDefault) {
-	const { useState, useEffect, ScriptsContext, Lambda } = imports;
-	const [scripts, setScripts] = useState([]);
-	const [refreshScriptsRequested, setRefreshScriptsRequested] = useState(false);
-	const refreshRate = 2 * 60 * 1000; // Minutes Seconds Milliseconds
+	const { useState, useEffect, ScriptsContext, Lambda } = imports
+	const [scripts, setScripts] = useState([])
+	const [refreshScriptsRequested, setRefreshScriptsRequested] = useState(false)
+	const refreshRate = 2 * 60 * 1000 // Minutes Seconds Milliseconds
 
 	async function refreshScripts() {
-		setRefreshScriptsRequested(true);
+		setRefreshScriptsRequested(true)
 		try {
-			setScripts(await Lambda.listAllFunctions());
+			setScripts(await Lambda.listAllFunctions())
 		} catch (e) {
-			console.log("Request for scripts failed");
+			console.log("Request for scripts failed")
 		} finally {
-			setRefreshScriptsRequested(false);
+			setRefreshScriptsRequested(false)
 		}
 	}
 
 	// Start interval timer to request refreshing of scripts
 	useEffect(() => {
-		refreshScripts();
+		refreshScripts()
 		const interval = setInterval(() => {
 			if (!refreshScriptsRequested) {
-				refreshScripts();
+				refreshScripts()
 			}
-		}, refreshRate);
-		return () => clearInterval(interval);
-	}, []);
+		}, refreshRate)
+		return () => clearInterval(interval)
+	}, [])
 
-	return { ...props, ScriptsContext, value: scripts };
+	return { ...props, ScriptsContext, value: scripts }
 }

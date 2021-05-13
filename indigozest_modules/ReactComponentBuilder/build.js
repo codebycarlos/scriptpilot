@@ -1,5 +1,5 @@
-import { setComponentPropDefaultsAndTypes } from "./helper/setComponentPropDefaultsAndTypes";
-import { createJSXComponent } from "./helper/createJSXComponent";
+import { setComponentPropDefaultsAndTypes } from "./helper/setComponentPropDefaultsAndTypes"
+import { createJSXComponent } from "./helper/createJSXComponent"
 export function build(componentFunctionDefinition) {
 	const {
 		imports,
@@ -8,20 +8,20 @@ export function build(componentFunctionDefinition) {
 		logic,
 		body,
 		name,
-	} = componentFunctionDefinition;
-	const componentJSXDefinition = { imports, styleDefault, logic, body };
+	} = componentFunctionDefinition
+	const componentJSXDefinition = { imports, styleDefault, logic, body }
 
 	// Create component function
-	function Component (props) {
-		return createJSXComponent (
+	function Component(props) {
+		return createJSXComponent(
 			{ ...props, className: [`react-${name}`, props["className"]].join(" ") },
 			componentJSXDefinition
-		);
-	};
+		)
+	}
 
 	// Initialise prop defaults and types
-	setComponentPropDefaultsAndTypes(Component, propsDefinition);
-	
+	setComponentPropDefaultsAndTypes(Component, propsDefinition)
+
 	// Return component
-	return Component;
+	return Component
 }

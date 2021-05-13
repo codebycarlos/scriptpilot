@@ -1,21 +1,21 @@
-import { ArgumentValidator, JSend } from "./_dependencies";
-import { assessRequestAccessRights } from "./assessRequestAccessRights";
+import { ArgumentValidator, JSend } from "./_dependencies"
+import { assessRequestAccessRights } from "./assessRequestAccessRights"
 
-export async function tryAssessRequestAccessRights(res, protectionLevel, session) {
-	ArgumentValidator.check([protectionLevel]);
-	let requestAccessRightsAssessment;
+export async function tryAssessRequestAccessRights(res, accessRightsLevel, Session) {
+	ArgumentValidator.check([accessRightsLevel])
+	let requestAccessRightsAssessment
 
 	try {
-		requestAccessRightsAssessment = await assessRequestAccessRights(protectionLevel, session);
+		requestAccessRightsAssessment = await assessRequestAccessRights(accessRightsLevel, Session)
 	} catch (e) {
-		JSend(res).error({ message: "Access denied: inadequate access rights." }, 401);
-		return null;
+		JSend(res).error({ message: "You do not hold sufficient access rights to perform this request." }, 401)
+		return null
 	}
 
 	if (requestAccessRightsAssessment.accessGranted !== true) {
-		JSend(res).error({ message: requestAccessRightsAssessment.message }, 401);
-		return null;
+		JSend(res).error({ message: requestAccessRightsAssessment.message }, 401)
+		return null
 	}
 
-	return true;
+	return true
 }

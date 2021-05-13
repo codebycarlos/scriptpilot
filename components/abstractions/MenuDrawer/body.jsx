@@ -1,6 +1,6 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { Drawer, MenuDrawerContents, useRouter } = imports;
-	const router = useRouter();
+	const { Drawer, MenuDrawerContents, useRouter } = imports
+	const router = useRouter()
 	return (
 		<Drawer
 			{...props.DOMAttributes}
@@ -9,5 +9,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 		>
 			<MenuDrawerContents currentPage={router.pathname} />
 		</Drawer>
-	);
+	)
 }

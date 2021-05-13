@@ -1,17 +1,18 @@
-import { ArgumentValidator, RequestHandler, AccessToken, JSend, consola } from "./_dependencies";
-export async function GET({req, res}) {
-	ArgumentValidator.check([req, res]);
+import { ArgumentValidator, AccessToken, JSend, consola, TokenPath } from "./_dependencies"
+export async function GET({ req, res }) {
+	ArgumentValidator.check([req, res, req.query.orgId])
+	let accessToken
 
-	const orgId = req.query.orgId.replace(/\D/g, "");
-	let token;
+	const orgId = req.query.orgId;
+	const accessTokenPath = TokenPath.generateAccessTokenPath(orgId)
+	const refreshTokenPath = TokenPath.generateRefreshTokenPath(orgId)
 
 	try {
-		token = await AccessToken.getAccessCode(orgId);
+		token = await AccessToken.getAccessCode(accessTokenPath, refreshTokenPath)
 	} catch (e) {
-		const errorMessage = "Request for new token failed.";
-		consola.error(`${errorMessage} ${e}`);
-		return JSend(res).error({ message: `${errorMessage}` });
+		consola.error(e)
+		return JSend(res).error({ message: "Request for new access token failed." })
 	}
 
-	return JSend(res).success({ data: { token } });
+	return JSend(res).success({ data: { token: accessToken } })
 }

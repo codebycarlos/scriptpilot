@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { MenuResponsive, Content, Footer, MediaQuery, breakpoint } = imports;
+	const { MenuResponsive, Content, Footer, MediaQuery, breakpoint } = imports
 	return (
 		<Root {...props.DOMAttributes} style={{ flexDirection: props.flexDirection }}>
 			<MenuResponsive />
@@ -10,5 +10,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				</MediaQuery>
 			</Content>
 		</Root>
-	);
+	)
 }

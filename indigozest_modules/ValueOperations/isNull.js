@@ -1,3 +1,3 @@
 export function isNull(object) {
-  return object == null;
+	return object == null
 }

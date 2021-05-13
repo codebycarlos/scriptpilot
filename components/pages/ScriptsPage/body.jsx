@@ -4,7 +4,7 @@ export function body(imports, props, styleDefault, Root = "main") {
 		ScriptsListAndActions,
 		PageDescription,
 		HorizontalSeparator,
-	} = imports;
+	} = imports
 	return (
 		<NavigationWrapper>
 			<Root {...props.DOMAttributes}>
@@ -13,5 +13,5 @@ export function body(imports, props, styleDefault, Root = "main") {
 				<ScriptsListAndActions />
 			</Root>
 		</NavigationWrapper>
-	);
+	)
 }

@@ -1,5 +1,5 @@
-import { connect } from "./connect.js";
-import { isConnected } from "./isConnected.js";
-import { connectIfNotConnected } from "./connectIfNotConnected.js";
+import { connect } from "./connect"
+import { isConnected } from "./isConnected"
+import { connectIfNotConnected } from "./connectIfNotConnected"
 
-export const MongoDB = { connect, isConnected, connectIfNotConnected };
+export const MongoDB = { connect, isConnected, connectIfNotConnected }

@@ -1,23 +1,22 @@
-import { ArgumentValidator, axios } from "../_dependencies.js";
-export async function fetchNewHTTPCall(requestDefinition) {
-	ArgumentValidator.check([...arguments, requestDefinition.refreshTokenCode]);
-	const { refreshTokenCode } = requestDefinition;
+import { ArgumentValidator, axios } from "../_dependencies"
+export async function fetchNewHTTPCall({refreshTokenCode, accountsUrl, clientId, clientSecret}) {
+	ArgumentValidator.check([...arguments, refreshTokenCode, clientId, clientSecret])
 
 	try {
 		return await axios.post(
-			`${process.env.ZOHO_SELF_CLIENT_ACCOUNTS_URL}` +
+			`${accountsUrl}` +
 				`/oauth/v2/token?refresh_token=${refreshTokenCode}` +
-				`&client_id=${process.env.ZOHO_SELF_CLIENT_ID}` +
-				`&client_secret=${process.env.ZOHO_SELF_CLIENT_SECRET}` +
+				`&client_id=${clientId}` +
+				`&client_secret=${clientSecret}` +
 				`&grant_type=refresh_token`,
 			null,
 			{
 				headers: {
 					"Content-Type": "application/x-www-form-urlencoded",
 				},
-			}
-		);
+			},
+		)
 	} catch (e) {
-		throw Error(`HTTP call failed. ${e}`);
+		throw Error(`HTTP call failed. ${e}`)
 	}
 }

@@ -1,9 +1,9 @@
-import { addExpiryTime } from "./addExpiryTime.js";
-import { fetchNew } from "./fetchNew.js";
-import { getAccessCode } from "./getAccessCode.js";
-import { isActive } from "./isActive.js";
-import { save } from "./save.js";
-import { Token } from "./_dependencies";
+import { addExpiryTime } from "./addExpiryTime"
+import { fetchNew } from "./fetchNew"
+import { getAccessCode } from "./getAccessCode"
+import { isActive } from "./isActive"
+import { save } from "./save"
+import { Token } from "./_dependencies"
 
 export const AccessToken = {
 	addExpiryTime,
@@ -13,4 +13,4 @@ export const AccessToken = {
 	save,
 	load: Token.load,
 	isLocked: Token.isLocked,
-};
+}

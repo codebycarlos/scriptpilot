@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { Image } = imports;
+	const { Image } = imports
 	return (
 		<Root {...props.DOMAttributes}>
 			<Image
@@ -13,5 +13,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				priority={props.priority}
 			/>
 		</Root>
-	);
+	)
 }

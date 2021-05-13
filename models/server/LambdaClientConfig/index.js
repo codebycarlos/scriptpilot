@@ -1,7 +1,12 @@
-export const LambdaClientConfig = {
-	region: "eu-west-2",
-	credentials: {
-		accessKeyId: "AKIAQO4NXB5AF3PFXPH2",
-		secretAccessKey: "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",
-	},
-};
+import { Settings } from "./_dependencies"
+export async function LambdaClientConfig() {
+	const settings = await Settings.Lambda
+
+	return {
+		region: settings.region,
+		credentials: {
+			accessKeyId: settings.accessKeyId,
+			secretAccessKey: settings.secretAccessKey,
+		},
+	}
+}

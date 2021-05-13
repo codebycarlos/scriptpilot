@@ -1,1 +1,1 @@
-export { ArgumentValidator } from "indigozest_modules/ArgumentValidator";
+export { ArgumentValidator } from "indigozest_modules/ArgumentValidator"

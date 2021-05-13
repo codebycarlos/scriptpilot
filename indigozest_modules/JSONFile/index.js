@@ -1,7 +1,7 @@
-import { load } from "./load.js";
-import { save } from "./save.js";
+import { load } from "./load"
+import { save } from "./save"
 
 export const JSONFile = {
 	load,
 	save,
-};
+}

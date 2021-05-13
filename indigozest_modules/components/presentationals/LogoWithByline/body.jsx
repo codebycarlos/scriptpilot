@@ -1,6 +1,6 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { ImageLogo, ContentGroup } = imports;
-	Root = ContentGroup;
+	const { ImageLogo, ContentGroup } = imports
+	Root = ContentGroup
 	return (
 		<Root {...props.DOMAttributes}>
 			<ImageLogo
@@ -12,5 +12,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 			/>
 			<p style={props.byline.style}>{props.byline.text}</p>
 		</Root>
-	);
+	)
 }

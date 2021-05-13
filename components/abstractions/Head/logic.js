@@ -1,3 +1,5 @@
 export function logic(imports, props) {
-  return;
+	const pageProps = useContext(PageContext)
+	props.title = companyName in pageProps ? pageProps.companyName : null
+	return props
 }

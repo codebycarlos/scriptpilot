@@ -25,5 +25,5 @@ export function propsDefinition(PropTypes) {
 			propType: PropTypes.bool,
 			defaultProp: false,
 		},
-	};
+	}
 }

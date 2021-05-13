@@ -1,6 +1,6 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { ContentGroup, LogoWithByline, ButtonDefault, styles } = imports;
-	Root = ContentGroup;
+	const { ContentGroup, LogoWithByline, ButtonDefault, styles } = imports
+	Root = ContentGroup
 	return (
 		<Root {...props.DOMAttributes}>
 			<LogoWithByline src={props.src} byline={props.byline} />
@@ -9,7 +9,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 				<input
 					type="hidden"
 					name="callbackUrl"
-					value={`${process.env.NEXT_PUBLIC_LOGIN_CALLBACK_URL}`}
+					value={props.loginCallbackUrl}
 				/>
 				<ButtonDefault
 					className={`${styleDefault.ButtonDefault} contained primary`}
@@ -19,5 +19,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				</ButtonDefault>
 			</form>
 		</Root>
-	);
+	)
 }

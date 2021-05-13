@@ -1,15 +1,15 @@
 export function logic(imports, props, styleDefault) {
-	const { useSession, LogRocket } = imports;
-	const [session, loading] = useSession();
+	const { useSession, LogRocket } = imports
+	const [Session] = useSession()
 
-	LogRocket.init("0tpjog/scriptpilot");
+	LogRocket.init("0tpjog/scriptpilot")
 
-	if (session) {
-		LogRocket.identify(session.user.id, {
-			name: session.user.name,
-			email: session.user.email,
-		});
+	if (Session) {
+		LogRocket.identify(Session.User.id, {
+			name: Session.User.name,
+			email: Session.User.email,
+		})
 	}
 
-	return;
+	return
 }

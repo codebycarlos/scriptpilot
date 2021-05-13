@@ -1,29 +1,31 @@
-import { ArgumentValidator } from "./_dependencies.js";
-import { fetchUserHTTPCall } from "./helper/fetchUserHTTPCall.js";
-export async function fetchUser(account) {
-	ArgumentValidator.check([...arguments, account.api_domain, account.id]);
-	let HTTPCallResponse;
+import { ArgumentValidator } from "./_dependencies"
+import { fetchUserHTTPCall } from "./helper/fetchUserHTTPCall"
+export async function fetchUser({apiDomain, orgId, userId}) {
+	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
+	let HTTPCallResponse
 
 	try {
 		HTTPCallResponse = await fetchUserHTTPCall({
-			account,
-		});
+			apiDomain,
+			orgId,
+			userId,
+		})
 	} catch (e) {
-		throw Error(`Unable to make HTTP call. ${e}`);
+		throw Error(`Unable to make HTTP call. ${e}`)
 	}
 
-	if (HTTPCallResponse == null) throw Error(`HTTP call response is null.`);
+	if (HTTPCallResponse == null) throw Error(`HTTP call response is null.`)
 
 	if (!("data" in HTTPCallResponse)) {
-		consola.info("Response object: ", HTTPCallResponse);
-		throw Error("No data received.");
+		consola.info("Response object: ", HTTPCallResponse)
+		throw Error("No data received.")
 	}
 
 	if (!("users" in HTTPCallResponse.data)) {
-		consola.info("Response object: ", HTTPCallResponse);
-		consola.info("Data portion: ", HTTPCallResponse.data);
-		throw Error(`No user data received. Response: ${JSON.stringify(HTTPCallResponse.data)}`);
+		consola.info("Response object: ", HTTPCallResponse)
+		consola.info("Data portion: ", HTTPCallResponse.data)
+		throw Error(`No user data received. Response: ${JSON.stringify(HTTPCallResponse.data)}`)
 	}
 
-	return HTTPCallResponse.data.users[0];
+	return HTTPCallResponse.data.users[0]
 }

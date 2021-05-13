@@ -1,5 +1,5 @@
-import { directoryExists } from "./directoryExists.js";
+import { directoryExists } from "./directoryExists"
 
 export const Path = {
 	directoryExists,
-};
+}

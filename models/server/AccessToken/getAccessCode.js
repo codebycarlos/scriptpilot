@@ -1,32 +1,24 @@
-import { ArgumentValidator, path } from "./_dependencies.js";
-import { getCurrentAccessCodeIfActive } from "./helper/getCurrentAccessCodeIfActive.js";
-import { getNewAccessCode } from "./helper/getNewAccessCode.js";
-export async function getAccessCode(orgId) {
-	ArgumentValidator.check([...arguments]);
-	const tokenPath = path.resolve(
-		process.cwd(),
-		`./secrets/zoho/org${orgId}/tokens/access.json`
-	);
-	const refreshTokenPath = path.resolve(
-		process.cwd(),
-		`./secrets/zoho/org${orgId}/tokens/refresh.json`
-	);
-	let currentAccessCode;
-	let newAccessCode;
+import { ArgumentValidator } from "./_dependencies"
+import { getCurrentAccessCodeIfActive } from "./helper/getCurrentAccessCodeIfActive"
+import { getNewAccessCode } from "./helper/getNewAccessCode"
+export async function getAccessCode({ accessTokenPath, refreshaccessTokenPath }) {
+	ArgumentValidator.check([...arguments, accessTokenPath, refreshaccessTokenPath])
+	let currentAccessCode
+	let newAccessCode
 
 	try {
-		currentAccessCode = await getCurrentAccessCodeIfActive(tokenPath);
+		currentAccessCode = await getCurrentAccessCodeIfActive(accessTokenPath)
 	} catch (e) {
-		consola.warn(`Unable to check current access code. ${e}`);
+		consola.warn(`Unable to check current access code. ${e}`)
 	}
 
-	if (currentAccessCode) return currentAccessCode;
+	if (currentAccessCode) return currentAccessCode
 
 	try {
-		newAccessCode = await getNewAccessCode(tokenPath, refreshTokenPath);
+		newAccessCode = await getNewAccessCode(accessTokenPath, refreshaccessTokenPath)
 	} catch (e) {
-		throw Error(`Unable to get new access code. ${e}`);
+		throw Error(`Unable to get new access code. ${e}`)
 	}
 
-	return newAccessCode;
+	return newAccessCode
 }

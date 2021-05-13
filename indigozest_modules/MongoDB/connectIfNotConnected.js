@@ -1,8 +1,8 @@
-import { ArgumentValidator } from "./_dependencies.js";
-import { isConnected } from "./isConnected.js";
-import { connect } from "./connect.js";
+import { ArgumentValidator } from "./_dependencies"
+import { isConnected } from "./isConnected"
+import { connect } from "./connect"
 export async function connectIfNotConnected(url) {
-	ArgumentValidator.check([...arguments]);
+	ArgumentValidator.check([...arguments])
 
-	if (await !isConnected()) await connect(url);
+	if (await !isConnected()) await connect(url)
 }

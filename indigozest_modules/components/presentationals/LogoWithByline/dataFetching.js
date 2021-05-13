@@ -1,3 +1,3 @@
 export async function dataFetching() {
-	return { props: {} };
+	return { props: {} }
 }

@@ -1,4 +1,4 @@
-const name = "ScriptNameGridCell";
+const name = "ScriptNameGridCell"
 
 /* 
 	Set a component name.
@@ -7,19 +7,19 @@ const name = "ScriptNameGridCell";
 */
 
 // Declare dependencies
-import { imports } from "./imports";
+import { imports } from "./imports"
 // Define a props object with their types and defaults:
-import { propsDefinition } from "./propsDefinition";
+import { propsDefinition } from "./propsDefinition"
 // Declare default style
-import styleDefault from "./_styleDefault.module.scss";
+import styleDefault from "./_styleDefault.module.scss"
 // Logical processing of data (incl. props), sent to body:
-import { logic } from "./logic";
+import { logic } from "./logic"
 // Create a JSX object to represent data processed by logic function:
-import { body } from "./body.jsx";
+import { body } from "./body.jsx"
 // Create a react component function:
-import { ReactComponentBuilder } from "indigozest_modules/ReactComponentBuilder";
+import { ReactComponentBuilder } from "indigozest_modules/ReactComponentBuilder"
 // Get PropTypes
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 const componentFunctionDefinition = {
 	imports,
@@ -28,10 +28,10 @@ const componentFunctionDefinition = {
 	logic,
 	body,
 	name,
-};
+}
 
 // Export Component
-export default ReactComponentBuilder.build(componentFunctionDefinition);
+export default ReactComponentBuilder.build(componentFunctionDefinition)
 
 /* Data fetching functions may be defined for pages only. 
 The function must be exported to the corresponding /pages/* routing file
@@ -40,4 +40,4 @@ and exported with one of the following names:
 -getStaticPaths
 -getServerSideProps
 For more info: https://nextjs.org/docs/basic-features/data-fetching */
-export { dataFetching } from "./dataFetching.js";
+export { dataFetching } from "./dataFetching"

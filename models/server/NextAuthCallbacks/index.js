@@ -1,4 +1,3 @@
-import { signIn } from "./signIn.js";
-import { session } from "./session.js";
+import { session } from "./session"
 
-export const NextAuthCallbacks = { signIn, session };
+export const NextAuthCallbacks = { session }

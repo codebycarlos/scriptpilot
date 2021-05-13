@@ -1,16 +1,16 @@
-import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies";
+import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies"
 export async function DELETE({ req, res }) {
-	ArgumentValidator.check([...arguments]);
-	const { name, version } = req.query;
+	ArgumentValidator.check([...arguments])
+	const { name, version } = req.query
 
 	try {
-		await Lambda.deleteFunction({ FunctionName: name, Qualifier: version });
+		await Lambda.deleteFunction({ FunctionName: name, Qualifier: version })
 	} catch (e) {
-		consola.error(e);
+		consola.error(e)
 		if (e.name === "ResourceNotFoundException")
-			return JSend(res).error({ message: "Script not found." }, 404);
-		return JSend(res).error({ message: "Request for script deletion failed." });
+			return JSend(res).error({ message: "Script not found." }, 404)
+		return JSend(res).error({ message: "Request for script deletion failed." })
 	}
 
-	return JSend(res).success();
+	return JSend(res).success()
 }

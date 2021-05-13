@@ -1,2 +1,4 @@
-import { Lambda, LambdaClientConfig } from "./_dependencies";
-export const LambdaClient = new Lambda(LambdaClientConfig);
+import { Lambda, LambdaClientConfig} from "./_dependencies"
+export async function LambdaClient() {
+	return new Lambda(LambdaClientConfig())
+}

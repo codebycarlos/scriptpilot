@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { signOut } = imports;
+	const { signOut } = imports
 	return (
 		<Root {...props.DOMAttributes}>
 			<a>Terms</a>
@@ -8,5 +8,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				Log out
 			</a>
 		</Root>
-	);
+	)
 }

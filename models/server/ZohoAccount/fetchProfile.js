@@ -1,17 +1,17 @@
-import { ArgumentValidator } from "./_dependencies.js";
-import { fetchUser } from "./fetchUser.js";
-export async function fetchProfile(account) {
-	ArgumentValidator.check([...arguments, account.api_domain, account.id]);
-	let user;
+import { ArgumentValidator } from "./_dependencies"
+import { fetchUser } from "./fetchUser"
+export async function fetchProfile({apiDomain, orgId, userId}) {
+	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
+	let user
 
 	try {
-		user = await fetchUser(account);
+		user = await fetchUser({orgId, userId})
 	} catch (e) {
-		throw Error(`Unable to fetch user. ${e}`);
+		throw Error(`Unable to fetch user. ${e}`)
 	}
 
-	if (!("profile" in user)) throw Error("Unable to read profile of user.");
-	if (!("name" in user.profile)) throw Error("Unable to read name of profile.");
+	if (!("profile" in user)) throw Error("Unable to read profile of user.")
+	if (!("name" in user.profile)) throw Error("Unable to read name of profile.")
 
-	return user.profile.name;
+	return user.profile.name
 }

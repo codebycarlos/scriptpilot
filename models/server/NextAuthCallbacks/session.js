@@ -1,15 +1,9 @@
-import { ArgumentValidator, Session, LogRocket } from "./_dependencies.js";
-export async function session(session = null, user) {
-	ArgumentValidator.check([user, user.id, user.name, user.email]);
+import { Settings } from "./_dependencies"
+export async function session(Session = null, user) {
+	ArgumentValidator.check([user, user.id])
 
-	let authorised;
-	try {
-		authorised = await Session.recheckPermissions(user.id);
-	} catch (e) {
-		consola.error(`Rechecking of permissions failed. ${e}`);
-	}
+	Session.User = user
+	Session.User.orgId = await Settings.Zoho.orgId
 
-    session["user"]["id"] = user.id;
-
-	return authorised ? session : null;
+	return Session
 }

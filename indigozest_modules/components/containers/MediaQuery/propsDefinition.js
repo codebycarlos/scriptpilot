@@ -3,5 +3,5 @@ export function propsDefinition(PropTypes) {
 		query: {
 			propType: PropTypes.string,
 		},
-	};
+	}
 }

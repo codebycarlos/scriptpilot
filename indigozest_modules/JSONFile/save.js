@@ -1,20 +1,20 @@
-import { ArgumentValidator, fs, lockFile, Path, consola } from "./_dependencies.js";
+import { ArgumentValidator, fs, lockFile, Path, consola } from "./_dependencies"
 
 export function save(object, targetPath) {
-	ArgumentValidator.check([...arguments]);
+	ArgumentValidator.check([...arguments])
 	if (!Path.directoryExists(targetPath))
-		throw Error(`Invalid path directory provided: ${directoryPath}.`);
+		throw Error(`Invalid path directory provided: ${directoryPath}.`)
 
-	let unlockFileFunction;
+	let unlockFileFunction
 	try {
-		unlockFileFunction = lockFile.lockSync(targetPath, { realpath: false });
+		unlockFileFunction = lockFile.lockSync(targetPath, { realpath: false })
 	} catch (e) {
-		throw Error(`Unable to lock file (in order to avoid concurrency issues): ${e}.`);
+		throw Error(`Unable to lock file (in order to avoid concurrency issues): ${e}.`)
 	}
 
-	consola.info(`Saving to file with path ${targetPath}`);
+	consola.info(`Saving to file with path ${targetPath}`)
 	fs.writeFile(targetPath, JSON.stringify(object), (e) => {
-		if (unlockFileFunction) unlockFileFunction();
-		if (e) throw Error(`Unable to write to file. ${e}.`);
-	});
+		if (unlockFileFunction) unlockFileFunction()
+		if (e) throw Error(`Unable to write to file. ${e}.`)
+	})
 }

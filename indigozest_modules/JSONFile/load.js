@@ -1,13 +1,13 @@
-import { ArgumentValidator, fs } from "./_dependencies.js";
+import { ArgumentValidator, fs } from "./_dependencies"
 export function load(targetPath) {
-	ArgumentValidator.check([...arguments]);
+	ArgumentValidator.check([...arguments])
 	if (!fs.existsSync(targetPath))
-		throw Error(`Invalid path. File not found in path: ${targetPath}`);
-	let file;
+		throw Error(`Invalid path. File not found in path: ${targetPath}`)
+	let file
 	try {
-		file = fs.readFileSync(targetPath, { encoding: "utf8" });
+		file = fs.readFileSync(targetPath, { encoding: "utf8" })
 	} catch (e) {
-		throw Error(`Unable to read file. ${e}`);
+		throw Error(`Unable to read file. ${e}`)
 	}
-	return JSON.parse(file);
+	return JSON.parse(file)
 }

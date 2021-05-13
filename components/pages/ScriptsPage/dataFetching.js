@@ -1,4 +1,6 @@
-import { ClientSession } from "models/client/ClientSession";
+import { PreparePage } from "models/client/PreparePage"
 export async function dataFetching(context) {
-	return await ClientSession.getPropsIfSessionActiveOrRedirect(context, "login");
+	const props = await PreparePage(context).getDefaultProps()
+	
+	return PreparePage(context).returnPropsIfAccessGrantedOrRedirect(props, "login", 1)
 }

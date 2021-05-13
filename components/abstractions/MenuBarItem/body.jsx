@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { Link, BottomNavigationAction } = imports;
+	const { Link, BottomNavigationAction } = imports
 	return (
 		<Link {...props.DOMAttributes} href={props.value}>
 			<BottomNavigationAction
@@ -10,5 +10,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				selected={props.selected}
 			/>
 		</Link>
-	);
+	)
 }

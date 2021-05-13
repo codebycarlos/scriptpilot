@@ -8,5 +8,5 @@ export function propsDefinition(PropTypes) {
     keywords: {
       propType: PropTypes.string,
     }
-  }; */
+  } */
 }

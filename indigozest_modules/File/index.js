@@ -1,5 +1,5 @@
-import { triggerDelayedUnlock } from "./triggerDelayedUnlock.js";
+import { triggerDelayedUnlock } from "./triggerDelayedUnlock"
 
 export const File = {
 	triggerDelayedUnlock,
-};
+}

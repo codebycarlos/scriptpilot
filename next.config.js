@@ -1,4 +1,4 @@
-const CircularDependencyPlugin = require("circular-dependency-plugin");
+const CircularDependencyPlugin = require("circular-dependency-plugin")
 module.exports = {
 	reactStrictMode: true,
 	webpack: (config, options) => {
@@ -12,7 +12,7 @@ module.exports = {
 					},
 				},
 			],
-		});
+		})
 		config.plugins.push(
 			new CircularDependencyPlugin({
 				// exclude detection of files based on a RegExp
@@ -25,12 +25,12 @@ module.exports = {
 				// set the current working directory for displaying module paths
 				cwd: process.cwd(),
 			})
-		);
+		)
 		if (!options.isServer) {
 			config.node = {
 				fs: "empty",
-			};
+			}
 		}
-		return config;
+		return config
 	},
-};
+}

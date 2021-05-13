@@ -1,10 +1,14 @@
-import { ArgumentValidator } from "./_dependencies";
-import { meetsProtectionLevel1 } from "./helper/meetsProtectionLevel1";
-export async function assessRequestAccessRights(protectionLevel, session) {
-	ArgumentValidator.check([protectionLevel]);
+import { ArgumentValidator, AccessRights } from "./_dependencies"
+export async function assessRequestAccessRights(accessRightsLevelTarget, Session) {
+	ArgumentValidator.check([accessRightsLevel])
 
-	if (protectionLevel >= 1 && !meetsProtectionLevel1(session))
-		return { accessGranted: false, message: "You need to be signed in." };
+	const accessRightsLevel = await AccessRights.determineAccessRightsLevel(Session)
 
-	return { accessGranted: true };
+	if (accessRightsLevel < accessRightsLevelTarget)
+		return {
+			accessGranted: false,
+			message: "You do not hold sufficient access rights to perform this request.",
+		}
+
+	return { accessGranted: true }
 }

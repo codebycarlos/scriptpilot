@@ -1,6 +1,6 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { MenuListItems, MenuBarItem, useRouter } = imports;
-	const router = useRouter();
+	const { MenuListItems, MenuBarItem, useRouter } = imports
+	const router = useRouter()
 	return (
 		<>
 			{MenuListItems.map((item) => (
@@ -13,5 +13,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				/>
 			))}
 		</>
-	);
+	)
 }

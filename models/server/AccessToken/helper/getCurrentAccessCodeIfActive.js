@@ -1,22 +1,22 @@
-import { ArgumentValidator, Token } from "../_dependencies.js";
-import { isActive } from "../isActive.js";
+import { ArgumentValidator, Token } from "../_dependencies"
+import { isActive } from "../isActive"
 export async function getCurrentAccessCodeIfActive(tokenPath) {
-	ArgumentValidator.check([...arguments]);
-	let token;
+	ArgumentValidator.check([...arguments])
+	let token
 
 	try {
-		token = await Token.load(tokenPath);
+		token = await Token.load(tokenPath)
 	} catch (e) {
-		throw Error(`Unable to load current access token: ${e}`);
+		throw Error(`Unable to load current access token: ${e}`)
 	}
 
 	try {
-		if (await !isActive(token)) return null;
+		if (await !isActive(token)) return null
 	} catch (e) {
-		throw Error(`Unable to determine if current access token is active. ${e}`);
+		throw Error(`Unable to determine if current access token is active. ${e}`)
 	}
 
-	if (!("access_token" in token)) throw Error("Token does not contain access code.");
+	if (!("access_token" in token)) throw Error("Token does not contain access code.")
 
-	return token.access_token;
+	return token.access_token
 }

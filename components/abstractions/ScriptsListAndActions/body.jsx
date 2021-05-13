@@ -1,8 +1,14 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { ScriptsContextProvider, ScriptsDataGrid, ButtonDefault, AddIcon, ActionsPanel } = imports;
+	const {
+		ScriptsContextProvider,
+		ScriptsDataGrid,
+		ButtonDefault,
+		AddIcon,
+		ActionsPanel,
+	} = imports
 	return (
 		<Root {...props.DOMAttributes}>
-			<ScriptsContextProvider> 
+			<ScriptsContextProvider>
 				<ScriptsDataGrid functions={props.functions} />
 			</ScriptsContextProvider>
 			<ActionsPanel>
@@ -12,5 +18,5 @@ export function body(imports, props, styleDefault, Root = "div") {
 				</ButtonDefault>
 			</ActionsPanel>
 		</Root>
-	);
+	)
 }

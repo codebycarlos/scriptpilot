@@ -1,15 +1,17 @@
-import { ArgumentValidator } from "./_dependencies.js";
+import { ArgumentValidator } from "./_dependencies"
 export async function findByUserId(model, targetUserId) {
-	ArgumentValidator.check([...arguments]);
-	let document;
+	ArgumentValidator.check([...arguments])
+	let document
 
 	try {
-		document = await model.findOne({
-			userId: targetUserId,
-		}).exec();
+		document = await model
+			.findOne({
+				userId: targetUserId,
+			})
+			.exec()
 	} catch (e) {
-		throw Error(`Unable to search for document with target user id: ${targetUserId}. ${e}`);
+		throw Error(`Unable to search for document with target user id: ${targetUserId}. ${e}`)
 	}
 
-	return document;
+	return document
 }

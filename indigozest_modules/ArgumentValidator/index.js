@@ -1,3 +1,3 @@
-import { check } from "./check";
+import { check } from "./check"
 
-export const ArgumentValidator = { check };
+export const ArgumentValidator = { check }

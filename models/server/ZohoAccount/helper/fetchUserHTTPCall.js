@@ -1,27 +1,27 @@
-import { ArgumentValidator, AccessToken, axios } from "../_dependencies.js";
-export async function fetchUserHTTPCall(requestDefinition) {
+import { ArgumentValidator, AccessToken, axios } from "../_dependencies"
+export async function fetchUserHTTPCall({apiDomain, orgId, userId}) {
 	ArgumentValidator.check([
 		...arguments,
-		requestDefinition.account.api_domain,
-		requestDefinition.account.id,
-	]);
-	const { account } = requestDefinition;
-	let accessTokenCode;
+		apiDomain,
+		orgId,
+		userId,
+	])
+	let accessTokenCode
 
 	try {
-		accessTokenCode = await AccessToken.getAccessCode(process.env.ZOHO_PRODUCTION_ORG_ID);
+		accessTokenCode = await AccessToken.getAccessCode({apiDomain, orgId})
 	} catch (e) {
-		throw Error(`Unable to authorise request. ${e}`);
+		throw Error(`Unable to authorise request. ${e}`)
 	}
 
 	return axios
-		.get(`${account.api_domain}/crm/v2/users/${account.id}`, {
+		.get(`${apiDomain}/crm/v2/users/${userId}`, {
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
 				Authorization: `Zoho-oauthtoken ${accessTokenCode}`,
 			},
 		})
 		.catch((e) => {
-			throw Error(`HTTP call failed. ${e}`);
-		});
+			throw Error(`HTTP call failed. ${e}`)
+		})
 }

@@ -1,12 +1,13 @@
-import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
-import { NextAuthCallbacks } from "models/server/NextAuthCallbacks";
+import NextAuth from "next-auth"
+import Providers from "next-auth/providers"
+import Settings from "models/server/Settings"
+import { NextAuthCallbacks } from "models/server/NextAuthCallbacks"
 
 const options = {
 	providers: [
 		Providers.Zoho({
-			clientId: process.env.ZOHO_APP_ID,
-			clientSecret: process.env.ZOHO_APP_SECRET,
+			clientId: await Settings.Zoho.appId,
+			clientSecret: await Settings.Zoho.appSecret,
 		}),
 	],
 	database: {
@@ -14,10 +15,10 @@ const options = {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		// Ensure network allows outbound connections to port 27017
-		url: process.env.MONGODB_CONNECT_URL,
+		url: await Settings.Mongo.connectUrl,
 	},
 	// Used for randomising hashing
-	secret: process.env.NEXT_AUTH_SECRET,
+	secret: await Settings.NextAuth.secret,
 	session: {
 		// Use JSON Web Tokens for session instead of database sessions.
 		jwt: false,
@@ -25,13 +26,12 @@ const options = {
 		maxAge: 1 * 1 * 15 * 60,
 	},
 	callbacks: {
-		signIn: NextAuthCallbacks.signIn,
 		session: NextAuthCallbacks.session,
 	},
 	pages: {
 		signIn: "/login",
 	},
 	debug: false,
-};
+}
 
-export default (req, res) => NextAuth(req, res, options);
+export default (req, res) => NextAuth(req, res, options)
