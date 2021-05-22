@@ -1,5 +1,6 @@
 import { ArgumentValidator } from "./_dependencies"
 import { fetchUserHTTPCall } from "./helper/fetchUserHTTPCall"
+
 export async function fetchUser({apiDomain, orgId, userId}) {
 	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
 	let HTTPCallResponse

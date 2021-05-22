@@ -1,2 +1,4 @@
 import Head from "next/head"
-export const imports = { Head }
+import { useContext } from 'react'
+import { PageContext } from "hooks/contexts/PageContext"
+export const imports = { Head, useContext, PageContext }

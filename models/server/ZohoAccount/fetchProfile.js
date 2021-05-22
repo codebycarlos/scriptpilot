@@ -1,11 +1,11 @@
 import { ArgumentValidator } from "./_dependencies"
 import { fetchUser } from "./fetchUser"
-export async function fetchProfile({apiDomain, orgId, userId}) {
+export async function fetchProfile({ apiDomain, orgId, userId }) {
 	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
 	let user
 
 	try {
-		user = await fetchUser({orgId, userId})
+		user = await fetchUser({ apiDomain, orgId, userId })
 	} catch (e) {
 		throw Error(`Unable to fetch user. ${e}`)
 	}

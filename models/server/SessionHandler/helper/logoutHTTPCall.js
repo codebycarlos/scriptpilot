@@ -1,11 +1,11 @@
-import { ArgumentValidator, axios } from "../_dependencies"
-export async function logoutHTTPCall(requestDefinition) {
-	ArgumentValidator.check([...arguments, requestDefinition.host, requestDefinition.CSRFToken])
-	const { host, CSRFToken } = requestDefinition
+import { ArgumentValidator, CustomAxios } from "../_dependencies"
+export async function logoutHTTPCall({ CSRFToken }) {
+	ArgumentValidator.check([CSRFToken])
+	const axios = await CustomAxios.load()
 
 	try {
 		return await axios.post(
-			`${host}/api/auth/signout`,
+			`api/auth/signout`,
 			{
 				csrfToken: CSRFToken,
 			},

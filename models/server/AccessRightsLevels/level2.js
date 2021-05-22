@@ -1,11 +1,15 @@
-import { Settings } from "models/server/Settings"
-export async function level2(Session) {
-	if (!(User in Session) || !(id in Session.User)) return false
+import { Settings, ZohoAccount } from "./_dependencies"
+export async function level2(session) {
+	if (!session || !("user" in session) || !("id" in session.user)) return false
 
-	const settings = await Settings.Zoho
-	
+	const settings = await Settings.Zoho()
+
 	return await ZohoAccount.hasAnyOfProfiles(
-		{ apiDomain: settings.apiDomain, orgId: settings.orgId, userId: Session.User.id },
+		{
+			apiDomain: settings.apiDomain,
+			orgId: settings.orgId,
+			userId: session.user.providerAccountId,
+		},
 		settings.authorizedProfiles,
 	)
 }

@@ -1,10 +1,4 @@
-import { fetchCsrfToken } from "./fetchCsrfToken"
 import { ClientSessionHandler } from "./_dependencies"
+import { isValid } from "./isValid"
 
-export const SessionHandler = {
-	fetchCsrfToken,
-	getSession: ClientSessionHandler.getSession,
-	getCsrfToken: ClientSessionHandler.getCsrfToken,
-	getRedirect: ClientSessionHandler.getRedirect,
-	isAuthorised: ClientSessionHandler.isAuthorised,
-}
+export const SessionHandler = Object.assign(ClientSessionHandler, { isValid })

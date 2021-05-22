@@ -1,10 +1,11 @@
 import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies"
 export async function DELETE({ req, res }) {
 	ArgumentValidator.check([...arguments])
+	const lambda = await Lambda.load()
 	const { name, version } = req.query
 
 	try {
-		await Lambda.deleteFunction({ FunctionName: name, Qualifier: version })
+		await lambda.deleteFunction({ FunctionName: name, Qualifier: version })
 	} catch (e) {
 		consola.error(e)
 		if (e.name === "ResourceNotFoundException")

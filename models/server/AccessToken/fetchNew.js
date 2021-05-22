@@ -6,10 +6,10 @@ export async function fetchNew(refreshToken) {
 
 	try {
 		HTTPCallResponse = await fetchNewHTTPCall({
-			refreshTokenCode,
-			accountsUrl: await Settings.Zoho.selfClientAccountsUrl,
-			clientId: await Settings.Zoho.clientId,
-			clientSecret: await Settings.Zoho.clientSecret,
+			refreshTokenCode: refreshToken.refresh_token,
+			accountsUrl: (await Settings.Zoho()).selfClientAccountsUrl,
+			clientId: (await Settings.Zoho()).selfClientId,
+			clientSecret: (await Settings.Zoho()).selfClientSecret,
 		})
 	} catch (e) {
 		throw Error(`Unable to make HTTP call. ${e}`)

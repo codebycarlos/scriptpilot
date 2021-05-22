@@ -1,7 +1,8 @@
 import { LambdaClient } from "./_dependencies"
 
 export async function getAccountUsage() {
-	const settings = await LambdaClient.getAccountSettings()
+	const lambdaClient = await LambdaClient.load()
+	const settings = await lambdaClient.getAccountSettings()
 
 	if (!"AccountUsage" in settings)
 		throw Error(`Unable to read account usage in settings. ${settings} `)

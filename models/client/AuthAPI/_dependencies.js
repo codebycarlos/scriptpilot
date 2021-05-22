@@ -1,1 +1,1 @@
-export { default as axios } from "axios"
+export { CustomAxios } from "models/client/CustomAxios"

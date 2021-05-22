@@ -1,4 +1,4 @@
-export function isAuthorised(Session) {
-	if (Session) return true
+export function isAuthorised(session) {
+	if (session) return true
 	return false
 }

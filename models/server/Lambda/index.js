@@ -1,10 +1,5 @@
-import { getAccountLimit } from "./getAccountLimit"
-import { getAccountUsage } from "./getAccountUsage"
-import { listAllFunctions } from "./listAllFunctions"
-import { LambdaClient } from "./_dependencies"
+import { load } from "./load"
 
-export const Lambda = Object.assign(LambdaClient, {
-	getAccountLimit,
-	getAccountUsage,
-	listAllFunctions,
-})
+export const Lambda = { 
+	load
+}

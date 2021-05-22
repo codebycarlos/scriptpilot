@@ -1,9 +1,8 @@
 export function body(imports, props, styleDefault, Root = "div") {
 	const { ContentGroup, LogoWithByline, ButtonDefault, styles } = imports
-	Root = ContentGroup
 	return (
-		<Root {...props.DOMAttributes}>
-			<LogoWithByline src={props.src} byline={props.byline} />
+		<ContentGroup {...props.DOMAttributes}>
+			<LogoWithByline src={props.src} byLine={props.byLine} />
 			<form method="post" action="/api/auth/signin/zoho" style={{ display: "contents" }}>
 				<input name="csrfToken" type="hidden" defaultValue={props.csrfToken} />
 				<input
@@ -18,6 +17,6 @@ export function body(imports, props, styleDefault, Root = "div") {
 					Log In
 				</ButtonDefault>
 			</form>
-		</Root>
+		</ContentGroup>
 	)
 }

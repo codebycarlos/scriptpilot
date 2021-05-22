@@ -1,4 +1,6 @@
 import { Settings } from "./_dependencies"
-export function generateAccessTokenPath(orgId) {
-	return (await Settings.Zoho.accessTokenPathFormat).replace("orgId", orgId)
+export async function generateAccessTokenPath(orgId) {
+	const accessTokenPathFormat = (await Settings.Zoho()).accessTokenPathFormat
+	if (!accessTokenPathFormat || typeof accessTokenPathFormat !== "string") throw Error("Invalid access token path format.")
+	return accessTokenPathFormat.replace("orgId", orgId)
 }

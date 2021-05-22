@@ -1,8 +1,8 @@
 import { ClientSessionHandler } from "models/client/ClientSessionHandler"
-export async function dataFetching({req, res}) {
-	const Session = await ClientSessionHandler.getSession({req, res})
+export async function dataFetching(context) {
+	const session = await ClientSessionHandler.getSession(context)
 
-	return Session
+	return session
 		? ClientSessionHandler.getRedirect("landing")
 		: ClientSessionHandler.getRedirect("login")
 }

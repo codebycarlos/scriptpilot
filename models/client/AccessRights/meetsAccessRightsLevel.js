@@ -1,5 +1,5 @@
 import { determineAccessRightsLevel } from "./determineAccessRightsLevel"
-export async function meetsAccessRightsLevel(accessRightsLevelTarget) {
-    const accessRightsLevel = await determineAccessRightsLevel()
-    return accessRightsLevel >= accessRightsLevelTarget
+export async function meetsAccessRightsLevel(session, accessRightsTarget) {
+	const accessRightsLevel = await determineAccessRightsLevel(session)
+	return accessRightsLevel >= accessRightsTarget
 }

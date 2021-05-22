@@ -1,6 +1,9 @@
 import { determineAccessRightsLevel } from "./determineAccessRightsLevel"
 import { meetsAccessRightsLevel } from "./meetsAccessRightsLevel"
-export const AccessRights = {
-    determineAccessRightsLevel,
-    meetsAccessRightsLevel,
+export function AccessRights(session) {
+	return {
+		determineAccessRightsLevel: () => determineAccessRightsLevel(session),
+		meetsAccessRightsLevel: (accessRightsTarget) =>
+			meetsAccessRightsLevel(session, accessRightsTarget),
+	}
 }

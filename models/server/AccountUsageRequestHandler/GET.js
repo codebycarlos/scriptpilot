@@ -1,11 +1,11 @@
-import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies"
-export async function GET({ req, res }) {
-	ArgumentValidator.check([...arguments])
+import { Lambda, JSend, consola } from "./_dependencies"
+export async function GET(req, res) {
+	const lambda = await Lambda.load()
 	const name = req.query.name
 	let usage
 
 	try {
-		usage = await Lambda.getAccountUsage()
+		usage = await lambda.getAccountUsage()
 	} catch (e) {
 		consola.error(e)
 		if (e.name === "ResourceNotFoundException")
@@ -13,5 +13,5 @@ export async function GET({ req, res }) {
 		return JSend(res).error({ message: "Request for script failed." })
 	}
 
-	return JSend(res).success({ data: { script } })
+	return JSend(res).success({ data: { usage } })
 }

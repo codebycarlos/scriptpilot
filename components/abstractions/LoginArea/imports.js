@@ -4,4 +4,5 @@ import { useContext } from 'react'
 import ContentGroup from "indigozest_modules/components/containers/ContentGroup"
 import ButtonDefault from "indigozest_modules/components/input/ButtonDefault"
 import LogoWithByline from "indigozest_modules/components/presentationals/LogoWithByline"
-export const imports = { LogoWithByline, ContentGroup, ButtonDefault, useContext }
+import { PageContext } from "hooks/contexts/PageContext"
+export const imports = { LogoWithByline, ContentGroup, ButtonDefault, useContext, PageContext }

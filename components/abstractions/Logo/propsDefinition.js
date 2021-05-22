@@ -2,7 +2,6 @@ export function propsDefinition(PropTypes) {
 	return {
 		src: {
 			propType: PropTypes.string.isRequired,
-			defaultProp: "/assets/images/logos/FullColor_close_up_1280x1024.svg",
 		},
 		height: {
 			propType: PropTypes.number,

@@ -1,20 +1,15 @@
-import { ArgumentValidator, AccessRightsLevels, consola } from "./_dependencies"
+import { AccessRightsLevels, consola } from "./_dependencies"
+export async function determineAccessRightsLevel(session) {
+	let levelsMetCount = 0
 
-export async function determineAccessRightsLevel({ req, res }) {
-	ArgumentValidator.check([req, res])
+	try {
+		for (let level in AccessRightsLevels) {
+			if (!(await AccessRightsLevels[level](session))) break
+			levelsMetCount++
+		}
+	} catch (e) {
+		consola.error(e)
+	}
 
-	const session = await SessionHandler.getSession({ req, res })
-    let level = 0;
-
-    try {
-        Object.values(AccessRightsLevels).forEach((level) => {
-            if(!(await level(session))) break
-            level++
-        })
-    }
-    catch(e) {
-        consola.error(e)
-    }
-
-    return level
+	return levelsMetCount
 }

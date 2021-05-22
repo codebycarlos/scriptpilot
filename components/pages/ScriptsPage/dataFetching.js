@@ -1,6 +1,9 @@
-import { PreparePage } from "models/client/PreparePage"
+import { PagePreparer } from "models/client/PagePreparer"
 export async function dataFetching(context) {
-	const props = await PreparePage(context).getDefaultProps()
-	
-	return PreparePage(context).returnPropsIfAccessGrantedOrRedirect(props, "login", 1)
+	const pagePreparer = await PagePreparer.load(context)
+
+	return await pagePreparer.returnPropsIfAccessGrantedOrRedirect({
+		redirectPage: "login",
+		accessRightsTarget: 1,
+	})
 }

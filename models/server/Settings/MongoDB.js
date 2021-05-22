@@ -1,4 +1,4 @@
-export async function Mongo() {
+export async function MongoDB() {
 	return {
 		cluster0UserName: process.env.MONGODB_CLUSTER0_USERNAME,
 		cluster0Password: process.env.MONGODB_CLUSTER0_PASSWORD,

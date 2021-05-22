@@ -8,7 +8,7 @@ export async function tryGetSession({ req, res }) {
 	} catch (e) {
 		JSend(res).error(
 			{
-				message: "Unable to retrieve Session. You need to be signed in.",
+				message: "Unable to retrieve session. You need to be signed in.",
 			},
 			401,
 		)

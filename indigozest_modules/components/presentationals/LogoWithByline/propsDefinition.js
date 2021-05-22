@@ -1,6 +1,6 @@
 export function propsDefinition(PropTypes) {
 	return {
-		byline: {
+		byLine: {
 			propType: PropTypes.object,
 		},
 		src: {

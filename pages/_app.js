@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react"
 import Head from "components/abstractions/Head"
 import Router from "next/router"
-import Settings from "models/server/Settings"
 import PageContextProvider from "components/providers/PageContextProvider"
 
 // Style
@@ -37,7 +36,7 @@ export default function App({ Component, pageProps }) {
 		<SessionProvider
 			Session={pageProps.Session}
 			options={
-				{ clientMaxAge: process.env.NEXT_PUBLIC_SESSION_CLIENT_MAX_AGE_IN_SECONDS } // Re-fetch Session if cache is older than specified seconds
+				{ clientMaxAge: process.env.NEXT_PUBLIC_SESSION_CLIENT_MAX_AGE_IN_SECONDS } // Re-fetch session if cache is older than specified seconds
 			}
 		>
 			<LogRocket />

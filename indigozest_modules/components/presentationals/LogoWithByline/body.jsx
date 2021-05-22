@@ -1,8 +1,7 @@
 export function body(imports, props, styleDefault, Root = "div") {
 	const { ImageLogo, ContentGroup } = imports
-	Root = ContentGroup
 	return (
-		<Root {...props.DOMAttributes}>
+		<ContentGroup {...props.DOMAttributes}>
 			<ImageLogo
 				src={props.src}
 				style={{ height: `${props.height}px`, width: `${props.width}px` }}
@@ -10,7 +9,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 				width={props.width}
 				layout="responsive"
 			/>
-			<p style={props.byline.style}>{props.byline.text}</p>
-		</Root>
+			<p style={props.byLine.style}>{props.byLine.text}</p>
+		</ContentGroup>
 	)
 }

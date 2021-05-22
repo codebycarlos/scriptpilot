@@ -1,5 +1,5 @@
 export { JSend } from "indigozest_modules/JSend"
-export { ArgumentValidator } from "indigozest_modules/ArgumentValidator"
 export { AccessToken } from "models/server/AccessToken"
+export { RequestHandler } from "models/server/RequestHandler"
 export { TokenPath } from "models/server/TokenPath"
 export { default as consola } from "consola"

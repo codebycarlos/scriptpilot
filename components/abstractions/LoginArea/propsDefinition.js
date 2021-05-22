@@ -3,7 +3,7 @@ export function propsDefinition(PropTypes) {
 		src: {
 			propType: PropTypes.string.isRequired,
 		},
-		byline: {
+		byLine: {
 			propType: PropTypes.object,
 		},
 		csrfToken: {

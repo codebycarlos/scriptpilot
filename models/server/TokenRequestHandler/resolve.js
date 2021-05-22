@@ -1,13 +1,8 @@
-import { ArgumentValidator, JSend } from "./_dependencies"
+import { RequestHandler } from "./_dependencies"
 import { GET } from "./GET"
 export async function resolve(req, res) {
-	ArgumentValidator.check([...arguments])
+	;({ req, res } = await RequestHandler.runMiddleware(req, res))
 
-	if (req.method == "GET") return await GET({req, res})
-	return JSend(res).failDetailed(
-		{
-			message: "Method not allowed.",
-		},
-		405,
-	)
+	if (req.method == "GET") return await GET(req, res)
+	return await RequestHandler.methodNotAllowedResponse(res)
 }

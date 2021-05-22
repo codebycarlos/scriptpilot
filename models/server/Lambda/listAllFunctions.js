@@ -1,6 +1,7 @@
 import { LambdaClient } from "./_dependencies"
 export async function listAllFunctions({ functions = [], Marker, MaxItems = 50 } = {}) {
-	const data = await LambdaClient.listFunctions({ Marker, MaxItems })
+	const lambdaClient = await LambdaClient.load()
+	const data = await lambdaClient.listFunctions({ Marker, MaxItems })
 
 	if ("Functions" in data) functions.push(...data.Functions)
 

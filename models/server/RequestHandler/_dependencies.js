@@ -1,5 +1,6 @@
 export { SessionHandler } from "models/server/SessionHandler"
 export { JSend } from "indigozest_modules/JSend"
-export { AccessRights } from "models/client/AccessRights"
+export { AccessRights } from "models/server/AccessRights"
 export { ArgumentValidator } from "indigozest_modules/ArgumentValidator"
+export { Middleware } from "models/server/Middleware"
 export { default as consola } from "consola"

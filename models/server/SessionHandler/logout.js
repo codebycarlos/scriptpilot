@@ -1,18 +1,18 @@
-import { Settings } from "./_dependencies"
-import { SessionHandler } from "./Session"
+import { ClientSessionHandler } from "./_dependencies"
 import { logoutHTTPCall } from "./helper/logoutHTTPCall"
-export async function logout() {
+export async function logout({req}) {
+	ArgumentValidator.check([req])
 	let CSRFToken
 
 	try {
-		CSRFToken = await Session.fetchCsrfToken()
+		CSRFToken = await ClientSessionHandler.getCsrfToken({req})
 	} catch (e) {
 		throw Error(`Unable to fetch CSRF token necessary for logout. ${e}`)
 	}
 
 	try {
-		return await logoutHTTPCall({ host: await Settings.Core.host, CSRFToken })
+		return await logoutHTTPCall({ CSRFToken })
 	} catch (e) {
-		throw Error(`Issues making call to terminate user Session. ${e}`)
+		throw Error(`Issues making call to terminate user session. ${e}`)
 	}
 }

@@ -1,1 +1,2 @@
-export { Lambda, LambdaClientConfig } from "@aws-sdk/client-lambda"
+export { Lambda } from "@aws-sdk/client-lambda"
+export { LambdaClientConfig } from "models/server/LambdaClientConfig"

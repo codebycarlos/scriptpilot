@@ -1,6 +1,6 @@
 import { Settings } from "./_dependencies"
 export async function LambdaClientConfig() {
-	const settings = await Settings.Lambda
+	const settings = await Settings.Lambda()
 
 	return {
 		region: settings.region,

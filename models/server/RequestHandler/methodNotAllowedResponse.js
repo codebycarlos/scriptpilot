@@ -1,4 +1,4 @@
-import { ArgumentValidator } from "./_dependencies"
+import { ArgumentValidator, JSend } from "./_dependencies"
 export async function methodNotAllowedResponse(res) {
 	ArgumentValidator.check([...arguments])
 	return await JSend(res).failDetailed(

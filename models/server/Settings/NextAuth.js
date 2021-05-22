@@ -1,6 +1,6 @@
 export async function NextAuth() {
 	return {
-		secret: process.env.NEXT_AUTH_SECRET,
+		secret: process.env.NEXTAUTH_SECRET,
 		nextAuthUrl: process.env.NEXTAUTH_URL,
 	}
 }

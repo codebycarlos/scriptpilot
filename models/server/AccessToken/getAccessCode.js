@@ -1,8 +1,8 @@
 import { ArgumentValidator } from "./_dependencies"
 import { getCurrentAccessCodeIfActive } from "./helper/getCurrentAccessCodeIfActive"
 import { getNewAccessCode } from "./helper/getNewAccessCode"
-export async function getAccessCode({ accessTokenPath, refreshaccessTokenPath }) {
-	ArgumentValidator.check([...arguments, accessTokenPath, refreshaccessTokenPath])
+export async function getAccessCode({ accessTokenPath, refreshTokenPath }) {
+	ArgumentValidator.check([...arguments, accessTokenPath, refreshTokenPath])
 	let currentAccessCode
 	let newAccessCode
 
@@ -15,7 +15,7 @@ export async function getAccessCode({ accessTokenPath, refreshaccessTokenPath })
 	if (currentAccessCode) return currentAccessCode
 
 	try {
-		newAccessCode = await getNewAccessCode(accessTokenPath, refreshaccessTokenPath)
+		newAccessCode = await getNewAccessCode({accessTokenPath, refreshTokenPath})
 	} catch (e) {
 		throw Error(`Unable to get new access code. ${e}`)
 	}

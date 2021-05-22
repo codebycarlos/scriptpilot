@@ -1,15 +1,12 @@
-import { Brand } from "./Brand"
-import { Core } from "./Core"
+import { ClientSettings } from "./_dependencies"
 import { Lambda } from "./Lambda"
-import { Mongo } from "./Mongo"
+import { MongoDB } from "./MongoDB"
 import { NextAuth } from "./NextAuth"
 import { Zoho } from "./Zoho"
 
-export const Settings = {
-	Brand: Brand(),
-    Core: Core(),
-    Lambda: Lambda(),
-    Mongo: Mongo(),
-    NextAuth: NextAuth(),
-    Zoho: Zoho()
-}
+export const Settings = Object.assign( ClientSettings, {
+	Lambda,
+	MongoDB,
+	NextAuth,
+	Zoho,
+})

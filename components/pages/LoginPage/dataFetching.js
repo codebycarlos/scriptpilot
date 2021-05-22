@@ -1,9 +1,16 @@
-import { PreparePage } from "models/client/PreparePage"
+import { PagePreparer } from "models/client/PagePreparer"
 import { Settings } from "models/server/Settings"
-export async function dataFetching(context) {
-	const props = await PreparePage(context).getDefaultProps()
-	props.loginCallbackUrl = await Settings.Core.loginCallbackUrl
-	props.logoPath = await Settings.Brand.logoPath
 
-	return PreparePage(context).returnPropsIfAccessNotGrantedOrRedirect(props, "landing", 1)
+export async function dataFetching(context) {
+	const pagePreparer = await PagePreparer.load(context)
+
+	let props = {}
+	props.loginCallbackUrl = (await Settings.Zoho()).loginCallbackUrl
+	props.logoPath = (await Settings.Brand()).logoPath
+
+	return await pagePreparer.returnPropsIfAccessNotGrantedOrRedirect({
+		props,
+		redirectPage: "landing",
+		accessRightsTarget: 1,
+	})
 }

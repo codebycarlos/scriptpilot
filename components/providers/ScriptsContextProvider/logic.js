@@ -1,14 +1,17 @@
 export function logic(imports, props, styleDefault) {
-	const { useState, useEffect, ScriptsContext, Lambda } = imports
+	const { useState, useEffect, CustomAxios } = imports
 	const [scripts, setScripts] = useState([])
 	const [refreshScriptsRequested, setRefreshScriptsRequested] = useState(false)
 	const refreshRate = 2 * 60 * 1000 // Minutes Seconds Milliseconds
 
 	async function refreshScripts() {
 		setRefreshScriptsRequested(true)
+		const axios = await CustomAxios.load()
 		try {
-			setScripts(await Lambda.listAllFunctions())
+			console.log(await axios.get("api/scripts"))
+			setScripts((await axios.get("api/scripts")).data.data.scripts)
 		} catch (e) {
+			console.log(e)
 			console.log("Request for scripts failed")
 		} finally {
 			setRefreshScriptsRequested(false)
@@ -26,5 +29,5 @@ export function logic(imports, props, styleDefault) {
 		return () => clearInterval(interval)
 	}, [])
 
-	return { ...props, ScriptsContext, value: scripts }
+	return { ...props, value: scripts }
 }
