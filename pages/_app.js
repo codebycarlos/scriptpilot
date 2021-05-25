@@ -1,6 +1,7 @@
 // Core
 import { useState, useEffect } from "react"
 import Head from "components/abstractions/Head"
+import Snackbar from "components/abstractions/Snackbar"
 import Router from "next/router"
 import PageContextProvider from "components/providers/PageContextProvider"
 
@@ -14,6 +15,7 @@ import { Provider as SessionProvider } from "next-auth/client"
 import LogRocket from "components/abstractions/LogRocket"
 import NProgress from "nprogress"
 import "nprogress/nprogress.css"
+import { SnackbarProvider } from "notistack"
 
 //Binding events for loading bar animation
 Router.events.on("routeChangeStart", () => NProgress.start())
@@ -42,18 +44,21 @@ export default function App({ Component, pageProps }) {
 			<LogRocket />
 			<CssBaseline />
 			<MaterialUIStylesProvider injectFirst>
-				<PageContextProvider value={pageProps}>
-					<Head />
-					{
-						/* Rendering of components delayed until server-side injected CSS 
-					is removed to prevent flickering and layout shifting. */
-						jssRemoved && (
-							<div className="react-App">
-								<Component {...pageProps} className="react-Page" />
-							</div>
-						)
-					}
-				</PageContextProvider>
+				<SnackbarProvider maxSnack={3} dense={true} hideIconVariant={true}>
+					<PageContextProvider value={pageProps}>
+						<Head />
+						<Snackbar />
+						{
+							/* Rendering of components delayed until server-side injected CSS 
+						is removed to prevent flickering and layout shifting. */
+							jssRemoved && (
+								<div className="react-App">
+									<Component {...pageProps} className="react-Page" />
+								</div>
+							)
+						}
+					</PageContextProvider>
+				</SnackbarProvider>
 			</MaterialUIStylesProvider>
 		</SessionProvider>
 	)

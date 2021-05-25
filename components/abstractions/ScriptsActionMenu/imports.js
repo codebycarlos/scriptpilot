@@ -3,4 +3,6 @@ import Link from 'next/link'
 //import { useSession, getSession, getCsrfToken, signIn } as nextAuth from 'next-auth/client'
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
-export const imports = { Menu, MenuItem, Link }
+import { API } from "models/client/API"
+import { default as consola } from "consola"
+export const imports = { Menu, MenuItem, Link, API, consola }

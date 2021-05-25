@@ -1,7 +1,7 @@
 export function logic(imports, props, styleDefault) {
 	const { useMediaQuery, breakpoint, useContext, ScriptsContext, ScriptNameGridCell } = imports
 	const largeScreen = useMediaQuery(`(max-width:${breakpoint.variable_breakpoint_L})`)
-	const scripts = useContext(ScriptsContext)
+	const { scripts, refreshScripts, error } = useContext(ScriptsContext)
 
 	props.DataGrid = {
 		density: largeScreen ? "compact" : "standard",
@@ -13,7 +13,9 @@ export function logic(imports, props, styleDefault) {
 				field: "FunctionName",
 				headerName: "Script Name",
 				width: 500,
-				renderCell: ({ value }) => <ScriptNameGridCell value={value} />,
+				renderCell: ({ value }) => (
+					<ScriptNameGridCell value={value} refresh={refreshScripts} />
+				),
 			},
 			{
 				field: "CodeSize",
@@ -36,6 +38,8 @@ export function logic(imports, props, styleDefault) {
 			},
 		],
 		rows: scripts,
+		error,
+		components:{ErrorOverlay: () => { return <p className="error-message"><b>Error:</b> {error}</p>}},
 	}
 	return props
 }

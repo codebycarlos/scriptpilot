@@ -2,6 +2,9 @@ import { Settings, ArgumentValidator, consola } from "./_dependencies"
 import { AccountsCollection } from "models/server/AccountsCollection"
 export async function session(session = null, user) {
 	ArgumentValidator.check([user, user.id])
+	console.log("checking")
+	if (!session) return null
+
 	let providerAccount, zohoSettings
 
 	try {

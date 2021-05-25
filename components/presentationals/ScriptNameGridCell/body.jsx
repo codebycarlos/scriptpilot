@@ -24,7 +24,8 @@ export function body(imports, props, styleDefault, Root = "div") {
 			<ScriptsActionMenu
 				anchorEl={anchorEl}
 				onClose={handleClose}
-				script={props.value}
+				value={props.value}
+				refresh={props.refresh}
 			/>
 		</Root>
 	)

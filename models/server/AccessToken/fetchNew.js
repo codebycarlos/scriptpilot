@@ -1,4 +1,4 @@
-import { ArgumentValidator, consola, Settings } from "./_dependencies"
+import { ArgumentValidator, Settings } from "./_dependencies"
 import { fetchNewHTTPCall } from "./helper/fetchNewHTTPCall"
 export async function fetchNew(refreshToken) {
 	ArgumentValidator.check([...arguments, refreshToken.refresh_token])
@@ -15,17 +15,10 @@ export async function fetchNew(refreshToken) {
 		throw Error(`Unable to make HTTP call. ${e}`)
 	}
 
-	if (HTTPCallResponse == null) throw Error(`HTTP call response is null.`)
-	if (!("data" in HTTPCallResponse)) {
-		consola.info("Response object: ", HTTPCallResponse)
-		throw Error("No data received.")
+	try {
+		return HTTPCallResponse.data
 	}
-
-	if (!("access_token" in HTTPCallResponse.data)) {
-		consola.info("Response object: ", HTTPCallResponse)
-		consola.info("Data portion: ", HTTPCallResponse.data)
-		throw Error(`No access token received. Response: ${JSON.stringify(HTTPCallResponse.data)}`)
+	catch(e) {
+		throw Error(`Invalid data received. ${e}`)
 	}
-
-	return HTTPCallResponse.data
 }
