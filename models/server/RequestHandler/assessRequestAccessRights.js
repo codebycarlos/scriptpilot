@@ -2,7 +2,8 @@ import { ArgumentValidator, AccessRights } from "./_dependencies"
 export async function assessRequestAccessRights(accessRightsTarget, session) {
 	ArgumentValidator.check([accessRightsTarget])
 
-	const accessRightsLevel = await AccessRights.determineAccessRightsLevel(session)
+	const accessRights = AccessRights(session)
+	const accessRightsLevel = await accessRights.determineAccessRightsLevel(session)
 
 	if (accessRightsLevel < accessRightsTarget)
 		return {

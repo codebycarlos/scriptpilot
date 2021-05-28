@@ -1,9 +1,17 @@
-import { ArgumentValidator, ClientSessionHandler, Settings } from "./_dependencies"
+import { ClientSessionHandler, Settings } from "./_dependencies"
+import { extractPageName } from "./helper/extractPageName"
+import { extractRootPath } from "./helper/extractRootPath"
 export async function getDefaultProps(context) {
-	ArgumentValidator.check([...arguments])
+	if (!context) return {}
+	const pageName = extractPageName(context.req.url)
+	const brandSettings = await Settings.Brand()
+	const appName = brandSettings.appName
+	const title = pageName ? `${appName} – ${pageName}` : appName
+	const rootPath = extractRootPath(context.req.url)
 	return {
+		title,
+		rootPath,
 		csrfToken: await ClientSessionHandler.getCsrfToken(context),
-		title: (await Settings.Brand()).appName,
-		Brand: 	(await Settings.Brand())
+		Brand: brandSettings,
 	}
 }

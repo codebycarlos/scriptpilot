@@ -5,7 +5,7 @@ import { tryAssessRequestAccessRights } from "./tryAssessRequestAccessRights"
 export async function protectRoute(route, context, accessRightsLevel) {
 	ArgumentValidator.check([...arguments])
 
-	const session = await tryGetSession(context)
+	const session = tryGetSession(context)
 
 	const accessGranted = await tryAssessRequestAccessRights(
 		context.res,

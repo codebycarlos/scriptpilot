@@ -17,7 +17,7 @@
 	border-color: function_color_palette("light-gray");
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-Content {
 		@include mixin_border_solid-with-color-palette("primary", 3px, "left");
 	}

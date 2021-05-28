@@ -1,8 +1,10 @@
 export function logic(imports, props, styleDefault) {
 	const { useMediaQuery, breakpoint, MenuPanel, MenuBar } = imports
-	const smallScreen = useMediaQuery(`(max-width:${breakpoint.variable_breakpoint_S})`)
+	const largeScreen = useMediaQuery(
+		`(min-width:${breakpoint.variable_breakpoint_S}) and (hover:hover)`,
+	)
 
-	props["MenuToDisplay"] = smallScreen ? MenuBar : MenuPanel
+	props["MenuToDisplay"] = largeScreen ? MenuPanel : MenuBar
 
 	return props
 }

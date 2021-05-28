@@ -1,10 +1,10 @@
 import { ArgumentValidator, SessionHandler, JSend } from "./_dependencies"
 
-export async function tryGetSession({ req, res }) {
+export function tryGetSession({ req, res }) {
 	ArgumentValidator.check([...arguments, req, res])
 
 	try {
-		return await SessionHandler.getSession({ req, res })
+		return req.headers.authorization
 	} catch (e) {
 		JSend(res).error(
 			{

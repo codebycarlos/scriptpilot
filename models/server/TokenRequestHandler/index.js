@@ -1,5 +1,5 @@
 import { GET } from "./GET"
-import { resolve } from "./handler"
+import { resolve } from "./resolve"
 export const TokenRequestHandler = {
 	GET,
 	resolve,

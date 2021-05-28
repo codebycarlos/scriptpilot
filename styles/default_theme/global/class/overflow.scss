@@ -10,7 +10,7 @@
 	overflow: unset;
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-MenuResponsive * {
 		overflow: hidden;
 	}

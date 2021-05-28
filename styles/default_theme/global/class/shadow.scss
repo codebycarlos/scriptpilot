@@ -10,7 +10,7 @@
 	}
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-MenuResponsive:hover {
 		@include mixin_shadow_box-shadow-very-dark;
 	}
@@ -19,4 +19,3 @@
 .react-MenuBar {
 	@include mixin_shadow_box-shadow-regular-dark;
 }
-

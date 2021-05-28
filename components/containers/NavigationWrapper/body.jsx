@@ -1,12 +1,13 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { MenuResponsive, Content, Footer, NotLoggedInSnackbar, MediaQuery, breakpoint } = imports
+	const { MenuResponsive, Content, Footer, NotLoggedInAlertDialog, MediaQuery, breakpoint } =
+		imports
 	return (
 		<Root {...props.DOMAttributes} style={{ flexDirection: props.flexDirection }}>
-			<NotLoggedInSnackbar/>
+			<NotLoggedInAlertDialog />
 			<MenuResponsive />
 			<Content style={{ order: props.order }}>
 				{props.children}
-				<MediaQuery query={`(max-width:${breakpoint.variable_breakpoint_S})`}>
+				<MediaQuery query={`(max-width:${breakpoint.variable_breakpoint_S}), (hover:none)`}>
 					<Footer className={styleDefault.Footer} />
 				</MediaQuery>
 			</Content>

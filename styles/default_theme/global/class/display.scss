@@ -4,7 +4,7 @@
 	display: none;
 }
 
-@media (max-width: function_breakpoint_breakpoint("S")) {
+@media (max-width: function_breakpoint_breakpoint("S")), (hover:none) {
 	.react-Content .react-Footer {
 		display: flex;
 	}
@@ -25,7 +25,7 @@
 	}
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	nav.react-MenuResponsive {
 		display: block;
 	}

@@ -1,8 +1,7 @@
-import { Settings, ArgumentValidator, consola } from "./_dependencies"
-import { AccountsCollection } from "models/server/AccountsCollection"
+import { Settings, ArgumentValidator, consola, AccountsCollection } from "./_dependencies"
 export async function session(session = null, user) {
 	ArgumentValidator.check([user, user.id])
-	console.log("checking")
+
 	if (!session) return null
 
 	let providerAccount, zohoSettings

@@ -16,6 +16,7 @@
 	@include mixin_color_background-linear-gradient-palette("senary", "quintenary");
 }
 
+.react-NavigationWrapper,
 .react-MenuPanel,
 .react-MenuBar {
 	@include mixin_color_background-linear-gradient-palette("quintenary", "senary", 200deg);

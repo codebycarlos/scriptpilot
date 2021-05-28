@@ -18,8 +18,8 @@ button.contained {
 	@include mixin_margin_global-vertical("extraSmall");
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover:hover) {
 	.react-Content {
-		margin-left: max(7.5vw, 75px);
+		margin-left: max(7.0vw, 75px);
 	}
 }

@@ -1,7 +1,7 @@
 import { LambdaClient } from "./_dependencies"
 
 export async function getAccountLimit() {
-	const lambdaClient = await LambdaClient.load()
+	const lambdaClient = await LambdaClient()
 	const settings = await lambdaClient.getAccountSettings()
 
 	if (!"AccountLimit" in settings)

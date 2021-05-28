@@ -1,0 +1,4 @@
+@use '../../_partial.module.scss' as *;
+html #nprogress .bar {
+	@include mixin_color_background-color-palette-lighten("senary", 20%);
+}

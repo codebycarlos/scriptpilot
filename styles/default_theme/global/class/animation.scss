@@ -1,13 +1,10 @@
 @use '../../_partial.module.scss' as *;
 
-.react-App > * {
+.react-App > *:not(.react-NavigationWrapper, .react-MenuResponsive), .react-Content {
 	@include mixin_animation_quick-fade-in;
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
-	.react-MenuResponsive {
-		@include mixin_animation_smooth-width-decrease;
-	}
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-MenuResponsive:hover {
 		@include mixin_animation_smooth-width-increase;
 	}

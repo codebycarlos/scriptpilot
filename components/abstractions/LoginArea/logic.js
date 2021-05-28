@@ -1,6 +1,6 @@
 export function logic(imports, props, styleDefault) {
-	const { useContext, PageContext } = imports
-	const pageProps = useContext(PageContext)
+	const { usePageContext } = imports
+	const pageProps = usePageContext()
 
 	const byLineText = "companyName" in pageProps.Brand ? `by ${pageProps.Brand.companyName}` : ""
 	props.loginCallbackUrl = "loginCallbackUrl" in pageProps ? pageProps.loginCallbackUrl : ""

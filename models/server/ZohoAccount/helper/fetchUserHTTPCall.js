@@ -4,7 +4,7 @@ export async function fetchUserHTTPCall({ apiDomain, orgId, userId }) {
 	let accessTokenCode
 	const accessTokenPath = await TokenPath.generateAccessTokenPath(orgId)
 	const refreshTokenPath = await TokenPath.generateRefreshTokenPath(orgId)
-	const axios = await CustomAxios.load()
+	const axios = await CustomAxios()
 
 	try {
 		accessTokenCode = await AccessToken.getAccessCode({ accessTokenPath, refreshTokenPath })

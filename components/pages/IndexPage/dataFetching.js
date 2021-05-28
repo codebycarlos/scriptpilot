@@ -1,8 +1,11 @@
-import { ClientSessionHandler } from "models/client/ClientSessionHandler"
+import { AccessRights } from "models/client/AccessRights"
+import { PagePreparer } from "models/client/PagePreparer"
 export async function dataFetching(context) {
-	const session = await ClientSessionHandler.getSession(context)
+	const accessRights = AccessRights(context)
+	const pagePreparer = PagePreparer(context)
 
-	return session
-		? ClientSessionHandler.getRedirect("landing")
-		: ClientSessionHandler.getRedirect("login")
+	if ((await accessRights.meetsAccessRightsLevel(1)) !== true)
+		return pagePreparer.getRedirect("/scripts")
+
+	return pagePreparer.getRedirect("/login")
 }

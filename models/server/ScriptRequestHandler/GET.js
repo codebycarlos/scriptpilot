@@ -2,7 +2,7 @@ import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies"
 export async function GET(req, res) {
 	ArgumentValidator.check([...arguments])
 	const name = req.query.name
-	const lambda = await Lambda.load()
+	const lambda = await Lambda()
 	let script
 
 	try {

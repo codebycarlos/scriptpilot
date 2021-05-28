@@ -3,13 +3,14 @@ import { fetchNewHTTPCall } from "./helper/fetchNewHTTPCall"
 export async function fetchNew(refreshToken) {
 	ArgumentValidator.check([...arguments, refreshToken.refresh_token])
 	let HTTPCallResponse = undefined
+	const zohoSettings = await Settings.Zoho()
 
 	try {
 		HTTPCallResponse = await fetchNewHTTPCall({
 			refreshTokenCode: refreshToken.refresh_token,
-			accountsUrl: (await Settings.Zoho()).selfClientAccountsUrl,
-			clientId: (await Settings.Zoho()).selfClientId,
-			clientSecret: (await Settings.Zoho()).selfClientSecret,
+			accountsUrl: zohoSettings.selfClientAccountsUrl,
+			clientId: zohoSettings.selfClientId,
+			clientSecret: zohoSettings.selfClientSecret,
 		})
 	} catch (e) {
 		throw Error(`Unable to make HTTP call. ${e}`)
@@ -17,8 +18,7 @@ export async function fetchNew(refreshToken) {
 
 	try {
 		return HTTPCallResponse.data
-	}
-	catch(e) {
+	} catch (e) {
 		throw Error(`Invalid data received. ${e}`)
 	}
 }

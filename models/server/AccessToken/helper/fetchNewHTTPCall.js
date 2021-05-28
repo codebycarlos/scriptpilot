@@ -1,7 +1,7 @@
 import { ArgumentValidator, CustomAxios } from "../_dependencies"
 export async function fetchNewHTTPCall({ refreshTokenCode, accountsUrl, clientId, clientSecret }) {
 	ArgumentValidator.check([...arguments, refreshTokenCode, clientId, clientSecret])
-	const axios = await CustomAxios.load()
+	const axios = await CustomAxios()
 
 	try {
 		return await axios.post(

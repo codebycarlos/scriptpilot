@@ -1,7 +1,7 @@
-import { Notifier, consola, AuthAPI, ScriptsAPI } from "./_dependencies"
+import { Snackbar, consola, AuthAPI, ScriptsAPI } from "./_dependencies"
 
 export const API = {
-    Notifier,
+    Snackbar,
     consola,
     Auth: AuthAPI,
     Scripts: ScriptsAPI,

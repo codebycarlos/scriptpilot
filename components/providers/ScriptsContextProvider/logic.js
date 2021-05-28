@@ -1,6 +1,6 @@
 export function logic(imports, props, styleDefault) {
 	const { useState, useEffect, API } = imports
-	const [scripts, setScripts] = useState([])
+	const [scripts, setScripts] = useState(props.scripts)
 	const [error, setError] = useState(null)
 	const [refreshScriptsRequested, setRefreshScriptsRequested] = useState(false)
 	const refreshRate = 2 * 60 * 1000 // Minutes Seconds Milliseconds
@@ -8,12 +8,12 @@ export function logic(imports, props, styleDefault) {
 	async function refreshScripts() {
 		setRefreshScriptsRequested(true)
 		try {
-			setScripts(await API.Scripts.getScripts())
+			const scriptsAPI = await API.Scripts()
+			setScripts(await scriptsAPI.getScripts())
 			setError(null)
-		}
-		catch(e) {
+		} catch (e) {
 			API.consola.error(e)
-			if(e.response.statusText) return setError(e.response.statusText)
+			if (e.response && e.response.statusText) return setError(e.response.statusText)
 			setError("Request for scripts failed.")
 		} finally {
 			setRefreshScriptsRequested(false)
@@ -22,7 +22,6 @@ export function logic(imports, props, styleDefault) {
 
 	// Start interval timer to request refreshing of scripts
 	useEffect(() => {
-		refreshScripts()
 		const interval = setInterval(() => {
 			if (!refreshScriptsRequested) {
 				refreshScripts()
@@ -30,6 +29,6 @@ export function logic(imports, props, styleDefault) {
 		}, refreshRate)
 		return () => clearInterval(interval)
 	}, [])
-
-	return { ...props, value: { scripts, refreshScripts, error } }
+	
+	return { ...props, value: { scripts: scripts, refreshScripts, error } }
 }

@@ -1,6 +1,6 @@
 @use '../../_partial.module.scss' as *;
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover:hover) {
 	nav.react-MenuResponsive:not(:hover) {
 		& .react-Logo,
 		.react-Footer,

@@ -12,7 +12,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 
 	return (
 		<Root {...props.DOMAttributes}>
-			<Link href={`/scripts/${props.value}`} prefetch={false}>
+			<Link href={`/scripts/${props.value}`} prefetch={true}>
 				{props.value}
 			</Link>
 			<IconButton

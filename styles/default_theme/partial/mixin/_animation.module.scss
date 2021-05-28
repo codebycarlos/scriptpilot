@@ -17,16 +17,11 @@
 }
 
 @keyframes smooth-width-increase {
+	from {
+		min-width: max(7.0vw, 75px);
+	}
 	to {
 		min-width: max(10vw, 220px);
-	}
-}
-@keyframes smooth-width-decrease {
-	from {
-		max-width: max(10vw, 220px);
-	}
-	to {
-		max-width: max(7.5vw, 75px);
 	}
 }
 
@@ -42,18 +37,10 @@
 	animation-name: quick-fade-out;
 }
 
-@mixin smooth-width-increase($animation-duration: 400ms, $animation-timing-function: ease-in-out) {
+@mixin smooth-width-increase($animation-duration: 200ms, $animation-timing-function: ease-in-out) {
 	animation-duration: $animation-duration;
 	animation-timing-function: $animation-timing-function;
 	animation-name: smooth-width-increase;
-	animation-delay: 100ms;
-	animation-fill-mode: forwards;
-}
-
-@mixin smooth-width-decrease($animation-duration: 200ms, $animation-timing-function: ease-in-out) {
-	animation-duration: $animation-duration;
-	animation-timing-function: $animation-timing-function;
-	animation-name: smooth-width-decrease;
-	animation-delay: 200ms;
-	animation-fill-mode: forwards;
+	animation-delay: 0ms;
+	animation-fill-mode: both;
 }

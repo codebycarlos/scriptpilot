@@ -20,8 +20,17 @@
 	@include mixin_padding_global-horizontal("extraSmall");
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover:hover) {
 	.react-Content {
 		@include mixin_padding_global("extraSmall", "top");
+	}
+}
+
+.react-ButtonDefault {
+	&.icon-only {
+		padding: 9px;
+	}
+	&.with-icon .MuiButton-label {
+		padding-right: 5px;
 	}
 }

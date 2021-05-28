@@ -1,7 +1,7 @@
 import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies"
 export async function DELETE(req, res) {
 	ArgumentValidator.check([...arguments])
-	const lambda = await Lambda.load()
+	const lambda = await Lambda()
 	const { name, version } = req.query
 
 	try {

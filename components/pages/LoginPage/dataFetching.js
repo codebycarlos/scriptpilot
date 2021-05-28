@@ -1,16 +1,15 @@
+import { AccessRights } from "models/client/AccessRights"
 import { PagePreparer } from "models/client/PagePreparer"
 import { Settings } from "models/server/Settings"
-
 export async function dataFetching(context) {
-	const pagePreparer = await PagePreparer.load(context)
+	const accessRights = AccessRights(context)
+	const pagePreparer = PagePreparer(context)
 
-	let props = {}
-	props.loginCallbackUrl = (await Settings.Zoho()).loginCallbackUrl
-	props.logoPath = (await Settings.Brand()).logoPath
+	if ((await accessRights.meetsAccessRightsLevel(1)) === true)
+		return pagePreparer.getRedirect("/scripts")
 
-	return await pagePreparer.returnPropsIfAccessNotGrantedOrRedirect({
-		props,
-		redirectPage: "landing",
-		accessRightsTarget: 1,
-	})
+	const zohoSettings = await Settings.Zoho()
+	const { loginCallbackUrl } = zohoSettings
+
+	return await pagePreparer.withDefaultProps({ loginCallbackUrl })
 }

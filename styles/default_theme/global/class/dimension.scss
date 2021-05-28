@@ -8,6 +8,12 @@
 	height: max-content;
 }
 
+.react-ButtonDefault {
+	&.icon-only {
+		min-width: unset;
+	}
+}
+
 @media (max-width: function_breakpoint_breakpoint("S")) {
 	.react-LoginPanel,
 	.react-LoginPanel > * {
@@ -23,12 +29,21 @@
 
 @media (min-width: function_breakpoint_breakpoint("S")) {
 	.react-FlexPanel {
-		min-width: max(10vw, 220px);
+		min-width: 220px;
 	}
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-MenuResponsive {
 		height: 100%;
+		max-width: max(7.0vw, 75px);
 	}
+}
+
+.MuiBottomNavigationAction-root {
+	max-width: none;
+}
+
+.MuiListItemIcon-root {
+	min-width: 60px;
 }

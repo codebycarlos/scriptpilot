@@ -1,4 +1,6 @@
 import { API } from "./_dependencies"
-export async function determineAccessRightsLevel(session) {
-    return await API.Auth.getAccessRights(session)
+export async function determineAccessRightsLevel(context) {
+	const authAPI = await API.Auth(context)
+
+	return await authAPI.getAccessRightsLevel()
 }

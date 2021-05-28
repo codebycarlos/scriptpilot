@@ -8,8 +8,12 @@
 	z-index: 0;
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-MenuResponsive {
 		z-index: 999999;
 	}
+}
+
+.MuiDataGrid-main {
+	z-index: 0;
 }

@@ -4,11 +4,14 @@ import { Settings } from "models/server/Settings"
 import { NextAuthCallbacks } from "models/server/NextAuthCallbacks"
 
 async function options() {
+	const zohoSettings = await Settings.Zoho()
+	const mongoDBSettings = await Settings.MongoDB()
+	const nextAuthSettings = await Settings.NextAuth()
 	return {
 		providers: [
 			Providers.Zoho({
-				clientId: (await Settings.Zoho()).appId,
-				clientSecret: (await Settings.Zoho()).appSecret,
+				clientId: zohoSettings.appId,
+				clientSecret: zohoSettings.appSecret,
 			}),
 		],
 		database: {
@@ -16,15 +19,16 @@ async function options() {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			// Ensure network allows outbound connections to port 27017
-			url: (await Settings.MongoDB()).connectUrl,
+			url: mongoDBSettings.connectUrl,
 		},
 		// Used for randomising hashing
-		secret: (await Settings.NextAuth()).secret,
+		secret: nextAuthSettings.secret,
 		session: {
 			// Use JSON Web Tokens for session instead of database sessions.
 			jwt: false,
 			// Seconds - How long (seconds) until an idle session expires and is no longer valid.
-			maxAge: 1 * 1 * 30 * 60,
+			// Hours * Minutes * Seconds
+			maxAge: 1 * 30 * 60,
 		},
 		callbacks: {
 			session: NextAuthCallbacks.session,

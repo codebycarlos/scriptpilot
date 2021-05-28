@@ -1,9 +1,10 @@
 // Core
 import { useState, useEffect } from "react"
 import Head from "components/abstractions/Head"
-import Snackbar from "components/abstractions/Snackbar"
+import AlertDialog from "components/presentationals/AlertDialog"
 import Router from "next/router"
 import PageContextProvider from "components/providers/PageContextProvider"
+import AlertDialogProvider from "components/providers/AlertDialogProvider"
 
 // Style
 import CssBaseline from "@material-ui/core/CssBaseline"
@@ -44,21 +45,30 @@ export default function App({ Component, pageProps }) {
 			<LogRocket />
 			<CssBaseline />
 			<MaterialUIStylesProvider injectFirst>
-				<SnackbarProvider maxSnack={3} dense={true} hideIconVariant={true}>
-					<PageContextProvider value={pageProps}>
-						<Head />
-						<Snackbar />
-						{
-							/* Rendering of components delayed until server-side injected CSS 
+				<AlertDialogProvider>
+					<SnackbarProvider
+						maxSnack={3}
+						dense={true}
+						hideIconVariant={true}
+						preventDuplicate={true}
+						resumeHideDuration={50}
+						anchorOrigin={{ horizontal: "left", vertical: "top" }}
+					>
+						<PageContextProvider value={pageProps}>
+							<Head />
+							<AlertDialog />
+							{
+								/* Rendering of components delayed until server-side injected CSS 
 						is removed to prevent flickering and layout shifting. */
-							jssRemoved && (
-								<div className="react-App">
-									<Component {...pageProps} className="react-Page" />
-								</div>
-							)
-						}
-					</PageContextProvider>
-				</SnackbarProvider>
+								jssRemoved && (
+									<div className="react-App">
+										<Component {...pageProps} className="react-Page" />
+									</div>
+								)
+							}
+						</PageContextProvider>
+					</SnackbarProvider>
+				</AlertDialogProvider>
 			</MaterialUIStylesProvider>
 		</SessionProvider>
 	)

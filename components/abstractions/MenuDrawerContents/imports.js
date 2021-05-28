@@ -2,10 +2,13 @@
 //import Link from 'next/link'
 //import { useSession, getSession, getCsrfToken, signIn } as nextAuth from 'next-auth/client'
 import { List } from "@material-ui/core"
-import { MenuListItems } from "config/MenuListItems"
+import { Settings } from "models/client/Settings"
+import { useState, useEffect } from "react"
 import MenuListItem from "components/abstractions/MenuListItem"
 export const imports = {
 	List,
-	MenuListItems,
+	Settings,
+	useState,
+	useEffect,
 	MenuListItem,
 }

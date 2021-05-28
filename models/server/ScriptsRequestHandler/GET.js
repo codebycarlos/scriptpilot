@@ -1,6 +1,6 @@
 import { Lambda, JSend, consola } from "./_dependencies"
 export async function GET(req, res) {
-	const lambda = await Lambda.load()
+	const lambda = await Lambda()
 	let scripts
 
 	try {
