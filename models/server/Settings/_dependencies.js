@@ -1,1 +1,1 @@
-export { Settings as ClientSettings } from "models/client/Settings"
+export { Settings as ClientSettings } from 'models/client/Settings'

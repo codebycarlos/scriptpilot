@@ -1,15 +1,17 @@
-import { AccessRightsLevels, consola } from "./_dependencies"
+import { AccessRightsLevels, Log } from './_dependencies'
 export async function determineAccessRightsLevel(session) {
-	let levelsMetCount = 0
+  let levelsMetCount = 0
 
-	try {
-		for (let level in AccessRightsLevels) {
-			if (!(await AccessRightsLevels[level](session))) break
-			levelsMetCount++
-		}
-	} catch (e) {
-		consola.error(e)
-	}
+  try {
+    for (const level in AccessRightsLevels) {
+      if (!await AccessRightsLevels[level](session)) {
+        break
+      }
+      levelsMetCount++
+    }
+  } catch (e) {
+    Log.error(e)
+  }
 
-	return levelsMetCount
+  return levelsMetCount
 }

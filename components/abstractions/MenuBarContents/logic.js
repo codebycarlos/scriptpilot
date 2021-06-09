@@ -1,14 +1,18 @@
 export function logic(imports, props, styleDefault) {
-	const { Settings, useState, useEffect } = imports
+  const { Settings, useState, useEffect } = imports
 
-	const [MenuListItems, setMenuListItems] = useState(null)
+  const [
+    MenuListItems,
+    setMenuListItems
+  ] = useState(null)
 
-	useEffect(async () => {
-		const coreSettings = await Settings.Core()
-		setMenuListItems(coreSettings.menuListItems)
-	}, [])
+  useEffect(async () => {
+    const coreSettings = await Settings.Core()
 
-	props.MenuListItems = MenuListItems
+    setMenuListItems(coreSettings.menuListItems)
+  }, [])
 
-	return props
+  props.MenuListItems = MenuListItems
+
+  return props
 }

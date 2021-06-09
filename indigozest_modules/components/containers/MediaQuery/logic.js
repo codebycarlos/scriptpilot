@@ -1,55 +1,73 @@
 export function logic(imports, props, styleDefault) {
-	// Imports
-	const { React, useMediaQuery } = imports
+  // Imports
+  const { React, useMediaQuery } = imports
 
-	// Create state to track whether or not to render, pass as prop to body
-	const [render, setRender] = React.useState(true)
-	const [delay, setDelay] = React.useState(false)
-	props["render"] = render
+  // Create state to track whether or not to render, pass as prop to body
+  const [
+    render,
+    setRender
+  ] = React.useState(true)
+  const [
+    delay,
+    setDelay
+  ] = React.useState(false)
 
-	// Early return if no children to render or no query
-	if (!props.children || !props.query) return props
+  props.render = render
 
-	// Evaluate query match
-	const matched = useMediaQuery(props.query)
+  // Early return if no children to render or no query
+  if (!props.children || !props.query) {
+    return props
+  }
 
-	// Positive match:
+  // Evaluate query match
+  const matched = useMediaQuery(props.query)
 
-	// Toggle rendering if necessary
-	if (matched) {
-		if (render) return props
-		setRender(true)
-		setDelay(false)
-		return props
-	}
+  // Positive match:
 
-	// Negative match:
+  // Toggle rendering if necessary
+  if (matched) {
+    if (render) {
+      return props
+    }
+    setRender(true)
+    setDelay(false)
 
-	// Add fade out class with animation and delayed toggling of rendering (timing should match animation)
-	const children = React.Children.toArray(props.children)
-	props["children"] = React.Children.map(children, (child) =>
-		React.cloneElement(child, {
-			className: [child.props.className, styleDefault.quickFadeOut].join(" "),
-		})
-	)
+    return props
+  }
 
-	// Do nothing if delay active (previous element being removed)
-	if (delay) return props
+  // Negative match:
 
-	// Only toggle rendering if not already disabled
-	if (!render) return props
+  // Add fade out class with animation and delayed toggling of rendering (timing should match animation)
+  const children = React.Children.toArray(props.children)
 
-	setDelay(true)
+  props.children = React.Children.map(children, (child) => React.cloneElement(child, {
+    className: [
+      child.props.className,
+      styleDefault.quickFadeOut
+    ].join(' ')
+  }))
 
-	setTimeout(
-		(setRender, setDelay) => {
-			setRender(false)
-			setDelay(false)
-		},
-		200,
-		setRender,
-		setDelay
-	)
+  // Do nothing if delay active (previous element being removed)
+  if (delay) {
+    return props
+  }
 
-	return props
+  // Only toggle rendering if not already disabled
+  if (!render) {
+    return props
+  }
+
+  setDelay(true)
+
+  setTimeout(
+    (setRender, setDelay) => {
+      setRender(false)
+      setDelay(false)
+    },
+    200,
+    setRender,
+    setDelay
+  )
+
+  return props
 }

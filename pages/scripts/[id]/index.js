@@ -1,1 +1,1 @@
-export { default, dataFetching as getServerSideProps } from "components/pages/ScriptPage"
+export { default, dataFetching as getServerSideProps } from 'components/pages/ScriptPage'

@@ -1,18 +1,12 @@
-import { ArgumentValidator, Lambda, JSend, consola } from "./_dependencies"
+import { API, JSend } from './_dependencies'
 export async function GET(req, res) {
-	ArgumentValidator.check([...arguments])
-	const name = req.query.name
-	const lambda = await Lambda()
-	let script
+  const { ScriptsAPI } = await API.Scripts()
 
-	try {
-		script = await lambda.getFunction({ FunctionName: name })
-	} catch (e) {
-		consola.error(e)
-		if (e.name === "ResourceNotFoundException")
-			return JSend(res).error({ message: "Script not found." }, 404)
-		return JSend(res).error({ message: "Request for script failed." })
-	}
+  const { script, error, message } = await ScriptsAPI.deleteScript(req.query)
 
-	return JSend(res).success({ data: { script } })
+  if (error) {
+    return JSend(res).error({ message })
+  }
+
+  return JSend(res).success({ data: { script } })
 }

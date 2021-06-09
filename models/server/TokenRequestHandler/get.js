@@ -1,17 +1,12 @@
-import { AccessToken, JSend, consola, TokenPath } from "./_dependencies"
+import { API, JSend } from './_dependencies'
 export async function GET(req, res) {
-	let accessTokenCode
+  const { ZohoAPI } = await API.Zoho()
 
-	const orgId = req.query.orgId
-	const accessTokenPath = await TokenPath.generateAccessTokenPath(orgId)
-	const refreshTokenPath = await TokenPath.generateRefreshTokenPath(orgId)
+  const { accessTokenCode, error, message } = await ZohoAPI.getAccesstokenCode(req.query)
 
-	try {
-		accessTokenCode = await AccessToken.getAccessCode({ accessTokenPath, refreshTokenPath })
-	} catch (e) {
-		consola.error(e)
-		return JSend(res).error({ message: "Request for new access token failed." })
-	}
+  if (error) {
+    return JSend(res).error({ message })
+  }
 
-	return JSend(res).success({ data: { token: accessTokenCode } })
+  return JSend(res).success({ data: { token: accessTokenCode } })
 }

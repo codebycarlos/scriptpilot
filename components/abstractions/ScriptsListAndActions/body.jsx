@@ -11,7 +11,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 			<ScriptsDataGrid functions={props.functions} />
 			<ActionsPanel>
 				<ButtonDefault
-					onClick={() => props.handleRefresh()}
+					onClick={props.handleRefresh}
 					className="contained secondary icon-only"
 				>
 					<RefreshIcon />

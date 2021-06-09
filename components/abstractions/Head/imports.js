@@ -1,3 +1,4 @@
-import Head from "next/head"
-import { usePageContext } from "hooks/consumer/usePageContext"
-export const imports = { Head, usePageContext }
+import Head from 'next/head'
+import { usePageContext } from 'indigozest_modules/hooks/consumer/usePageContext'
+export const imports = { Head,
+  usePageContext }

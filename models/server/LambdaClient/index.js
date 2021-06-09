@@ -1,4 +1,4 @@
-import { Lambda, LambdaClientConfig } from "./_dependencies"
+import { Lambda, LambdaClientConfig } from './_dependencies'
 export async function LambdaClient() {
-	return new Lambda(await LambdaClientConfig())
+  return new Lambda(await LambdaClientConfig())
 }

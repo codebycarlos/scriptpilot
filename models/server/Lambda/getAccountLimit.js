@@ -1,11 +1,12 @@
-import { LambdaClient } from "./_dependencies"
+import { LambdaClient } from './_dependencies'
 
 export async function getAccountLimit() {
-	const lambdaClient = await LambdaClient()
-	const settings = await lambdaClient.getAccountSettings()
+  const lambdaClient = await LambdaClient()
+  const settings = await lambdaClient.getAccountSettings()
 
-	if (!"AccountLimit" in settings)
-		throw Error(`Unable to read account limits in settings. ${settings} `)
+  if (!'AccountLimit' in settings) {
+    throw Error(`Unable to read account limits in settings. ${settings} `)
+  }
 
-	return settings.AccountLimit
+  return settings.AccountLimit
 }

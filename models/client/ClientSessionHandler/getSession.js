@@ -1,8 +1,8 @@
-import { getSessionRequest } from "./_dependencies"
+import { getSessionRequest } from './_dependencies'
 export async function getSession(context) {
-	try {
-		return await getSessionRequest(context)
-	} catch (e) {
-		return null
-	}
+  try {
+    return await getSessionRequest(context)
+  } catch (e) {
+    return null
+  }
 }

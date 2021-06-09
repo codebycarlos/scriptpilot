@@ -1,3 +1,3 @@
-export { JSONFile } from "indigozest_modules/JSONFile"
-export { ArgumentValidator } from "indigozest_modules/ArgumentValidator"
-export { default as lockFile } from "proper-lockfile"
+export { JSONFile } from 'indigozest_modules/models/server/JSONFile'
+export { ArgumentValidator } from 'indigozest_modules/models/client/ArgumentValidator'
+export { default as lockFile } from 'proper-lockfile'

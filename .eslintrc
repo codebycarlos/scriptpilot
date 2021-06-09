@@ -1,0 +1,9 @@
+{
+  "parser": "babel-eslint"
+,  
+  "extends": [
+      // ...
+      "plugin:react-hooks/recommended"
+    ]
+  }
+  

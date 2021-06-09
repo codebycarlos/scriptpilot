@@ -1,10 +1,12 @@
 export function logic(imports, props, styleDefault) {
-	const { useAlertDialogContext } = imports
-	const { dialog, closeDialog } = useAlertDialogContext()
-	props.dialog = dialog
-	props.open = ("contentText" in props.dialog && "actions" in props.dialog) ? true : false
-	props.handleClose = () => {
-		closeDialog()
-	}
-	return props
+  const { useNotifications } = imports
+  const { AlertDialog } = useNotifications()
+
+  props.dialog = AlertDialog.dialog
+  props.open = Boolean('contentText' in props.dialog && 'actions' in props.dialog)
+  props.handleClose = () => {
+    AlertDialog.closeDialog()
+  }
+
+  return props
 }

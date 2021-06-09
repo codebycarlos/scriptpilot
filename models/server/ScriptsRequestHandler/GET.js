@@ -1,14 +1,12 @@
-import { Lambda, JSend, consola } from "./_dependencies"
+import { API, JSend } from './_dependencies'
 export async function GET(req, res) {
-	const lambda = await Lambda()
-	let scripts
+  const { ScriptsAPI } = await API.Scripts()
 
-	try {
-		scripts = await lambda.listAllFunctions()
-	} catch (e) {
-		consola.error(e)
-		return JSend(res).error({ message: "Request for scripts failed." })
-	}
+  const { scripts, error, message } = await ScriptsAPI.getScripts()
 
-	return JSend(res).success({ data: { scripts } })
+  if (error) {
+    return JSend(res).error({ message })
+  }
+
+  return JSend(res).success({ data: { scripts } })
 }

@@ -12,7 +12,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 
 	return (
 		<Root {...props.DOMAttributes}>
-			<Link href={`/scripts/${props.value}`} prefetch={true}>
+			<Link href={`/scripts/${props.value}`}>
 				{props.value}
 			</Link>
 			<IconButton
@@ -25,7 +25,6 @@ export function body(imports, props, styleDefault, Root = "div") {
 				anchorEl={anchorEl}
 				onClose={handleClose}
 				value={props.value}
-				refresh={props.refresh}
 			/>
 		</Root>
 	)

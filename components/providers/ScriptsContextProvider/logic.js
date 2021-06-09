@@ -1,34 +1,30 @@
 export function logic(imports, props, styleDefault) {
-	const { useState, useEffect, API } = imports
-	const [scripts, setScripts] = useState(props.scripts)
-	const [error, setError] = useState(null)
-	const [refreshScriptsRequested, setRefreshScriptsRequested] = useState(false)
-	const refreshRate = 2 * 60 * 1000 // Minutes Seconds Milliseconds
+	const { useState, useEffect, useCallback, useScriptsContextActions, useRequestHandler } =
+		imports
+	const [data, setData] = useState({ scripts: props.scripts, error: null })
+	const { refreshScripts } = useScriptsContextActions()
+	const { request, requestWithSnackbar } = useRequestHandler()
 
-	async function refreshScripts() {
-		setRefreshScriptsRequested(true)
-		try {
-			const scriptsAPI = await API.Scripts()
-			setScripts(await scriptsAPI.getScripts())
-			setError(null)
-		} catch (e) {
-			API.consola.error(e)
-			if (e.response && e.response.statusText) return setError(e.response.statusText)
-			setError("Request for scripts failed.")
-		} finally {
-			setRefreshScriptsRequested(false)
-		}
-	}
+	const refreshScriptsRequest = useCallback(
+		async () => await refreshScripts(requestWithSnackbar, [data, setData]),
+		[requestWithSnackbar, data, setData],
+	)
 
 	// Start interval timer to request refreshing of scripts
 	useEffect(() => {
-		const interval = setInterval(() => {
-			if (!refreshScriptsRequested) {
-				refreshScripts()
-			}
-		}, refreshRate)
+		const interval = setInterval(async () => {
+
+		}, 0.1 * 60 * 1000)
+
 		return () => clearInterval(interval)
-	}, [])
-	
-	return { ...props, value: { scripts: scripts, refreshScripts, error } }
+	}, [refreshScriptsRequest])
+
+	return {
+		...props,
+		value: {
+			scripts: data.scripts,
+			error: data.error ? data.error : null,
+			refreshScripts: refreshScriptsRequest,
+		},
+	}
 }

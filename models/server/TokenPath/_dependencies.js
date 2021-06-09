@@ -1,1 +1,1 @@
-export { Settings } from "models/server/Settings"
+export { Settings } from 'models/server/Settings'

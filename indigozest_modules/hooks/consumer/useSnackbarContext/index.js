@@ -1,2 +1,2 @@
-import { useSnackbar } from "./_dependencies"
-export const useSnackbarContext = () => useSnackbar()
+import { useSnackbar } from './_dependencies'
+export const useSnackbarContext = () => ({ snackbarContext: useSnackbar() })

@@ -1,4 +1,5 @@
-import { load } from "./load"
-import { isLocked } from "./isLocked"
+import { load } from './load'
+import { isLocked } from './isLocked'
 
-export const Token = { load, isLocked }
+export const Token = { load,
+  isLocked }

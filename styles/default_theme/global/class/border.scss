@@ -7,7 +7,7 @@
 }
 
 .react-MenuBar .MuiBottomNavigationAction-root {
-	@include mixin_border_solid-with-color-palette("quintenary", 3px, "bottom");
+	border-bottom: transparent 3px solid;
 	&.Mui-selected {
 		@include mixin_border_solid-with-color-palette("primary", 3px, "bottom");
 	}
@@ -23,5 +23,12 @@
 	}
 	.react-MenuResponsive:hover ~ .react-Content {
 		border-left: solid 3px transparent;
+	}
+}
+
+
+@media (max-width: function_breakpoint_breakpoint("S")), (hover: none) {
+	.react-Footer {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "top");
 	}
 }

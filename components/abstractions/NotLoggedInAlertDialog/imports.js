@@ -1,14 +1,12 @@
-import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
-//import Link from 'next/link'
-import { getSession } from "next-auth/client"
-import { useAlertDialogContext } from "indigozest_modules/hooks/consumer/useAlertDialogContext"
-import { default as consola } from "consola"
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+// Import Link from 'next/link'
+import { getSession } from 'next-auth/client'
+import { useNotifications } from 'indigozest_modules/hooks/extender/useNotifications'
 export const imports = {
-	useState,
-	useEffect,
-	getSession,
-	useAlertDialogContext,
-	useRouter,
-	consola,
+  useState,
+  useEffect,
+  getSession,
+  useNotifications,
+  useRouter
 }

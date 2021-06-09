@@ -1,14 +1,12 @@
-import { AccessRights, JSend, consola } from "./_dependencies"
+import { API, JSend } from './_dependencies'
 export async function GET(req, res) {
-	const accessRights = await AccessRights(req.headers.authorization)
+  const { AuthAPI } = await API.Auth(req.headers.authorization)
 
-	let accessRightsLevel
-	try {
-		accessRightsLevel = await accessRights.determineAccessRightsLevel()
-	} catch (e) {
-		consola.error(e)
-		return JSend(res).error({ message: "Request for user access rights level failed." })
-	}
+  const { accessRightsLevel, error, message } = await AuthAPI.getAccessRightsLevel()
 
-	return JSend(res).success({ data: { accessRightsLevel } })
+  if (error) {
+    return JSend(res).error({ message })
+  }
+
+  return JSend(res).success({ data: { accessRightsLevel } })
 }

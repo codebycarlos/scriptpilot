@@ -1,1 +1,1 @@
-export { API } from "models/client/API"
+export { API } from 'models/client/API'

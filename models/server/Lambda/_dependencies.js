@@ -1,1 +1,1 @@
-export { LambdaClient } from "models/server/LambdaClient"
+export { LambdaClient } from 'models/server/LambdaClient'

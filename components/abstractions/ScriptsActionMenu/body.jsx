@@ -16,10 +16,10 @@ export function body(imports, props, styleDefault, Root = "div") {
 			}}
 			placement="bottom"
 		>
-			<Link href={`scripts/${props.value}`} prefetch={true}>
+			<Link href={`scripts/${props.value}`}>
 				<MenuItem onClick={props.onClose}>Details</MenuItem>
 			</Link>
-			<Link href={`scripts/${props.value}?action=edit`} prefetch={true}>
+			<Link href={`scripts/${props.value}?action=edit`}>
 				<MenuItem onClick={props.onClose}>Edit</MenuItem>
 			</Link>
 			<MenuItem onClick={props.onClose}>Execute</MenuItem>

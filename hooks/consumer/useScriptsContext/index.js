@@ -1,2 +1,2 @@
-import { useContext, ScriptsContext } from "./_dependencies"
+import { ScriptsContext, useContext } from './_dependencies'
 export const useScriptsContext = () => useContext(ScriptsContext)

@@ -1,7 +1,7 @@
 export function propsDefinition(PropTypes) {
-	return {
-		query: {
-			propType: PropTypes.string,
-		},
-	}
+  return {
+    query: {
+      propType: PropTypes.string
+    }
+  }
 }
