@@ -9,7 +9,7 @@ export const refreshScriptsSilent = (request, [data, setData]) => {
 		let scripts
 
 		try {
-			scripts = await ScriptsAPI.getScripts()
+			scripts = await ScriptsAPI.getScriptsAsync()
 			setData({ scripts, error: null })
 		} catch (e) {
 			setData({ scripts: null, error: e.message || "Unable to refresh scripts." })

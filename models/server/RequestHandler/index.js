@@ -1,15 +1,15 @@
-import { protectRoute } from './protectRoute'
-import { assessRequestAccessRights } from './assessRequestAccessRights'
-import { tryAssessRequestAccessRights } from './tryAssessRequestAccessRights'
-import { tryGetSession } from './tryGetSession'
-import { methodNotAllowedResponse } from './methodNotAllowedResponse'
-import { runMiddleware } from './runMiddleware'
+import { protectRouteAsync } from "./protectRouteAsync"
+import { assessRequestAccessRightsAsync } from "./assessRequestAccessRightsAsync"
+import { tryAssessRequestAccessRightsAsync } from "./tryAssessRequestAccessRightsAsync"
+import { tryGetSession } from "./tryGetSession"
+import { methodNotAllowedResponse } from "./methodNotAllowedResponse"
+import { runMiddlewareAsync } from "./runMiddlewareAsync"
 
 export const RequestHandler = {
-  protectRoute,
-  assessRequestAccessRights,
-  tryAssessRequestAccessRights,
-  tryGetSession,
-  methodNotAllowedResponse,
-  runMiddleware
+	protectRouteAsync,
+	assessRequestAccessRightsAsync,
+	tryAssessRequestAccessRightsAsync,
+	tryGetSession,
+	methodNotAllowedResponse,
+	runMiddlewareAsync,
 }

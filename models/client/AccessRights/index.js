@@ -1,8 +1,8 @@
-import { determineAccessRightsLevel } from './determineAccessRightsLevel'
-import { meetsAccessRightsLevel } from './meetsAccessRightsLevel'
+import { determineAccessRightsLevelAsync } from './determineAccessRightsLevelAsync'
+import { meetsAccessRightsLevelAsync } from './meetsAccessRightsLevelAsync'
 export function AccessRights(session) {
   return {
-    determineAccessRightsLevel: () => determineAccessRightsLevel(session),
-    meetsAccessRightsLevel: (accessRightsTarget) => meetsAccessRightsLevel(session, accessRightsTarget)
+    determineAccessRightsLevelAsync: () => determineAccessRightsLevelAsync(session),
+    meetsAccessRightsLevelAsync: (accessRightsTarget) => meetsAccessRightsLevelAsync(session, accessRightsTarget)
   }
 }

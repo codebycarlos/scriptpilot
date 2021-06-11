@@ -1,6 +1,6 @@
 import { ScriptsAPI } from './_dependencies'
 
-export const deleteScript = (requestWithSnackbar, ...args) => {
+export const deleteScriptAsync = (requestWithSnackbar, ...args) => {
 
-  return requestWithSnackbar(ScriptsAPI.deleteScript(...args), { initial: 'Deleting script.' })
+  return requestWithSnackbar(ScriptsAPI.deleteScriptAsync(...args), { initial: 'Deleting script.' })
 }

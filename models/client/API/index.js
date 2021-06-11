@@ -1,6 +1,7 @@
-import { AuthAPI, ScriptsAPI } from './_dependencies'
+import { loadAuthAPIAsync } from "./loadAuthAPIAsync"
+import { loadScriptsAPIAsync } from "./loadScriptsAPIAsync"
 
 export const API = {
-  Auth: AuthAPI,
-  Scripts: ScriptsAPI
+	loadAuthAPIAsync,
+	loadScriptsAPIAsync,
 }

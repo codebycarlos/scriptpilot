@@ -1,3 +1,3 @@
-import { session } from './session'
+import { sessionAsync } from './sessionAsync'
 
-export const NextAuthCallbacks = { session }
+export const NextAuthCallbacks = { sessionAsync }

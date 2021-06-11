@@ -1,7 +1,7 @@
-import { getSession } from './getSession'
-import { getCsrfToken } from './getCsrfToken'
+import { getSessionAsync } from './getSessionAsync'
+import { getCsrfTokenAsync } from './getCsrfTokenAsync'
 
 export const ClientSessionHandler = {
-  getSession,
-  getCsrfToken
+  getSessionAsync,
+  getCsrfTokenAsync
 }

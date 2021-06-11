@@ -4,9 +4,9 @@ export async function dataFetching(context) {
   const accessRights = AccessRights(context)
   const pagePreparer = PagePreparer(context)
 
-  if (await accessRights.meetsAccessRightsLevel(2) !== true) {
+  if (await accessRights.meetsAccessRightsLevelAsync(2) !== true) {
     return pagePreparer.getRedirect('/login')
   }
 
-  return await pagePreparer.withDefaultProps()
+  return await pagePreparer.withDefaultPropsAsync()
 }

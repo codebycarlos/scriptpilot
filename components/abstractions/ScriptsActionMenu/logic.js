@@ -1,12 +1,12 @@
 export function logic(imports, props, styleDefault) {
   const { useNotifications, useScriptsContext } = imports
-  const { deleteScript, refreshScripts } = useScriptsContext()
+  const { deleteScriptAsync, refreshScriptsAsync } = useScriptsContext()
   const { AlertDialog } = useNotifications()
 
   async function deleteScriptsAndRefreshRequest(scriptName) {
     props.onClose()
-    await deleteScript(scriptName)
-    await refreshScripts()
+    await deleteScriptAsync(scriptName)
+    await refreshScriptsAsync()
   }
 
   props.handleDelete = async (scriptName) => {

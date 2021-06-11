@@ -1,5 +1,5 @@
 export function logic(imports, props, styleDefault) {
-  const { useState, useEffect, getSession, useNotifications, useRouter } = imports
+  const { useState, useEffect, getSessionAsync, useNotifications, useRouter } = imports
   const router = useRouter()
   const { AlertDialog, Log } = useNotifications()
   const [
@@ -11,7 +11,7 @@ export function logic(imports, props, styleDefault) {
   async function checkLoggedIn() {
     try {
       setCheckRequested(true)
-      const session = await getSession()
+      const session = await getSessionAsync()
 
       if (session) {
         return

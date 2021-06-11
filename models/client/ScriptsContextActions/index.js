@@ -1,6 +1,6 @@
-import { refreshScripts } from './refreshScripts'
-import { deleteScript } from './deleteScript'
+import { refreshScriptsAsync } from './refreshScriptsAsync'
+import { deleteScriptAsync } from './deleteScriptAsync'
 export const ScriptsContextActions = {
-  refreshScripts,
-  deleteScript
+  refreshScriptsAsync,
+  deleteScriptAsync
 }

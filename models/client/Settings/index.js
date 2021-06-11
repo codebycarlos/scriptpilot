@@ -1,7 +1,9 @@
-import { Brand } from './Brand'
-import { Core } from './Core'
+import { BrandAsync } from "./BrandAsync"
+import { CoreAsync } from "./CoreAsync"
+import { ExtensionsAsync } from "./ExtensionsAsync"
 
 export const Settings = {
-  Brand,
-  Core
+	BrandAsync,
+	CoreAsync,
+	ExtensionsAsync,
 }

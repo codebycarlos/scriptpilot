@@ -1,1 +1,1 @@
-export { resolve as default } from 'models/server/ScriptsRequestHandler/resolve'
+export { resolveAsync as default } from 'models/server/ScriptsRequestHandler/resolveAsync'

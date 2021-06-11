@@ -1,1 +1,1 @@
-export { ScriptsAPI } from 'models/client/ScriptsAPI'
+export { API } from 'models/client/API'

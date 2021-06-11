@@ -1,8 +1,8 @@
-import { GET } from './GET'
-import { DELETE } from './DELETE'
-import { resolve } from './resolve'
+import { GETAsync } from './GETAsync'
+import { DELETEAsync } from './DELETEAsync'
+import { resolveAsync } from './resolveAsync'
 export const ScriptRequestHandler = {
-  GET,
-  DELETE,
-  resolve
+  GETAsync,
+  DELETEAsync,
+  resolveAsync
 }

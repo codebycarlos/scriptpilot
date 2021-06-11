@@ -1,8 +1,8 @@
-import { level1 } from './level1'
-import { level2 } from './level2'
-import { level3 } from './level3'
+import { level1Async } from './level1Async'
+import { level2Async } from './level2Async'
+import { level3Async } from './level3Async'
 export const AccessRightsLevels = {
-  level1,
-  level2,
-  level3
+  level1Async,
+  level2Async,
+  level3Async
 }

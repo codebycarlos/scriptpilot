@@ -1,11 +1,11 @@
-import { getDefaultProps } from './getDefaultProps'
+import { getDefaultPropsAsync } from './getDefaultPropsAsync'
 import { getRedirect } from './getRedirect'
-import { withDefaultProps } from './withDefaultProps'
+import { withDefaultPropsAsync } from './withDefaultPropsAsync'
 
 export function PagePreparer(context) {
   return {
-    getDefaultProps: (...args) => getDefaultProps(context, ...args),
+    getDefaultPropsAsync: (...args) => getDefaultPropsAsync(context, ...args),
     getRedirect: (...args) => getRedirect(context, ...args),
-    withDefaultProps: (...args) => withDefaultProps(context, ...args)
+    withDefaultPropsAsync: (...args) => withDefaultPropsAsync(context, ...args)
   }
 }

@@ -1,7 +1,9 @@
-import { AuthAPI, ScriptsAPI, ZohoAPI } from './_dependencies'
+import { loadAuthAPIAsync } from "./loadAuthAPIAsync"
+import { loadScriptsAPIAsync } from "./loadScriptsAPIAsync"
+import { loadZohoAPIAsync } from "./loadZohoAPIAsync"
 
 export const API = {
-  Auth: AuthAPI,
-  Scripts: ScriptsAPI,
-  Zoho: ZohoAPI
+	loadAuthAPIAsync,
+	loadScriptsAPIAsync,
+	loadZohoAPIAsync,
 }

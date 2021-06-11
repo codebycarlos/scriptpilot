@@ -1,1 +1,1 @@
-export { resolve as default } from 'models/server/TokenRequestHandler/resolve'
+export { resolveAsync as default } from 'models/server/TokenRequestHandler/resolveAsync'

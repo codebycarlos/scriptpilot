@@ -1,7 +1,7 @@
-import { connect } from './connect'
+import { connectAsync } from './connectAsync'
 import { isConnected } from './isConnected'
-import { connectIfNotConnected } from './connectIfNotConnected'
+import { connectIfNotConnectedAsync } from './connectIfNotConnectedAsync'
 
-export const MongoDB = { connect,
+export const MongoDB = { connectAsync,
   isConnected,
-  connectIfNotConnected }
+  connectIfNotConnectedAsync }

@@ -1,6 +1,6 @@
-import { GET } from './GET'
-import { resolve } from './resolve'
+import { GETAsync } from './GETAsync'
+import { resolveAsync } from './resolveAsync'
 export const TokenRequestHandler = {
-  GET,
-  resolve
+  GETAsync,
+  resolveAsync
 }

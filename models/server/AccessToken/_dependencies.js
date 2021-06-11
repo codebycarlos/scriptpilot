@@ -1,7 +1,7 @@
 export { ArgumentValidator } from 'indigozest_modules/models/client/ArgumentValidator'
 export { JSONFile } from 'indigozest_modules/models/server/JSONFile'
 export { File } from 'indigozest_modules/models/server/File'
-export { CustomAxios } from 'models/client/CustomAxios'
+export { CustomAxiosAsync } from 'models/client/CustomAxiosAsync'
 export { default as fs } from 'fs'
 export { Token } from '../Token/index'
 export { Settings } from 'models/server/Settings'

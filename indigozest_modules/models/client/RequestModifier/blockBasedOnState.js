@@ -1,4 +1,4 @@
-export function blockBasedOnState({ requestFunction, requestState }) {
+export function blockBasedOnState({ requestFunctionAsync, requestState }) {
 	if (!requestFunction) throw Error("No request function provided.")
 	if (!requestState) throw Error("No request state provided.")
 
@@ -9,7 +9,7 @@ export function blockBasedOnState({ requestFunction, requestState }) {
 
 			setState(true)
 
-			return await requestFunction()
+			return await requestFunctionAsync()
 		} finally {
 			setState(false)
 		}

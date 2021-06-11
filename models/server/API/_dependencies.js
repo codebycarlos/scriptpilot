@@ -1,3 +1,3 @@
-export { AuthAPI } from 'models/server/AuthAPI'
-export { ScriptsAPI } from 'models/server/ScriptsAPI'
-export { ZohoAPI } from 'models/server/ZohoAPI'
+export { loadAuthAPIAsync } from "models/server/loadAuthAPIAsync"
+export { loadScriptsAPIAsync } from "models/server/loadScriptsAPIAsync"
+export { loadZohoAPIAsync } from "models/server/loadZohoAPIAsync"

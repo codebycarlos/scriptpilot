@@ -1,2 +1,2 @@
-export { AuthAPI } from 'models/client/AuthAPI'
-export { ScriptsAPI } from 'models/client/ScriptsAPI'
+export { loadAuthAPI } from "models/client/loadAuthAPIAsync"
+export { loadScriptsAPI } from "models/client/loadScriptsAPIAsync"

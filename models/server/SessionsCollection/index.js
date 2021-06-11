@@ -1,9 +1,9 @@
 import { MongoDBCollection } from './_dependencies'
 import { schemaDefinition } from './schemaDefinition'
-import { findByAccessToken } from './findByAccessToken'
+import { findByAccessTokenAsync } from './findByAccessTokenAsync'
 
 export const SessionsCollection = MongoDBCollection.assembleCollection({
   name: 'session',
   schemaDefinition,
-  methodsActingOnModel: [findByAccessToken]
+  methodsActingOnModel: [findByAccessTokenAsync]
 })

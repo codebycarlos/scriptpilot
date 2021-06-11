@@ -1,11 +1,8 @@
 export function logic(imports, props, styleDefault) {
   const { useScriptsContext } = imports
-  const { refreshScripts } = useScriptsContext()
+  const { refreshScriptsAsync } = useScriptsContext()
 
-  props.handleRefresh = refreshScripts
-  console.log("🚀 --------------------------------------------------------------------")
-  console.log("🚀 ~ file: logic.js ~ line 6 ~ logic ~ refreshScripts", refreshScripts)
-  console.log("🚀 --------------------------------------------------------------------")
+  props.handleRefresh = async () => await refreshScriptsAsync()
 
   return props
 }

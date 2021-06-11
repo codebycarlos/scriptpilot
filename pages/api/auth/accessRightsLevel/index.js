@@ -1,1 +1,1 @@
-export { resolve as default } from 'models/server/AccessRightsLevelRequestHandler/resolve'
+export { resolveAsync as default } from 'models/server/AccessRightsLevelRequestHandler/resolveAsync'

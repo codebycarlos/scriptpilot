@@ -1,6 +1,6 @@
-import { generateAccessTokenPath } from './generateAccessTokenPath'
-import { generateRefreshTokenPath } from './generateRefreshTokenPath'
+import { generateAccessTokenPathAsync } from './generateAccessTokenPathAsync'
+import { generateRefreshTokenPathAsync } from './generateRefreshTokenPathAsync'
 export const TokenPath = {
-  generateAccessTokenPath,
-  generateRefreshTokenPath
+  generateAccessTokenPathAsync,
+  generateRefreshTokenPathAsync
 }

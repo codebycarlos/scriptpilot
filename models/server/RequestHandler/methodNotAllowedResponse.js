@@ -1,11 +1,11 @@
-import { ArgumentValidator, JSend } from './_dependencies'
-export async function methodNotAllowedResponse(res) {
-  ArgumentValidator.check([...arguments])
+import { ArgumentValidator, JSend } from "./_dependencies"
+export function methodNotAllowedResponse(res) {
+	ArgumentValidator.check([...arguments])
 
-  return await JSend(res).failDetailed(
-    {
-      message: 'Method not allowed.'
-    },
-    405
-  )
+	return JSend(res).failDetailed(
+		{
+			message: "Method not allowed.",
+		},
+		405,
+	)
 }

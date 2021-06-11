@@ -4,7 +4,7 @@ export async function dataFetching(context) {
   const accessRights = AccessRights(context)
   const pagePreparer = PagePreparer(context)
 
-  if (await accessRights.meetsAccessRightsLevel(1) !== true) {
+  if (await accessRights.meetsAccessRightsLevelAsync(1) !== true) {
     return pagePreparer.getRedirect('/scripts')
   }
 

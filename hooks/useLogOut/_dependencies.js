@@ -1,2 +1,2 @@
 export { useRouter } from 'next/router'
-export { signOut } from 'next-auth/client'
+export { signOut as signOutAsync } from 'next-auth/client'

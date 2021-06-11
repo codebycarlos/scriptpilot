@@ -1,7 +1,7 @@
-import { fetchUser } from './fetchUser'
-import { fetchProfile } from './fetchProfile'
-import { hasAnyOfProfiles } from './hasAnyOfProfiles'
+import { fetchUserAsync } from './fetchUserAsync'
+import { fetchProfileAsync } from './fetchProfileAsync'
+import { hasAnyOfProfilesAsync } from './hasAnyOfProfilesAsync'
 
-export const ZohoAccount = { fetchUser,
-  fetchProfile,
-  hasAnyOfProfiles }
+export const ZohoAccount = { fetchUserAsync,
+  fetchProfileAsync,
+  hasAnyOfProfilesAsync }
