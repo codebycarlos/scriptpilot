@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { ScriptContext } from "hooks/context/ScriptContext"
-// Import Link from 'next/link'
-import { API } from "models/client/API"
-import { useNotifications } from "indigozest_modules/hooks/extender/useNotifications"
-export const imports = { useState, useEffect, ScriptContext, API, useNotifications }
+import { useScript } from "hooks/extender/useScript"
+import { usePageContext } from "indigozest_modules/hooks/consumer/usePageContext"
+export const imports = {
+	useEffect,
+	ScriptContext,
+	useScript,
+	usePageContext,
+}

@@ -1,5 +1,5 @@
 export { ArgumentValidator } from "indigozest_modules/models/client/ArgumentValidator"
 export { CustomAxiosAsync } from "models/client/CustomAxiosAsync"
 export { AccessToken } from "models/server/AccessToken"
-export { TokenPath } from "models/server/TokenPath"
 export { MongoDB } from "indigozest_modules/models/server/MongoDB"
+export { Try } from "indigozest_modules/models/client/Try"

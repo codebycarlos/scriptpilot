@@ -1,11 +1,4 @@
-/*
- * Import { useState, useEffect, useContext } from 'react'
- * import Link from 'next/link'
- * import { useSession, getSession, getCsrfToken, signIn } as nextAuth from 'next-auth/client'
- */
-import BottomNavigation from '@material-ui/core/BottomNavigation'
-import MenuBarContents from 'components/abstractions/MenuBarContents'
-import { usePageContext } from 'indigozest_modules/hooks/consumer/usePageContext'
-export const imports = { BottomNavigation,
-  MenuBarContents,
-  usePageContext }
+import BottomNavigation from "@material-ui/core/BottomNavigation"
+import MenuBarContents from "components/abstractions/MenuBarContents"
+import { usePageContext } from "indigozest_modules/hooks/consumer/usePageContext"
+export const imports = { BottomNavigation, MenuBarContents, usePageContext }

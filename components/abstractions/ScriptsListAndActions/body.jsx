@@ -1,25 +1,23 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const {
-		ScriptsDataGrid,
-		ButtonDefault,
-		AddIcon,
-		ActionsPanel,
-		RefreshIcon,
-	} = imports
+	const { Link, ScriptsDataGrid, ButtonDefault, AddIcon, ActionsPanel, RefreshIcon } = imports
 	return (
 		<Root {...props.DOMAttributes}>
-			<ScriptsDataGrid functions={props.functions} />
+			<ScriptsDataGrid />
 			<ActionsPanel>
 				<ButtonDefault
 					onClick={props.handleRefresh}
-					className="contained secondary icon-only"
+					className="contained secondary"
+					title="Refresh"
 				>
 					<RefreshIcon />
+					<p>Refresh</p>
 				</ButtonDefault>
-				<ButtonDefault className="contained primary with-icon">
-					<AddIcon />
-					New Script
-				</ButtonDefault>
+				<Link href={"scripts/new"}>
+					<ButtonDefault className="contained primary" title="New Script">
+						<AddIcon />
+						<p>New Script</p>
+					</ButtonDefault>
+				</Link>
 			</ActionsPanel>
 		</Root>
 	)

@@ -1,6 +1,10 @@
-import { determineAccessRightsLevelAsync } from './determineAccessRightsLevelAsync'
+import { Try } from "./_dependencies"
+import { determineAccessRightsLevelAsync } from "./determineAccessRightsLevelAsync"
 export async function meetsAccessRightsLevelAsync(session, accessRightsTarget) {
-  const { accessRightsLevel } = await determineAccessRightsLevelAsync(session)
+	if (!accessRightsTarget) throw Error("No target access level provided.")
 
-  return accessRightsLevel >= accessRightsTarget
+	const [accessRightsLevel, error] = await Try(() => determineAccessRightsLevelAsync(session))
+	if (error) throw Error("Unable to determine access rights level.")
+
+	return accessRightsLevel >= accessRightsTarget
 }

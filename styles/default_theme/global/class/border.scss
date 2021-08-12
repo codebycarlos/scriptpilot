@@ -26,9 +26,27 @@
 	}
 }
 
-
 @media (max-width: function_breakpoint_breakpoint("S")), (hover: none) {
 	.react-Footer {
 		@include mixin_border_solid-with-color-palette("primary", 3px, "top");
 	}
+}
+
+.code-container {
+	border: 1px solid rgba(224, 224, 224, 1);
+	border-radius: 4px;
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-InvokeContent {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "left");
+	}
+}
+
+.react-InvokeContentOutputBadge {
+	border-radius: 4px;
+}
+
+.linenumber {
+	border-right: 1px solid rgba(224, 224, 224, 1);
 }

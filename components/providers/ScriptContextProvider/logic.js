@@ -1,20 +1,25 @@
 export function logic(imports, props, styleDefault) {
-	const { useState, useEffect, API, useNotifications } = imports
-	const { Log } = useNotifications()
-	const [Script, setScript] = useState(props.Script)
-	const [error, setError] = useState(null)
-	const [refreshScriptRequested, setRefreshScriptRequested] = useState(false)
+	const { useEffect, useScript, usePageContext } = imports
 
-	// Start interval timer to request refreshing of Script
-	useEffect(() => {
-		const interval = setInterval(() => {
-			if (!refreshScriptRequested) {
-				refreshScript()
-			}
-		}, 2 * 60 * 1000)
+	const pageProps = usePageContext()
 
-		return () => clearInterval(interval)
-	}, [])
+	const initialState = {
+		script: props?.Data ?? {},
+		error: null,
+	}
 
-	return { ...props, value: { Script, refreshScript, error } }
+	const { Data, Actions, Effects, setState } = useScript(initialState)
+
+	useEffect(() => setState(initialState), [pageProps?.urlPath, setState])
+
+	if (props?.Data) useEffect(() => Effects.refreshScriptPeriodically(2 * 60 * 1000), [Effects])
+
+	return {
+		...props,
+		value: {
+			Data,
+			Actions,
+			Effects,
+		},
+	}
 }

@@ -1,17 +1,11 @@
-import { AccessRightsLevels, Log } from './_dependencies'
+import { Try } from "./_dependencies"
+import { countAccessRightsLevelsMetAsync } from "./countAccessRightsLevelsMetAsync"
+
 export async function determineAccessRightsLevelAsync(session) {
-  let levelsMetCount = 0
+	const [levelsMetCount, errorWithLevelsMetCount] = await Try(() =>
+		countAccessRightsLevelsMetAsync(session),
+	)
+	if (errorWithLevelsMetCount) throw Error(`Unable to count access rights levels met.`)
 
-  try {
-    for (const level in AccessRightsLevels) {
-      if (!await AccessRightsLevels[level](session)) {
-        break
-      }
-      levelsMetCount++
-    }
-  } catch (e) {
-    Log.error(e)
-  }
-
-  return levelsMetCount
+	return levelsMetCount
 }

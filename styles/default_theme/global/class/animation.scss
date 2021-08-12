@@ -1,6 +1,7 @@
 @use '../../_partial.module.scss' as *;
 
-.react-App > *:not(.react-NavigationWrapper, .react-MenuResponsive), .react-Content {
+.react-App > *:not(.react-NavigationWrapper, .react-MenuResponsive),
+.react-Content {
 	@include mixin_animation_quick-fade-in;
 }
 

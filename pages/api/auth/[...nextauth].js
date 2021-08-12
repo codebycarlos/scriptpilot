@@ -1,4 +1,4 @@
-import NextAuth from 'next-auth'
+import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
 import { Settings } from "models/server/Settings"
 import { NextAuthCallbacks } from "models/server/NextAuthCallbacks"
@@ -32,7 +32,7 @@ async function options() {
 			 * Seconds - How long (seconds) until an idle session expires and is no longer valid.
 			 * Hours * Minutes * Seconds
 			 */
-			maxAge: 1 * 30 * 60,
+			maxAge: 10 * 60 * 60,
 		},
 		callbacks: {
 			session: NextAuthCallbacks.sessionAsync,

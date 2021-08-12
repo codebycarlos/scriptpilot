@@ -1,16 +1,15 @@
-import { LambdaAsync } from "./_dependencies"
-export async function deleteScriptAsync({ name, version }) {
-	try {
-		const { Lambda } = await LambdaAsync()
+import { LambdaAsync, Try, APIKeyPair } from "./_dependencies"
+export async function deleteScriptAsync({ FunctionName, Qualifier }) {
+	if (Qualifier === "$LATEST") Qualifier = undefined
 
-		await Lambda.deleteFunction({ FunctionName: name, Qualifier: version })
+	const { Lambda } = await LambdaAsync()
 
-		return { error: null, message: null }
-	} catch (e) {
-		if (e.name === "ResourceNotFoundException") {
-			return { error: e, message: "Script not found." }
-		}
+	const [, errorDeletingAPIKey] = await Try(() =>
+		APIKeyPair.clearKeyPairAsync({ FunctionName, Qualifier }),
+	)
 
-		return { error: e, message: "Request for script deletion failed." }
-	}
+	const [output, error] = await Try(() => Lambda.deleteFunction({ FunctionName, Qualifier }))
+
+	if (error?.name === "ResourceNotFoundException") throw Error("Script not found.")
+	if (error) throw Error("Request for script deletion failed.")
 }

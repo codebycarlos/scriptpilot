@@ -1,22 +1,10 @@
-export function error(
-  snackbarContext,
-  { error, message = 'Request failed.', persist = false, closePrevious = true } = {}
-) {
-  if (!snackbarContext || !error && !message) {
-    return
-  }
+export function error(snackbarContext, message, { persist = false, closePrevious = true } = {}) {
+	if (!snackbarContext || !message) return
 
-  if (closePrevious) {
-    snackbarContext.closeSnackbar()
-  }
+	if (closePrevious) snackbarContext.closeSnackbar()
 
-  message =
-		error && error.response && error.response.statusText
-		  ? `Error: ${error.response.statusText}`
-		  : `Error: ${message}`
-
-  return snackbarContext.enqueueSnackbar(message, {
-    variant: 'error',
-    persist
-  })
+	return snackbarContext.enqueueSnackbar(message, {
+		variant: "error",
+		persist,
+	})
 }

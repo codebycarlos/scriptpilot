@@ -15,7 +15,7 @@
 	}
 }
 
-@function lighten($color, $change: 5%) {
+@function lighten($color, $change: 10%) {
 	@return color.adjust($color, $lightness: $change);
 }
 
@@ -23,7 +23,7 @@
 	@return color.adjust($color, $lightness: $change);
 }
 
-@function darken($color, $change: 5%) {
+@function darken($color, $change: 10%) {
 	$change: $change * -1;
 	@return color.adjust($color, $lightness: $change);
 }

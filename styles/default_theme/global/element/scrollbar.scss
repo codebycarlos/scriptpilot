@@ -5,10 +5,10 @@ $scrollbar-track-color: transparent;
 $scrollbar-width-name: thin;
 $scrollbar-width-pixels: 10px;
 
-
 * {
 	scrollbar-width: function_scrollbar_default("width-name");
-	scrollbar-color: function_scrollbar_default("thumb-color") function_scrollbar_default("track-color");
+	scrollbar-color: function_scrollbar_default("thumb-color")
+		function_scrollbar_default("track-color");
 }
 *::-webkit-scrollbar {
 	width: $scrollbar-width-pixels;

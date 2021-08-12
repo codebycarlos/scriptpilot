@@ -13,12 +13,6 @@
 	$max: $unresponsive-font-size * (1 + $min-max-variance-multiplier);
 	$responsive-factor: 3vw;
 	font-size: clamp(#{$min}, #{$responsive-factor}, #{$max});
-	// @debug "----";
-	// @debug $multiplier-factor;
-	// @debug $min;
-	// @debug $responsive-factor;
-	// @debug $max;
-	// @debug "----";
 }
 
 @mixin font-size-root {

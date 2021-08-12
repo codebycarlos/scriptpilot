@@ -1,4 +1,8 @@
-import { SessionHandler } from './_dependencies'
+import { SessionHandler, Try } from "./_dependencies"
 export async function level1Async(session) {
-  return await SessionHandler.isValidAsync(session)
+	const [valid, errorWithValid] = await Try(() => SessionHandler.isValidAsync(session))
+
+	if (errorWithValid) throw Error("Unable to determine session is valid.")
+
+	return valid
 }

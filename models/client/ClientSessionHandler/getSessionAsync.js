@@ -1,8 +1,8 @@
-import { getSessionRequestAsync } from './_dependencies'
+import { getSessionRequestAsync, Try } from "./_dependencies"
 export async function getSessionAsync(context) {
-  try {
-    return await getSessionRequestAsync(context)
-  } catch (e) {
-    return null
-  }
+	const [session, errorWithSession] = await Try(() => getSessionRequestAsync(context))
+
+	if (errorWithSession) return null
+
+	return session
 }

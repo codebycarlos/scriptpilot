@@ -1,15 +1,23 @@
-import { LambdaAsync } from "./_dependencies"
-export async function getScriptAsync({ name }) {
-	try {
-		const { Lambda } = await LambdaAsync()
-		const script = await Lambda.getFunction({ FunctionName: name })
+import { LambdaAsync, Try } from "./_dependencies"
+import { getScriptAPIEndpointURLAsync } from "./getScriptAPIEndpointURLAsync"
+export async function getScriptAsync({ FunctionName, Qualifier }) {
+	if (!Qualifier) Qualifier = "$LATEST"
 
-		return { script, error: null, message: null }
-	} catch (e) {
-		if (e.name === "ResourceNotFoundException") {
-			return { script: null, error: e, message: "Script not found." }
-		}
+	const { Lambda } = await LambdaAsync()
 
-		return { script: {}, error: e, message: "Request for script failed." }
-	}
+	const [script, error] = await Try(() => Lambda.getFunction({ FunctionName, Qualifier }))
+
+	const [APIEndpointURL] = await Try(() =>
+		getScriptAPIEndpointURLAsync({
+			FunctionName,
+			Qualifier,
+		}),
+	)
+
+	if (error?.name === "ResourceNotFoundException") throw Error("Script not found.")
+	if (error) throw Error("Request for script failed.")
+
+	const Configuration = { ...script.Configuration, APIEndpointURL }
+
+	return { ...script, Configuration }
 }

@@ -4,7 +4,5 @@ import { connectAsync } from './connectAsync'
 export async function connectIfNotConnectedAsync(url) {
   ArgumentValidator.check([...arguments])
 
-  if (!isConnected()) {
-    await connectAsync(url)
-  }
+  if (!isConnected()) await connectAsync(url)
 }

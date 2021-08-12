@@ -1,11 +1,7 @@
-export function initial(snackbarContext, { message, persist = true, closePrevious = true } = {}) {
-  if (!snackbarContext || !message) {
-    return
-  }
+export function initial(snackbarContext, message, { persist = true, closePrevious = true } = {}) {
+	if (!snackbarContext || !message) return
 
-  if (closePrevious) {
-    snackbarContext.closeSnackbar()
-  }
+	if (closePrevious) snackbarContext.closeSnackbar()
 
-  return snackbarContext.enqueueSnackbar(message, { persist })
+	return snackbarContext.enqueueSnackbar(message, { persist })
 }

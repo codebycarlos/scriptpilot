@@ -4,7 +4,7 @@
 	display: none;
 }
 
-@media (max-width: function_breakpoint_breakpoint("S")), (hover:none) {
+@media (max-width: function_breakpoint_breakpoint("S")), (hover: none) {
 	.react-Content .react-Footer {
 		display: flex;
 	}
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: function_breakpoint_breakpoint("M")) {
-	.react-ScriptsPage .react-HorizontalSeparator {
+	.react-HorizontalSeparator {
 		display: none;
 	}
 }
@@ -33,4 +33,55 @@
 
 .MuiDataGrid-row .MuiIconButton-sizeSmall {
 	display: unset;
+}
+
+.react-ScriptDetails {
+	display: grid;
+}
+
+.react-ButtonDefault p {
+	display: block ruby;
+}
+
+.code-container {
+	display: block;
+}
+
+.code-container code {
+	display: block;
+}
+
+.react-InvokeContentInput fieldset,
+fieldset.environment-variable {
+	display: grid;
+}
+
+.react-InvokeContentInput form {
+	display: grid;
+}
+
+@media (max-width: function_breakpoint_breakpoint("M")) {
+	fieldset.environment-variable:not(:last-of-type) .MuiButtonBase-root {
+		display: none;
+	}
+
+	.react-InvokeContentInput fieldset:not(:last-of-type) .MuiButtonBase-root {
+		display: none;
+	}
+}
+
+.react-InvokeContentInput .Mui-disabled {
+	display: none;
+}
+
+fieldset.configuration {
+	display: grid;
+}
+
+fieldset .field {
+	display: flex;
+}
+
+.environment-variables {
+	display: grid;
 }

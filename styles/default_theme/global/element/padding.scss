@@ -1,0 +1,9 @@
+@use '../../_partial.module.scss' as *;
+
+fieldset {
+	padding: unset;
+}
+
+select {
+	@include mixin_padding_global("extraExtraSmall", "left");
+}

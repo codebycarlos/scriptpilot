@@ -5,16 +5,23 @@ export function body(imports, props, styleDefault, Root = "main") {
 		ScriptsListAndActions,
 		PageDescription,
 		HorizontalSeparator,
+		InvokeOverlay,
+		InvokeOverlayProvider,
 	} = imports
+
+	const { scripts } = props
 
 	return (
 		<NavigationWrapper>
 			<Root {...props.DOMAttributes}>
 				<PageDescription page="scripts" />
 				<HorizontalSeparator />
-				<ScriptsContextProvider scripts={props.scripts}>
-					<ScriptsListAndActions />
-				</ScriptsContextProvider>
+				<InvokeOverlayProvider>
+					<ScriptsContextProvider Data={scripts}>
+						<ScriptsListAndActions />
+					</ScriptsContextProvider>
+					<InvokeOverlay />
+				</InvokeOverlayProvider>
 			</Root>
 		</NavigationWrapper>
 	)

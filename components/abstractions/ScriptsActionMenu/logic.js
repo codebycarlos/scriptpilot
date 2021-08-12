@@ -1,33 +1,54 @@
 export function logic(imports, props, styleDefault) {
-  const { useNotifications, useScriptsContext } = imports
-  const { deleteScriptAsync, refreshScriptsAsync } = useScriptsContext()
-  const { AlertDialog } = useNotifications()
+	const { useNotifications, useWithSnackbar, useScriptsContext, useInvokeOverlayContext } =
+		imports
+	const { Actions: ScriptsActions } = useScriptsContext()
+	const { AlertDialog } = useNotifications()
+	const { DataRef: InvokeOverlayDataRef, Actions: InvokeOverlayActions } =
+		useInvokeOverlayContext()
 
-  async function deleteScriptsAndRefreshRequest(scriptName) {
-    props.onClose()
-    await deleteScriptAsync(scriptName)
-    await refreshScriptsAsync()
-  }
+	const invokeRequest = useWithSnackbar(
+		async ({ Payload }) => {
+			await ScriptsActions.invokeScriptWithOverlayAsync({
+				Input: { ...InvokeOverlayDataRef?.current?.script, Payload },
+				InvokeOverlayActions,
+			})
+		},
+		{ messages: { initial: "Invoking script." } },
+	)
 
-  props.handleDelete = async (scriptName) => {
-    const title = `Delete script ${scriptName}?`
-    const contentText = 'Deleting a script permanently removes the script\'s code.'
-    const actions = [
-      { label: 'Cancel',
-        onClick: () => AlertDialog.closeDialog() },
-      {
-        label: 'Delete',
-        onClick: () => {
-          deleteScriptsAndRefreshRequest(scriptName)
-          closeDialog()
-        }
-      }
-    ]
+	props.handleInvoke = async (FunctionName) => {
+		props.onClose()
+		InvokeOverlayActions.openNew({
+			script: { FunctionName },
+			invokeCallback: invokeRequest,
+		})
+	}
 
-    AlertDialog.setDialog({ title,
-      contentText,
-      actions })
-  }
+	const deleteScriptsAndRefresh = useWithSnackbar(
+		async (FunctionName) => {
+			props.onClose()
+			await ScriptsActions.deleteScriptAsync({ Input: { FunctionName } })
+			await ScriptsActions.refreshScriptsAsync()
+		},
+		{ messages: { initial: "Deleting script." } },
+	)
 
-  return props
+	props.handleDelete = async (FunctionName) => {
+		const title = `Delete script ${FunctionName}?`
+		const contentText =
+			"Deleting a script permanently removes the script's code (including all versions)."
+		const actions = [
+			{ label: "Cancel", onClick: () => AlertDialog.closeDialog() },
+			{
+				label: "Delete",
+				onClick: async () => {
+					AlertDialog.closeDialog()
+					await deleteScriptsAndRefresh(FunctionName)
+				},
+			},
+		]
+		AlertDialog.setDialog({ title, contentText, actions })
+	}
+
+	return props
 }

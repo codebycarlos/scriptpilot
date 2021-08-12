@@ -1,11 +1,12 @@
-import { ArgumentValidator, fs } from './_dependencies'
+import { ArgumentValidator, fs, Try } from "./_dependencies"
 export function directoryExists(fullPath) {
-  ArgumentValidator.check([...arguments])
-  try {
-    const directoryPath = fullPath.match(/(.*)[\/\\]/)[1] || ''
+	ArgumentValidator.check([...arguments])
 
-    return fs.existsSync(directoryPath)
-  } catch (e) {
-    throw Error(`Unable to check if directory path exists for path: ${fullPath}. ${e}`)
-  }
+	const directoryPath = fullPath.match(/(.*)[\/\\]/)[1]
+
+	const [exists, errorWithExists] = Try(() => fs.existsSync(directoryPath))
+	if (errorWithExists)
+		throw Error(`Unable to check if directory path exists for path: ${directoryPath}.`)
+
+	return exists
 }

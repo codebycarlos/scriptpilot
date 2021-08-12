@@ -1,5 +1,9 @@
 @use '../../_partial.module.scss' as *;
 
 .log-out-link {
-	@include mixin_cursor_pointer;
+	cursor: pointer;
+}
+
+.react-InvokeContentCloseButton svg {
+	cursor: pointer;
 }

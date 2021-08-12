@@ -19,11 +19,14 @@ export function body(imports, props, styleDefault, Root = "div") {
 			<Link href={`scripts/${props.value}`}>
 				<MenuItem onClick={props.onClose}>Details</MenuItem>
 			</Link>
-			<Link href={`scripts/${props.value}?action=edit`}>
+			<Link href={`scripts/${props.value}/edit`}>
 				<MenuItem onClick={props.onClose}>Edit</MenuItem>
 			</Link>
-			<MenuItem onClick={props.onClose}>Execute</MenuItem>
+			<Link href={`scripts/${props.value}/publish`}>
+				<MenuItem onClick={props.onClose}>Add Version</MenuItem>
+			</Link>
 			<MenuItem onClick={() => props.handleDelete(props.value)}>Delete</MenuItem>
+			<MenuItem onClick={() => props.handleInvoke(props.value)}>Invoke</MenuItem>
 		</Menu>
 	)
 }

@@ -1,9 +1,11 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { useLogOut } = imports
-	const [logOutAsync] = useLogOut()
+	const { useLogOut, Link } = imports
+	const { logOutAsync } = useLogOut()
 	return (
 		<Root {...props.DOMAttributes}>
-			<a>Terms</a>
+			<Link href={`/terms`}>
+				<a>Terms</a>
+			</Link>
 			<p className={styleDefault.separator}>•</p>
 			<a className="log-out-link" onClick={async () => await logOutAsync()}>
 				Log out

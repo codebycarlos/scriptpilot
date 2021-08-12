@@ -11,3 +11,7 @@ textarea {
 a:hover {
 	@include mixin_color_palette("primary");
 }
+
+select {
+	@include mixin_color_background-color-palette("white");
+}

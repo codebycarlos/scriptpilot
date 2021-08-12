@@ -1,31 +1,23 @@
-import { AccessToken, ArgumentValidator, CustomAxiosAsync, TokenPath } from '../_dependencies'
+import { ArgumentValidator, CustomAxiosAsync, AccessToken, Try } from "../_dependencies"
 export async function fetchUserHTTPCallAsync({ apiDomain, orgId, userId }) {
-  ArgumentValidator.check([
-    ...arguments,
-    apiDomain,
-    orgId,
-    userId
-  ])
-  let accessTokenCode
-  const accessTokenPath = await TokenPath.generateAccessTokenPathAsync(orgId)
-  const refreshTokenPath = await TokenPath.generateRefreshTokenPathAsync(orgId)
-  const axios = await CustomAxiosAsync()
+	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
 
-  try {
-    accessTokenCode = await AccessToken.getAccessCodeAsync({ accessTokenPath,
-      refreshTokenPath })
-  } catch (e) {
-    throw Error(`Unable to authorise request. ${e}`)
-  }
+	const [accessTokenCode, errorWithAccessTokenCode] = await Try(() =>
+		AccessToken.getAccessCodeForOrgAsync(orgId),
+	)
 
-  try {
-    return await axios.get(`${apiDomain}/crm/v2/users/${userId}`, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: `Zoho-oauthtoken ${accessTokenCode}`
-      }
-    })
-  } catch (e) {
-    throw Error(`HTTP call failed. ${e}`)
-  }
+	if (errorWithAccessTokenCode) throw Error(`Unable to authorize request.`)
+
+	const axios = await CustomAxiosAsync()
+	const [response, errorWithHTTPCall] = await Try(() =>
+		axios.get(`${apiDomain}/crm/v2/users/${userId}`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Zoho-oauthtoken ${accessTokenCode}`,
+			},
+		}),
+	)
+	if (errorWithHTTPCall) throw Error(`HTTP call failed.`)
+
+	return response
 }

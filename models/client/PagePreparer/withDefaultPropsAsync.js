@@ -1,15 +1,10 @@
-import { Log } from './_dependencies'
-import { getDefaultPropsAsync } from './getDefaultPropsAsync'
+import { Log, Try } from "./_dependencies"
+import { getDefaultPropsAsync } from "./getDefaultPropsAsync"
 
 export async function withDefaultPropsAsync(context, props) {
-  let defaultProps = {}
+	const [defaultProps, errorWithDefaultProps] = await Try(() => getDefaultPropsAsync(context))
 
-  try {
-    defaultProps = await getDefaultPropsAsync(context)
-  } catch (e) {
-    Log.error(`Unable to load default props. ${e}`)
-  }
+	if (errorWithDefaultProps) Log.error(`Unable to load default props. ${errorWithDefaultProps}`)
 
-  return { props: { ...defaultProps,
-    ...props } }
+	return { props: { ...(defaultProps ?? {}), ...props } }
 }

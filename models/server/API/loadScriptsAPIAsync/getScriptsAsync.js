@@ -1,11 +1,10 @@
-import { LambdaAsync } from "./_dependencies"
+import { LambdaAsync, Try } from "./_dependencies"
 export async function getScriptsAsync() {
-	try {
-		const { Lambda } = await LambdaAsync()
-		const scripts = await Lambda.listAllFunctionsAsync()
+	const { Lambda } = await LambdaAsync()
 
-		return { scripts, error: null, message: null }
-	} catch (e) {
-		return { scripts: [], error: e, message: "Request for scripts failed." }
-	}
+	const [scripts, error] = await Try(() => Lambda.listAllFunctionsAsync())
+
+	if (error) throw Error("Request for scripts failed.")
+
+	return scripts
 }

@@ -18,8 +18,65 @@ button.contained {
 	@include mixin_margin_global-vertical("extraSmall");
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) and (hover:hover) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-Content {
-		margin-left: max(7.0vw, 75px);
+		margin-left: max(7vw, 75px);
 	}
+}
+
+.title {
+	@include mixin_margin_global("extraSmall", "top");
+	margin-bottom: 0;
+}
+
+.react-ScriptPage,
+.react-VersionPage {
+	& .script-description {
+		margin: 0;
+	}
+}
+
+.react-ScriptPage,
+.react-VersionPage {
+	& .react-ScriptDetails {
+		@include mixin_margin_global-vertical("extraSmall");
+	}
+}
+
+.react-DataGrid {
+	@include mixin_margin_global-vertical("extraSmall");
+}
+
+.section-title {
+	@include mixin_margin_global("extraSmall", "top");
+	margin-bottom: 0;
+}
+
+.react-ActionsPanel .react-ButtonDefault p {
+	margin: 0;
+}
+
+.code-container {
+	@include mixin_margin_global-vertical("extraSmall");
+}
+
+.react-InvokeContentInput .MuiIconButton-root,
+fieldset.environment-variable .MuiIconButton-root {
+	margin: auto;
+}
+
+.linenumber {
+	@include mixin_margin_global("extraSmall", "right");
+}
+
+fieldset.configuration {
+	@include mixin_margin_global-vertical("extraSmall");
+}
+
+.environment-variables {
+	@include mixin_margin_global-vertical("extraSmall");
+}
+
+.file-uploader {
+	@include mixin_margin_global-vertical("extraSmall");
 }

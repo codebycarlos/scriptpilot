@@ -1,17 +1,8 @@
-import { AccessRights } from './_dependencies'
+import { AccessRights, Try } from "./_dependencies"
 export async function getAccessRightsLevelAsync(session) {
-  try {
-    const accessRights = AccessRights(session)
-    const accessRightsLevel = await accessRights.determineAccessRightsLevelAsync()
+	const [output, error] = await Try(() => AccessRights(session).determineAccessRightsLevelAsync())
 
-    return { accessRightsLevel,
-      error: null,
-      message: null }
-  } catch (e) {
-    return {
-      accessRightsLevel: null,
-      error: e,
-      message: 'Request for user access rights level failed.'
-    }
-  }
+	if (error) throw Error(`Request for user access rights level failed.`)
+
+	return output
 }

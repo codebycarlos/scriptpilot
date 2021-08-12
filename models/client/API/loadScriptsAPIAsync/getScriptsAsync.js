@@ -1,20 +1,10 @@
-import { CustomAxiosAsync } from './_dependencies'
+import { CustomAxiosAsync, Try } from "./_dependencies"
 export async function getScriptsAsync(session) {
-  try {
-    const axios = await CustomAxiosAsync(session)
-    const response = await axios.get('api/scripts')
-    const { data, status, statusText } = response
+	const axios = await CustomAxiosAsync(session)
 
-    return { scripts: data.data.scripts,
-      error: null,
-      message: statusText,
-      status }
-  } catch (e) {
-    const { status, statusText } = e.response
+	const [response, error] = await Try(() => axios.get("api/scripts"))
 
-    return { scripts: [],
-      error: e,
-      message: statusText,
-      status }
-  }
+	if (error) throw Error(error?.response?.data?.message ?? "Unable to load scripts.")
+
+	return response?.data?.data?.scripts
 }

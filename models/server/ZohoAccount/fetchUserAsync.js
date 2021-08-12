@@ -1,28 +1,18 @@
-import { ArgumentValidator } from './_dependencies'
-import { fetchUserHTTPCallAsync } from './helper/fetchUserHTTPCallAsync'
+import { ArgumentValidator, Try } from "./_dependencies"
+import { fetchUserHTTPCallAsync } from "./helper/fetchUserHTTPCallAsync"
 
 export async function fetchUserAsync({ apiDomain, orgId, userId }) {
-  ArgumentValidator.check([
-    ...arguments,
-    apiDomain,
-    orgId,
-    userId
-  ])
-  let HTTPCallResponse
+	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
 
-  try {
-    HTTPCallResponse = await fetchUserHTTPCallAsync({
-      apiDomain,
-      orgId,
-      userId
-    })
-  } catch (e) {
-    throw Error(`Unable to make HTTP call. ${e}`)
-  }
+	const [HTTPCallResponse, errorWithHTTPCall] = await Try(() =>
+		fetchUserHTTPCallAsync({
+			apiDomain,
+			orgId,
+			userId,
+		}),
+	)
 
-  try {
-    return HTTPCallResponse.data.users[0]
-  } catch (e) {
-    throw Error(`Invalid data received. ${e}`)
-  }
+	if (errorWithHTTPCall) throw Error(`Unable to make HTTP call.`)
+
+	return HTTPCallResponse.data.users[0]
 }

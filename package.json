@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-lambda": "^3.13.1",
+    "@hookform/error-message": "^2.0.0",
     "@material-ui/core": "^4.11.3",
     "@material-ui/data-grid": "*",
     "@material-ui/icons": "^4.11.2",
@@ -21,6 +22,7 @@
     "css-loader": "^5.2.1",
     "date-fns": "^2.21.3",
     "dotenv": "^8.2.0",
+    "generate-api-key": "^1.0.0",
     "logrocket": "^1.0.15",
     "moment": "^2.29.1",
     "mongodb": "^3.6.6",
@@ -33,9 +35,14 @@
     "proper-lockfile": "^4.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-dropzone": "^11.3.4",
+    "react-hook-form": "^7.11.1",
+    "react-syntax-highlighter": "^15.4.3",
+    "react-use": "^17.2.4",
     "sass": "^1.32.8",
     "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

@@ -1,12 +1,11 @@
-import { ArgumentValidator } from './_dependencies'
+import { ArgumentValidator, Try } from "./_dependencies"
 export function addExpiryTime(token) {
-  ArgumentValidator.check([...arguments])
-  try {
-    token = JSON.parse(JSON.stringify(token))
-  } catch (e) {
-    throw Error(`Invalid token provided: ${e}.`)
-  }
-  token.expiry_time = Date.now() + token.expires_in * 1000
+	ArgumentValidator.check([...arguments])
 
-  return token
+	let [tokenRead, errorWithTokenRead] = Try(() => JSON.parse(JSON.stringify(token)))
+	if (errorWithTokenRead) throw Error(`Unable to parse token.`)
+
+	tokenRead.expiry_time = Date.now() + tokenRead.expires_in * 1000
+
+	return tokenRead
 }

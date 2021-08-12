@@ -8,8 +8,8 @@ export async function CoreAsync() {
 		domainUrl: process.env.NEXT_PUBLIC_DOMAIN_URL,
 		menuListItems: [
 			{ path: "/scripts", label: "scripts", icon: icons.FlashOn },
-			{ path: "/schedules", label: "schedules", icon: icons.Schedule },
-			{ path: "/settings", label: "settings", icon: icons.Settings },
+			//			{ path: "/schedules", label: "schedules", icon: icons.Schedule },
+			//			{ path: "/settings", label: "settings", icon: icons.Settings },
 		],
 	}
 }

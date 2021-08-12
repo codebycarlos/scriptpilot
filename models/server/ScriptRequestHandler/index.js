@@ -1,8 +1,12 @@
-import { GETAsync } from './GETAsync'
-import { DELETEAsync } from './DELETEAsync'
-import { resolveAsync } from './resolveAsync'
+import { GETAsync } from "./GETAsync"
+import { POSTAsync } from "./POSTAsync"
+import { DELETEAsync } from "./DELETEAsync"
+import { PUTAsync } from "./PUTAsync"
+import { resolveAsync } from "./resolveAsync"
 export const ScriptRequestHandler = {
-  GETAsync,
-  DELETEAsync,
-  resolveAsync
+	GETAsync,
+	POSTAsync,
+	DELETEAsync,
+	PUTAsync,
+	resolveAsync,
 }

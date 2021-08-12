@@ -1,16 +1,13 @@
-import { FilePath } from '../_dependencies'
+import { FilePath } from "../_dependencies"
 
 export function extractRootPath(url) {
-  if (!url || url.charAt(0) !== '/') {
-    return
-  }
+	if (!url || url.charAt(0) !== "/") return
 
-  const urlComponents = url.split('/')
+	const urlComponents = url.split("/")
 
-  return (
-    `/${
-      urlComponents[1] === '_next' && urlComponents[4]
-		  ? FilePath.removeExtension(urlComponents[4])
-		  : urlComponents[1]}`
-  )
+	return `/${
+		urlComponents[1] === "_next" && urlComponents[4]
+			? FilePath.removeExtension(urlComponents[4])
+			: urlComponents[1]
+	}`
 }

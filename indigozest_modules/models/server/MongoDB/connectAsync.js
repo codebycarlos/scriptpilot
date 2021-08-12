@@ -1,16 +1,13 @@
-import { ArgumentValidator, mongoose } from './_dependencies'
+import { ArgumentValidator, mongoose } from "./_dependencies"
 export async function connectAsync(url) {
-  ArgumentValidator.check([...arguments])
+	ArgumentValidator.check([...arguments])
 
-  const options = {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-  }
+	const options = {
+		useNewUrlParser: true,
+		useCreateIndex: true,
+		useUnifiedTopology: true,
+		useFindAndModify: false,
+	}
 
-  try {
-    await mongoose.connect(url, options)
-  } catch (e) {
-    throw Error(`Unable to establish connection to database. ${e}`)
-  }
+	await mongoose.connect(url, options)
 }

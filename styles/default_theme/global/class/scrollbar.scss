@@ -3,3 +3,7 @@
 .react-MenuPanel {
 	@include mixin_scrollbar_width-none;
 }
+
+.react-ActionsPanel {
+    scrollbar-width: none;
+}

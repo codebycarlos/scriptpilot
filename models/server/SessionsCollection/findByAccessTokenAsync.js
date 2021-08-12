@@ -1,19 +1,21 @@
-import { ArgumentValidator, MongoDBCollection } from './_dependencies'
+import { ArgumentValidator, MongoDBCollection, Try } from "./_dependencies"
 export async function findByAccessTokenAsync(model, targetAccessToken) {
-  ArgumentValidator.check([...arguments])
-  let document
+	ArgumentValidator.check([...arguments])
 
-  await MongoDBCollection.establishConnectionAsync()
+	const [output, errorWithConnection] = await Try(() =>
+		MongoDBCollection.establishConnectionAsync(),
+	)
+	if (errorWithConnection) throw Error(`Unable to establish connection.`)
 
-  try {
-    document = await model.
-      findOne({
-        accessToken: targetAccessToken
-      }).
-      exec()
-  } catch (e) {
-    throw Error(`Unable to search for document with target value: ${targetAccessToken}. ${e}`)
-  }
+	const [document, errorWithDocument] = await Try(() =>
+		model
+			.findOne({
+				accessToken: targetAccessToken,
+			})
+			.exec(),
+	)
+	if (errorWithDocument)
+		throw Error(`Unable to search for document with target value: ${targetAccessToken}.`)
 
-  return document
+	return document
 }

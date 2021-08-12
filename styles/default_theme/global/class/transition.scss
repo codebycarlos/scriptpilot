@@ -22,3 +22,11 @@
 		@include mixin_transition_quick-ease-in-out;
 	}
 }
+
+.react-InvokeOverlay {
+    @include mixin_transition_quick-ease-in-out;
+}
+
+.react-InvokeContent {
+    @include mixin_transition_quick-ease-in-out;
+}

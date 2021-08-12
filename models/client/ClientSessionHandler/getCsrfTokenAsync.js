@@ -1,8 +1,8 @@
-import { getCsrfTokenRequestAsync } from './_dependencies'
+import { getCsrfTokenRequestAsync, Try } from "./_dependencies"
 export async function getCsrfTokenAsync(context) {
-  try {
-    return await getCsrfTokenRequestAsync(context)
-  } catch (e) {
-    return null
-  }
+	const [csrfToken, errorWithCsrfToken] = await Try(() => getCsrfTokenRequestAsync(context))
+
+	if (errorWithCsrfToken) return null
+
+	return csrfToken
 }

@@ -1,6 +1,7 @@
 import { getAccountLimitAsync } from "./getAccountLimitAsync"
 import { getAccountUsageAsync } from "./getAccountUsageAsync"
 import { listAllFunctionsAsync } from "./listAllFunctionsAsync"
+import { listAllVersionsByFunctionAsync } from "./listAllVersionsByFunctionAsync"
 import { LambdaClientAsync } from "./_dependencies"
 
 export async function LambdaAsync() {
@@ -9,6 +10,7 @@ export async function LambdaAsync() {
 			getAccountLimitAsync,
 			getAccountUsageAsync,
 			listAllFunctionsAsync,
+            listAllVersionsByFunctionAsync,
 		}),
 	}
 }

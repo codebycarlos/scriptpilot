@@ -10,6 +10,9 @@ $black: hsl(0, 0%, 0%);
 $off-black: hsl(0, 0%, 5%);
 $gray: hsl(0, 0%, 22%);
 $light-gray: hsl(36, 8%, 88%);
+$success: #43a047;
+$error: #d32f2f;
+$warning: #ff9800;
 
 $palette: (
 	"primary": $primary,
@@ -24,6 +27,9 @@ $palette: (
 	"off-black": $off-black,
 	"gray": $gray,
 	"light-gray": $light-gray,
+	"success": $success,
+	"error": $error,
+	"warning": $warning,
 );
 
 :export {
@@ -39,4 +45,7 @@ $palette: (
 	variable_color_palette-off-black: $off-black;
 	variable_color_palette-gray: $gray;
 	variable_color_palette-light-gray: $light-gray;
+	variable_color_palette-success: $success;
+	variable_color_palette-error: $error;
+	variable_color_palette-warning: $warning;
 }

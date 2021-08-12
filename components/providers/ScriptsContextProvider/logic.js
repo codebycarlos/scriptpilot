@@ -1,19 +1,15 @@
 export function logic(imports, props, styleDefault) {
-	const { useState, useEffect, useCallback, useScriptsContextActions, useRequestHandler } =
-		imports
-	const [data, setData] = useState({ scripts: props.scripts, error: null })
-	const { refreshScripts } = useScriptsContextActions()
-	const { request, requestWithSnackbar } = useRequestHandler()
+	const { useEffect, useScripts } = imports
+	const { Data, Actions, Effects } = useScripts({ scripts: props?.Data ?? [], error: null })
 
-	const refreshScriptsRequest = refreshScripts(requestWithSnackbar, [data, setData])
+	useEffect(() => Effects.refreshScriptsPeriodically(2 * 60 * 1000), [Effects])
 
-	// Start interval timer to request refreshing of scripts
 	return {
 		...props,
 		value: {
-			scripts: data.scripts,
-			error: data.error ? data.error : null,
-			refreshScriptsAsync: refreshScriptsRequest,
+			Data,
+			Actions,
+			Effects,
 		},
 	}
 }

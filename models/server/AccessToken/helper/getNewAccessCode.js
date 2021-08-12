@@ -1,35 +1,24 @@
-import { ArgumentValidator, Token } from '../_dependencies'
-import { fetchNewAsync } from '../fetchNewAsync'
-import { save } from '../save'
-import { ensureTokenIsNotLocked } from './ensureTokenIsNotLocked'
+import { ArgumentValidator, Token, Try } from "../_dependencies"
+import { fetchNewAsync } from "../fetchNewAsync"
+import { save } from "../save"
+import { ensureTokenIsNotLocked } from "./ensureTokenIsNotLocked"
+import { updateAwait } from "typescript"
 export async function getNewAccessCodeAsync({ accessTokenPath, refreshTokenPath }) {
-  ArgumentValidator.check([...arguments])
-  let refreshToken
-  let newToken
+	ArgumentValidator.check([...arguments])
 
-  try {
-    ensureTokenIsNotLocked(accessTokenPath)
-  } catch (e) {
-    throw Error(`Unable to ensure token access file is not locked. ${e}`)
-  }
+	const [ensureTokenUnlocked, errorWithEnsureTokenUnlocked] = Try(() =>
+		ensureTokenIsNotLocked(accessTokenPath),
+	)
+	if (errorWithEnsureTokenUnlocked)
+		throw Error(`Unable to ensure token access file is not locked.`)
 
-  try {
-    refreshToken = Token.load(refreshTokenPath)
-  } catch (e) {
-    throw Error(`Unable to load refresh token. ${e}`)
-  }
+	const [refreshToken, errorWithRefreshToken] = Try(() => Token.load(refreshTokenPath))
+	if (errorWithRefreshToken) throw Error(`Unable to load refresh token.`)
 
-  try {
-    newToken = await fetchNewAsync(refreshToken)
-  } catch (e) {
-    throw Error(`Unable to fetch new access token. ${e}`)
-  }
+	const [newToken, errorWithNewToken] = await Try(() => fetchNewAsync(refreshToken))
+	if (errorWithNewToken) throw Error(`Unable to fetch new access token.`)
 
-  if (!('access_token' in newToken)) {
-    throw Error('New token does not contain access code.')
-  }
+	save(newToken, accessTokenPath)
 
-  save(newToken, accessTokenPath)
-
-  return newToken.access_token
+	return newToken.access_token
 }

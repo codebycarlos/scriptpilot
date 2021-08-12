@@ -1,8 +1,10 @@
 export function logic(imports, props, styleDefault) {
-  const { useScriptsContext } = imports
-  const { refreshScriptsAsync } = useScriptsContext()
+	const { useScriptsContext, useWithSnackbar } = imports
+	const { Actions } = useScriptsContext()
 
-  props.handleRefresh = async () => await refreshScriptsAsync()
+	props.handleRefresh = useWithSnackbar(Actions.refreshScriptsAsync, {
+		messages: { initial: "Refreshing scripts." },
+	})
 
-  return props
+	return props
 }

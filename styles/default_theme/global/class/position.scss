@@ -19,3 +19,7 @@
 		position: absolute;
 	}
 }
+
+.react-InvokeOverlay.open .react-InvokeContent {
+    right: 0;
+}

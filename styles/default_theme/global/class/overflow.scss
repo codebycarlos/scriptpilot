@@ -15,3 +15,15 @@
 		overflow: hidden;
 	}
 }
+
+.react-ButtonDefault:not(.primary) p {
+	overflow: hidden;
+}
+
+.react-ActionsPanel {
+	overflow-x: scroll;
+}
+
+.code-container code {
+	overflow: scroll;
+}

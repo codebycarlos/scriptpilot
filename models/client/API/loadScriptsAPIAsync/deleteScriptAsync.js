@@ -1,22 +1,12 @@
-import { CustomAxiosAsync } from './_dependencies'
-export async function deleteScriptAsync(session, { name, version }) {
-  try {
-    const axios = await CustomAxiosAsync(session)
-    const response = await axios.delete(`api/scripts/${name}`, {
-      params: {
-        version
-      }
-    })
-    const { status, statusText } = response
+import { CustomAxiosAsync, Try } from "./_dependencies"
+export async function deleteScriptAsync(session, { FunctionName, Qualifier }) {
+	const axios = await CustomAxiosAsync(session)
 
-    return { error: null,
-      message: statusText,
-      status }
-  } catch (e) {
-    const { status, statusText } = e.response
+	const urlModifier = Qualifier ? `/versions/${Qualifier}` : ""
 
-    return { error: e,
-      message: statusText,
-      status }
-  }
+	const [response, error] = await Try(() =>
+		axios.delete(`api/scripts/${FunctionName}${urlModifier}`),
+	)
+
+	if (error) throw Error("Unable to delete script.")
 }

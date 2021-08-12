@@ -1,31 +1,22 @@
-import { ArgumentValidator, Log } from './_dependencies'
-import { getCurrentAccessCodeIfActiveAsync } from './helper/getCurrentAccessCodeIfActiveAsync'
-import { getNewAccessCodeAsync } from './helper/getNewAccessCode'
+import { ArgumentValidator, Log, Try } from "./_dependencies"
+import { getCurrentAccessCodeIfActiveAsync } from "./helper/getCurrentAccessCodeIfActiveAsync"
+import { getNewAccessCodeAsync } from "./helper/getNewAccessCode"
 export async function getAccessCodeAsync({ accessTokenPath, refreshTokenPath }) {
-  ArgumentValidator.check([
-    ...arguments,
-    accessTokenPath,
-    refreshTokenPath
-  ])
-  let currentAccessCode
-  let newAccessCode
+	ArgumentValidator.check([...arguments, accessTokenPath, refreshTokenPath])
 
-  try {
-    currentAccessCode = await getCurrentAccessCodeIfActiveAsync(accessTokenPath)
-  } catch (e) {
-    Log.warn(`Unable to check current access code. ${e}`)
-  }
+	const [currentAccessCode, errorWithCurrentAccessCode] = await Try(() =>
+		getCurrentAccessCodeIfActiveAsync({ tokenPath: accessTokenPath }),
+	)
+	if (errorWithCurrentAccessCode)
+		Log.warn(`Unable to check current access code. ${errorWithCurrentAccessCode}`)
 
-  if (currentAccessCode) {
-    return currentAccessCode
-  }
+	if (currentAccessCode) return currentAccessCode
 
-  try {
-    newAccessCode = await getNewAccessCodeAsync({ accessTokenPath,
-      refreshTokenPath })
-  } catch (e) {
-    throw Error(`Unable to get new access code. ${e}`)
-  }
+	const [newAccessCode, errorWithNewAccessCode] = await Try(() =>
+		getNewAccessCodeAsync({ accessTokenPath, refreshTokenPath }),
+	)
 
-  return newAccessCode
+	if (errorWithNewAccessCode) throw Error(`Unable to get new access code.`)
+
+	return newAccessCode
 }

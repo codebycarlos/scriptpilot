@@ -1,10 +1,9 @@
-import { ArgumentValidator, mongoose } from './_dependencies'
+import { ArgumentValidator, mongoose, Try } from "./_dependencies"
 export function createModel(modelName, schema) {
-  ArgumentValidator.check([...arguments])
+	ArgumentValidator.check([...arguments])
 
-  try {
-    return mongoose.model(modelName, schema)
-  } catch (e) {
-    throw Error(`Unable to create model ${e}. `)
-  }
+	const [model, errorWithModel] = Try(() => mongoose.model(modelName, schema))
+	if (errorWithModel) throw Error(`Unable to create model.`)
+
+	return model
 }

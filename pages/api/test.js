@@ -1,9 +1,7 @@
-export default async function handler(req, res) {
-  try {
-    console.log('Working!')
-  } catch (e) {
-    console.log(e)
-  }
+import { JSend } from "indigozest_modules/models/server/JSend"
 
-  return JSend(res).success()
+export default async function handler(req, res) {
+	console.log("Working!")
+
+	return JSend(res).success()
 }

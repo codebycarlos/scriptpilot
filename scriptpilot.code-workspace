@@ -5,9 +5,9 @@
 		}
 	],
 	"settings": {
-		"cSpell.words": [
-			"oauthtoken",
-			"signout"
-		]
+		"cSpell.words": ["oauthtoken", "signout"],
+		"files.autoSave": "onFocusChange",
+		"workbench.editor.limit.enabled": true,
+		"workbench.editor.highlightModifiedTabs": true
 	}
 }

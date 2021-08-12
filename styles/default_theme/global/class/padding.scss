@@ -20,9 +20,15 @@
 	@include mixin_padding_global-horizontal("extraSmall");
 }
 
-@media (min-width: function_breakpoint_breakpoint("S")) and (hover:hover) {
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-Content {
 		@include mixin_padding_global("extraSmall", "top");
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("L")) and (hover: hover) {
+	.react-Content {
+		@include mixin_padding_global("large", "right");
 	}
 }
 
@@ -30,7 +36,50 @@
 	&.icon-only {
 		padding: 9px;
 	}
-	&.with-icon .MuiButton-label {
+	& .MuiButton-label {
 		padding-right: 5px;
 	}
+}
+
+@media (max-width: function_breakpoint_breakpoint("M")) and (hover: hover) {
+	.react-ButtonDefault:not(.primary) .MuiButton-label {
+		padding: 0;
+	}
+}
+
+.react-InvokeContent {
+	@include mixin_padding_global("small");
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
+	.react-InvokeContent {
+		@include mixin_padding_global("extraSmall");
+	}
+}
+
+.code-container {
+	@include mixin_padding_global("extraSmall", "top");
+	@include mixin_padding_global("extraSmall", "right");
+	@include mixin_padding_global("extraSmall", "left");
+}
+
+.code-container code {
+	@include mixin_padding_global("extraSmall", "right");
+	@include mixin_padding_global("extraSmall", "bottom");
+}
+
+.react-InvokeContentOutputBadge {
+	@include mixin_padding_global("extraExtraSmall");
+}
+
+.react-InvokeContentOutputBadge small {
+	padding-right: 5px;
+}
+
+.react-ActionsPanel {
+	@include mixin_padding_global-horizontal("extraExtraSmall");
+}
+
+.field {
+	padding-bottom: 20px;
 }

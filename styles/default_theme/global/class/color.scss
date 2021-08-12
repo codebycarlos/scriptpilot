@@ -110,3 +110,47 @@ button.contained {
 		}
 	}
 }
+
+.MuiFilledInput-root {
+	@include mixin_color_background-color-palette("white");
+}
+
+.react-ActionsPanel .react-ButtonDefault p {
+	@include mixin_color_palette("white");
+}
+
+.react-InvokeContent {
+	@include mixin_color_background-color-palette("off-white");
+}
+
+.react-InvokeOverlay.open {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.code-container {
+	@include mixin_color_background-color-palette("white");
+}
+
+.react-InvokeContentOutputBadge .badge-icon {
+	@include mixin_color_palette("white");
+}
+
+.react-InvokeContentOutputBadge.success {
+	@include mixin_color_background-color-palette("success");
+}
+
+.react-InvokeContentOutputBadge.error {
+	@include mixin_color_background-color-palette("error");
+}
+
+.react-InvokeContentOutputBadge small {
+	@include mixin_color_palette("white");
+}
+
+.error-label {
+	@include mixin_color_palette("error");
+}
+
+.file-uploader > div {
+	@include mixin_color_background-color-palette("white");
+}
