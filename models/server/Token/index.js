@@ -1,5 +1,4 @@
-import { load } from './load'
-import { isLocked } from './isLocked'
+import { loadAndDecryptAsync } from "./loadAndDecryptAsync"
+import { encryptAndSaveAsync } from "./encryptAndSaveAsync"
 
-export const Token = { load,
-  isLocked }
+export const Token = { loadAndDecryptAsync, encryptAndSaveAsync }

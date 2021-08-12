@@ -8,7 +8,6 @@ export async function level2Async(session) {
 		ZohoAccount.hasAnyOfProfilesAsync(
 			{
 				apiDomain: settings.apiDomain,
-				orgId: settings.orgId,
 				userId: session.user.providerAccountId,
 			},
 			settings.authorizedProfiles,

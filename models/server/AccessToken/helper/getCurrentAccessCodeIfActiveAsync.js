@@ -1,9 +1,11 @@
 import { ArgumentValidator, Token, Try } from "../_dependencies"
 import { isActive } from "../isActive"
-export async function getCurrentAccessCodeIfActiveAsync({ tokenPath }) {
+export async function getCurrentAccessCodeIfActiveAsync() {
 	ArgumentValidator.check([...arguments])
 
-	const [token, errorWithToken] = await Try(() => Token.load(tokenPath))
+	const [token, errorWithToken] = await Try(() =>
+		Token.loadAndDecryptAsync({ type: "access_token" }),
+	)
 
 	if (errorWithToken) throw Error(`Unable to load current access token.`)
 

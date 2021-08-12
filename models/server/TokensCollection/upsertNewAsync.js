@@ -10,7 +10,6 @@ export async function upsertNewAsync(
 		expiry_time,
 		type,
 		encrypted,
-		encrypted_token,
 	},
 ) {
 	ArgumentValidator.check([...arguments])
@@ -33,13 +32,12 @@ export async function upsertNewAsync(
 				expires_in,
 				expiry_time,
 				encrypted,
-				encrypted_token,
 			},
 			{
 				new: true,
 				upsert: true,
-				overwrite: true,
 				runValidators: true,
+				lean: true,
 			},
 		)
 		.exec()

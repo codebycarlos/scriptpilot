@@ -1,13 +1,13 @@
 import { ArgumentValidator, Try } from "./_dependencies"
 import { fetchProfileNameAsync } from "./fetchProfileNameAsync"
 
-export async function hasAnyOfProfilesAsync({ apiDomain, orgId, userId }, targetProfiles) {
-	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
+export async function hasAnyOfProfilesAsync({ apiDomain, userId }, targetProfiles) {
+	ArgumentValidator.check([...arguments, apiDomain, userId])
 
 	const [profileName, errorWithProfileName] = await Try(() =>
-		fetchProfileNameAsync({ apiDomain, orgId, userId }),
+		fetchProfileNameAsync({ apiDomain, userId }),
 	)
-	if (errorWithProfileName) throw Error(`Unable to get profile. ${e}`)
+	if (errorWithProfileName) throw Error(`Unable to get profile.`)
 
 	const [targetFilesUpper, errorWithTargetFilesUpper] = Try(() =>
 		targetProfiles.map((targetProfile) => targetProfile.toUpperCase()),

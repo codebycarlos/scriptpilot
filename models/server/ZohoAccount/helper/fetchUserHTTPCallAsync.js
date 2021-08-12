@@ -1,9 +1,9 @@
 import { ArgumentValidator, CustomAxiosAsync, AccessToken, Try } from "../_dependencies"
-export async function fetchUserHTTPCallAsync({ apiDomain, orgId, userId }) {
-	ArgumentValidator.check([...arguments, apiDomain, orgId, userId])
+export async function fetchUserHTTPCallAsync({ apiDomain, userId }) {
+	ArgumentValidator.check([...arguments, apiDomain, userId])
 
 	const [accessTokenCode, errorWithAccessTokenCode] = await Try(() =>
-		AccessToken.getAccessCodeForOrgAsync(orgId),
+		AccessToken.getAccessCodeAsync(),
 	)
 
 	if (errorWithAccessTokenCode) throw Error(`Unable to authorize request.`)
