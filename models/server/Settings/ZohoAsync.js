@@ -12,7 +12,5 @@ export async function ZohoAsync() {
 		developerProfiles: process.env.ZOHO_DEVELOPER_PROFILES.split(","),
 		administratorProfiles: process.env.ZOHO_ADMINISTRATOR_PROFILES.split(","),
 		authorizedProfiles: process.env.ZOHO_AUTHORIZED_PROFILES.split(","),
-		accessTokenPathFormat: process.env.ZOHO_ACCESS_TOKEN_PATH_FORMAT,
-		refreshTokenPathFormat: process.env.ZOHO_REFRESH_TOKEN_PATH_FORMAT,
 	}
 }
