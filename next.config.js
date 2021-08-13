@@ -1,4 +1,5 @@
 const CircularDependencyPlugin = require("circular-dependency-plugin")
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 
 module.exports = {
 	reactStrictMode: true,
@@ -26,12 +27,9 @@ module.exports = {
 				// Set the current working directory for displaying module paths
 				cwd: process.cwd(),
 			}),
+			new CaseSensitivePathsPlugin(),
 		)
-		if (!options.isServer)
-			config.node = {
-				fs: "empty",
-			}
-
+		if (!options.isServer) config.resolve.fallback.fs = false
 		return config
 	},
 }

@@ -9,5 +9,3 @@ export async function createScriptAsync({}, { Input } = {}) {
 
 	return script
 }
-
-// file rename
