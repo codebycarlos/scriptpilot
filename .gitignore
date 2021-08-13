@@ -34,7 +34,7 @@ yarn-error.log*
 .env.production.local
 .env.production
 env.js
-
+.toml
 
 # vercel
 .vercel
@@ -42,3 +42,5 @@ env.js
 # secrets
 /secret
 /secrets
+# Local Netlify folder
+.netlify

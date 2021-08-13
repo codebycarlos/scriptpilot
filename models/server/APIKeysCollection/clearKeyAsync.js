@@ -22,4 +22,6 @@ export async function clearKeyAsync(model, { FunctionName, Qualifier }) {
 			},
 		)
 		.exec()
+
+	MongoDBCollection.disconnect()
 }
