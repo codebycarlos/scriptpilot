@@ -1,8 +1,0 @@
-[context.production.environment]
-  REACT_APP_API_URL = "https://api.test.im"
-
-[context.deploy-preview.environment]
-  REACT_APP_API_URL = "https://api-staging.test.im"
-
-[context.branch-deploy.environment]
-  REACT_APP_API_URL = "https://api-staging.test.im"
