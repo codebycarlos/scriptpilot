@@ -17,7 +17,5 @@ export async function findByUserIdAsync(model, targetUserId) {
 	if (errorWithDocument)
 		throw Error(`Unable to search for document with target value: ${targetUserId}.`)
 
-	MongoDBCollection.disconnect()
-
 	return document
 }

@@ -29,6 +29,4 @@ export async function upsertNewAsync(model, { FunctionName, Qualifier, key }) {
 			},
 		)
 		.exec()
-
-	MongoDBCollection.disconnect()
 }

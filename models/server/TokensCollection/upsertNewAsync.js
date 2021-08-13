@@ -41,6 +41,4 @@ export async function upsertNewAsync(
 			},
 		)
 		.exec()
-
-	MongoDBCollection.disconnect()
 }

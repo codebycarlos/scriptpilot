@@ -13,7 +13,5 @@ export async function findOneAsync(model, { FunctionName, Qualifier }) {
 		})
 		.exec()
 
-	MongoDBCollection.disconnect()
-
 	return result
 }

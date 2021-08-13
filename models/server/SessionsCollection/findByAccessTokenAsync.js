@@ -17,7 +17,5 @@ export async function findByAccessTokenAsync(model, targetAccessToken) {
 	if (errorWithDocument)
 		throw Error(`Unable to search for document with target value: ${targetAccessToken}.`)
 
-	MongoDBCollection.disconnect()
-
 	return document
 }

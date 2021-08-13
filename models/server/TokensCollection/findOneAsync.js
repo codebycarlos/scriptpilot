@@ -7,7 +7,5 @@ export async function findOneAsync(model, { type }) {
 
 	const result = await model.findOne({ type }, null, { lean: true }).exec()
 
-	MongoDBCollection.disconnect()
-
 	return result
 }

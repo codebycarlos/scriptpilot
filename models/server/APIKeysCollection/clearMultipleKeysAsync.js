@@ -21,6 +21,4 @@ export async function clearMultipleKeysAsync(model, { FunctionName }) {
 			},
 		)
 		.exec()
-
-	MongoDBCollection.disconnect()
 }
