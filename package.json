@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT",
+    "heroku-postbuild":"npmp run build"
   },
   "dependencies": {
     "@aws-sdk/client-lambda": "^3.13.1",
