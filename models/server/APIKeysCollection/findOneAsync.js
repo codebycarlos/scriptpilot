@@ -5,6 +5,8 @@ export async function findOneAsync(model, { FunctionName, Qualifier }) {
 	const [, errorWithConnection] = await Try(() => MongoDBCollection.establishConnectionAsync())
 	if (errorWithConnection) throw Error(`Unable to establish connection.`)
 
+	MongoDBCollection.disconnect()
+
 	return model
 		.findOne({
 			Active: true,
@@ -12,6 +14,4 @@ export async function findOneAsync(model, { FunctionName, Qualifier }) {
 			Qualifier,
 		})
 		.exec()
-
-	MongoDBCollection.disconnect()
 }
