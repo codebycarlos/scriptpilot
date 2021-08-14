@@ -6,7 +6,11 @@ export async function POSTAsync(req, res) {
 		return JSend(res).error({ message: "Unauthorised access." }, 401)
 
 	const [accessGranted] = await Try(() =>
-		APIKeyPair.confirmKeyMatchAsync({ ARN, key: req.query.apikey }),
+		APIKeyPair.confirmKeyMatchAsync({
+			FunctionName: req.query.FunctionName,
+			Qualifier: req.query.Qualifier,
+			key: req.query.apikey,
+		}),
 	)
 
 	if (accessGranted !== true) return JSend(res).error({ message: "Unauthorised access." }, 401)
