@@ -9,7 +9,7 @@ export async function POSTAsync(req, res) {
 		APIKeyPair.confirmKeyMatchAsync({
 			FunctionName: req.query.FunctionName,
 			Qualifier: req.query.Qualifier,
-			key: req.query.apikey,
+			apikey: req.query.apikey,
 		}),
 	)
 
