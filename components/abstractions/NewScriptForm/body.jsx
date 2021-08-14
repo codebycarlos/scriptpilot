@@ -203,11 +203,11 @@ export function body(imports, props, styleDefault, Root = "main") {
 							rules={{
 								min: {
 									value: 1,
-									message: "Timeout must be between 1 and 900 seconds.",
+									message: "Timeout must be between 1 and 30 seconds.",
 								},
 								max: {
-									value: 900,
-									message: "Timeout must be between 1 and 900 seconds.",
+									value: 30,
+									message: "Timeout must be between 1 and 30 seconds.",
 								},
 								required: "This field is required.",
 							}}
