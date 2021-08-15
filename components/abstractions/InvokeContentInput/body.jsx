@@ -56,7 +56,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 					<div className="invocation-type-label-with-help-icon">
 						<p className="section-title">Invocation Type</p>
 						<HelpIcon
-							data-tip="The invocation type affects how your script's code is ran<br>Synchronous: invoke script and wait for a response (30 seconds max).<br>Asynchronous: invoke script in the background without waiting for a response (900 seconds max)."
+							data-tip="The invocation type affects how your script's code is executed.<br>Synchronous: invoke script and wait for a response (30 seconds max).<br>Asynchronous: invoke script in the background without waiting for a response (900 seconds max)."
 							data-multiline={true}
 							data-effect="solid"
 							data-place="right"
