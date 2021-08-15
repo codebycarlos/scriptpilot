@@ -80,3 +80,7 @@ fieldset.configuration {
 .file-uploader {
 	@include mixin_margin_global-vertical("extraSmall");
 }
+
+.react-InvokeContentOutputBadge {
+	@include mixin_margin_global-vertical("extraSmall");
+}

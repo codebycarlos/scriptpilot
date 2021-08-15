@@ -17,3 +17,11 @@
 fieldset .field {
 	flex-direction: column;
 }
+
+.MuiFormGroup-root {
+	flex-direction: row;
+}
+
+.invocation-type-label-with-help-icon {
+	align-items: baseline;
+}

@@ -1,8 +1,8 @@
 export function logic(imports, props, styleDefault) {
-	const { useState, useEffect, useForm, uuidv4, useInvokeOverlayContext } = imports
+	const { useState, useForm, uuidv4, useInvokeOverlayContext } = imports
 	const { Data, Actions: InvokeOverlayActions } = useInvokeOverlayContext()
 	const [inputFields, setInputFields] = useState([{ id: uuidv4() }])
-
+	props.script = Data.script
 	props.methods = useForm()
 
 	const formatAsJSON = ({ key, value }) => {
@@ -15,8 +15,13 @@ export function logic(imports, props, styleDefault) {
 		return JSON.stringify(keysAndValues)
 	}
 
-	props.invokeCallback = (Payload) => {
-		Data.invokeCallback({ Payload: formatAsJSON(Payload) })
+	props.invokeCallback = (formData) => {
+		Data.invokeCallback({
+			Input: {
+				InvocationType: formData.InvocationType,
+				Payload: formatAsJSON(formData.Payload),
+			},
+		})
 	}
 
 	props.handleAddFields = () => {

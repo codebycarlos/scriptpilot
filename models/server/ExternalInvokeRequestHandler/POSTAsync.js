@@ -8,7 +8,7 @@ export async function POSTAsync(req, res) {
 	const [accessGranted] = await Try(() =>
 		APIKeyPair.confirmKeyMatchAsync({
 			FunctionName: req.query.FunctionName,
-			Qualifier: req.query.Qualifier,
+			Qualifier: req.query?.Qualifier,
 			apikey: req.query.apikey,
 		}),
 	)
@@ -16,7 +16,12 @@ export async function POSTAsync(req, res) {
 	if (accessGranted !== true) return JSend(res).error({ message: "Unauthorised access." }, 401)
 
 	const [response, error] = await Try(() =>
-		ScriptsAPI.invokeScriptAsync({ ...req.query, ...req?.body?.data }),
+		ScriptsAPI.invokeScriptAsync({
+			...req.query,
+			...req?.body?.data,
+			InvocationType:
+				req.query?.invocation_type === "asynchronous" ? "Event" : "RequestResponse",
+		}),
 	)
 
 	if (error) return JSend(res).error({ message: error?.message })

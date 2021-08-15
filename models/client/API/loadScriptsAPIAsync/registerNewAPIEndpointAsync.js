@@ -8,7 +8,7 @@ export async function registerNewAPIEndpointAsync(
 	},
 ) {
 	const axios = await CustomAxiosAsync(session)
-	console.log(2, Input)
+
 	const [, error] = await Try(() =>
 		axios.post(`api/scripts/${Input.FunctionName}/apikey`, {
 			data: {

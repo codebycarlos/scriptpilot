@@ -19,9 +19,9 @@ export function logic(imports, props, styleDefault) {
 	props.error = error
 
 	const invokeRequest = useWithSnackbar(
-		async ({ Payload }) => {
+		async ({ Input }) => {
 			await Actions.invokeScriptWithOverlayAsync({
-				Input: { ...InvokeOverlayDataRef?.current?.script, Payload },
+				Input: { ...InvokeOverlayDataRef?.current?.script, ...Input },
 				InvokeOverlayActions,
 			})
 		},

@@ -83,3 +83,7 @@
 .field {
 	padding-bottom: 20px;
 }
+
+div .__react_component_tooltip {
+	@include mixin_padding_global-vertical("extraSmall");
+}

@@ -10,5 +10,5 @@ export async function getScriptAPIEndpointURLAsync({ FunctionName, Qualifier }) 
 
 	const QualifierPath = Qualifier ? `/versions/${Qualifier}` : ""
 
-	return `${coreSettings.host}/api/scripts/${FunctionName}${QualifierPath}/external-invoke?auth_type=apikey&apikey=${key}`
+	return `${coreSettings.host}/api/scripts/${FunctionName}${QualifierPath}/external-invoke?auth_type=apikey&apikey=${key}&invocation_type=synchronous`
 }

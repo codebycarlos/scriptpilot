@@ -135,7 +135,8 @@ button.contained {
 	@include mixin_color_palette("white");
 }
 
-.react-InvokeContentOutputBadge.success {
+.react-InvokeContentOutputBadge.success-synchronous,
+.react-InvokeContentOutputBadge.success-asynchronous {
 	@include mixin_color_background-color-palette("success");
 }
 
@@ -153,4 +154,12 @@ button.contained {
 
 .file-uploader > div {
 	@include mixin_color_background-color-palette("white");
+}
+
+.Mui-checked .MuiSvgIcon-root path {
+	@include mixin_color_palette("primary");
+}
+
+div .__react_component_tooltip span {
+	@include mixin_color_palette("white");
 }

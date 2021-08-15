@@ -50,3 +50,8 @@
 .linenumber {
 	border-right: 1px solid rgba(224, 224, 224, 1);
 }
+
+div .__react_component_tooltip.place-right::before,
+div .__react_component_tooltip.place-right::after {
+	border: unset;
+}

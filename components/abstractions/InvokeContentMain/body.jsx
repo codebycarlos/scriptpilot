@@ -3,7 +3,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 	return (
 		<Root {...props.DOMAttributes}>
 			{props?.Data?.open && <InvokeContentInput />}
-			{props?.Data?.outputText && (
+			{(props?.Data?.outputText || props?.Data?.outputType === "success-asynchronous") && (
 				<>
 					<HorizontalSeparator />
 					<InvokeContentOutput />

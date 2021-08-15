@@ -5,7 +5,7 @@ export async function registerNewAPIEndpointAsync({ Data, setState }, { Input } 
 		Input = { ...Data?.script?.Configuration, Qualifier: Data?.script?.Configuration?.Version }
 
 	const { ScriptsAPI } = await API.loadScriptsAPIAsync()
-	console.log(1, Input)
+
 	const [, error] = await Try(() => ScriptsAPI.registerNewAPIEndpointAsync(Input))
 
 	if (error) {

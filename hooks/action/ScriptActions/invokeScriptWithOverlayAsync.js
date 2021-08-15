@@ -8,7 +8,10 @@ export async function invokeScriptWithOverlayAsync({ Data }, { Input, InvokeOver
 
 	const [output, error] = await Try(() => ScriptsAPI.invokeScriptAsync(Input))
 
-	if (error || output?.$metadata?.httpStatusCode !== 200 || !output?.Payload)
+	if (
+		error ||
+		(output?.$metadata?.httpStatusCode !== 200 && output?.$metadata?.httpStatusCode !== 202)
+	)
 		throw error ?? Error("Unable to invoke script.")
 
 	if (output.FunctionError)
@@ -17,8 +20,15 @@ export async function invokeScriptWithOverlayAsync({ Data }, { Input, InvokeOver
 			outputType: "error",
 		})
 
-	InvokeOverlayActions.setOutput({
+	if (output?.$metadata?.httpStatusCode === 202) {
+		return InvokeOverlayActions.setOutput({
+			outputText: null,
+			outputType: "success-asynchronous",
+		})
+	}
+
+	return InvokeOverlayActions.setOutput({
 		outputText: output.Payload,
-		outputType: "success",
+		outputType: "success-synchronous",
 	})
 }
