@@ -32,7 +32,7 @@ export function logic(imports, props, styleDefault) {
 	const deleteVersionAndRefresh = useWithSnackbar(
 		async (Qualifier) => {
 			props.onClose()
-			await scriptActions.deleteScriptAsync({
+			await Actions.deleteScriptAsync({
 				Input: { FunctionName: script?.Configuration?.FunctionName, Qualifier },
 			})
 			await versionActions.refreshVersionsAsync({
