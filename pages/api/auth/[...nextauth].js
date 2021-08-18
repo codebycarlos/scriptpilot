@@ -32,7 +32,7 @@ async function options() {
 			 * Seconds - How long (seconds) until an idle session expires and is no longer valid.
 			 * Hours * Minutes * Seconds
 			 */
-			maxAge: 10 * 60 * 60,
+			//maxAge: 0.2 * 60 * 60,
 		},
 		callbacks: {
 			session: NextAuthCallbacks.sessionAsync,
