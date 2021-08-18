@@ -6,6 +6,7 @@ export function addExpiryTime(token) {
 	if (errorWithTokenRead) throw Error(`Unable to parse token.`)
 
 	tokenRead.expiry_time = Date.now() + tokenRead.expires_in * 1000
+	tokenRead.expires_in = null
 
 	return tokenRead
 }

@@ -4,5 +4,5 @@ export async function encryptAsync({ token }) {
 	const [tokenValue, errorWithTokenValue] = Try(() => token[token.type])
 	if (errorWithTokenValue) throw Error("Unable to read token value.")
 
-	return { ...token, [token.type]: Crypto.encryptAsync(tokenValue), encrypted: true }
+	return { ...token, [token.type]: await Crypto.encryptAsync(tokenValue), encrypted: true }
 }

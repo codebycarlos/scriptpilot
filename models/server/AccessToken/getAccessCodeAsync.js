@@ -1,6 +1,6 @@
 import { Log, Try } from "./_dependencies"
 import { getCurrentAccessCodeIfActiveAsync } from "./helper/getCurrentAccessCodeIfActiveAsync"
-import { getNewAccessCodeAsync } from "./helper/getNewAccessCode"
+import { getNewAccessCodeAsync } from "./helper/getNewAccessCodeAsync"
 export async function getAccessCodeAsync() {
 	const [currentAccessCode, errorWithCurrentAccessCode] = await Try(() =>
 		getCurrentAccessCodeIfActiveAsync(),

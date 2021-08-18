@@ -11,7 +11,7 @@ export async function getNewAccessCodeAsync() {
 	const [newToken, errorWithNewToken] = await Try(() => fetchNewAsync(refreshToken))
 	if (errorWithNewToken) throw Error(`Unable to fetch new access token.`)
 
-	saveAsync(newToken)
+	await saveAsync(newToken)
 
 	return newToken.access_token
 }

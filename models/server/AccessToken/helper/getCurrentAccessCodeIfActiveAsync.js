@@ -8,7 +8,6 @@ export async function getCurrentAccessCodeIfActiveAsync() {
 	)
 
 	if (errorWithToken) throw Error(`Unable to load current access token.`)
-
 	if (!isActive(token)) return null
 
 	return token.access_token

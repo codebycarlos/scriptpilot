@@ -14,9 +14,7 @@ export async function upsertNewAsync(
 ) {
 	ArgumentValidator.check([...arguments])
 
-	const [output, errorWithConnection] = await Try(() =>
-		MongoDBCollection.establishConnectionAsync(),
-	)
+	const [, errorWithConnection] = await Try(() => MongoDBCollection.establishConnectionAsync())
 	if (errorWithConnection) throw Error(`Unable to establish connection.`)
 
 	await model
