@@ -35,7 +35,7 @@ export function logic(imports, props, styleDefault) {
 			await Actions.deleteScriptAsync({
 				Input: { FunctionName: script?.Configuration?.FunctionName, Qualifier },
 			})
-			await versionActions.refreshVersionsAsync({
+			await Actions.refreshVersionsAsync({
 				Input: {
 					FunctionName: script?.Configuration?.FunctionName,
 				},
