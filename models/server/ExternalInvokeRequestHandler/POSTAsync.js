@@ -18,7 +18,7 @@ export async function POSTAsync(req, res) {
 	const [response, error] = await Try(() =>
 		ScriptsAPI.invokeScriptAsync({
 			...req.query,
-			...req?.body?.data,
+			...req?.body,
 			InvocationType:
 				req.query?.invocation_type === "asynchronous" ? "Event" : "RequestResponse",
 		}),
