@@ -15,7 +15,7 @@ export function logic(imports, props, styleDefault) {
   target="_blank"
   title="Find out more." rel="noreferrer"
 				>triggered</a>
-				&nbsp;manually, via a repeating schedule, or an HTTP request.
+				&nbsp;manually, or externally via a HTTP request.
     </>
   }
 
