@@ -1,0 +1,56 @@
+$global-padding-unit: rem;
+$local-padding-unit: em;
+
+$extraExtraSmall: 0.5;
+$extraSmall: 1;
+$small: 2;
+$medium: 5;
+$large: 10;
+$extraLarge: 20;
+
+$global-padding-extraExtraSmall: $extraExtraSmall + $global-padding-unit;
+$global-padding-extraSmall: $extraSmall + $global-padding-unit;
+$global-padding-small: $small + $global-padding-unit;
+$global-padding-medium: $medium + $global-padding-unit;
+$global-padding-large: $large + $global-padding-unit;
+$global-padding-extraLarge: $extraLarge + $global-padding-unit;
+
+$local-padding-extraExtraSmall: $extraExtraSmall + $local-padding-unit;
+$local-padding-extraSmall: $extraSmall + $local-padding-unit;
+$local-padding-small: $small + $local-padding-unit;
+$local-padding-medium: $medium + $local-padding-unit;
+$local-padding-large: $large + $local-padding-unit;
+$local-padding-extraLarge: $extraLarge + $local-padding-unit;
+
+$global-padding: (
+    "extraExtraSmall": $global-padding-extraExtraSmall,
+	"extraSmall": $global-padding-extraSmall,
+	"small": $global-padding-small,
+	"medium": $global-padding-medium,
+	"large": $global-padding-large,
+	"extraLarge": $global-padding-extraLarge,
+);
+
+$local-padding: (
+    "extraExtraSmall": $local-padding-extraExtraSmall,
+	"extraSmall": $local-padding-extraSmall,
+	"small": $local-padding-small,
+	"medium": $local-padding-medium,
+	"large": $local-padding-large,
+	"extraLarge": $local-padding-extraLarge,
+);
+
+:export {
+    variable_padding_global-padding-extraExtraSmall: $global-padding-extraExtraSmall;
+	variable_padding_global-padding-extraSmall: $global-padding-extraSmall;
+	variable_padding_global-padding-small: $global-padding-small;
+	variable_padding_global-padding-medium: $global-padding-medium;
+	variable_padding_global-padding-large: $global-padding-large;
+	variable_padding_global-padding-extraLarge: $global-padding-extraLarge;
+    variable_padding_local-padding-extraExtraSmall: $local-padding-extraExtraSmall;
+	variable_padding_local-padding-extraSmall: $local-padding-extraSmall;
+	variable_padding_local-padding-small: $local-padding-small;
+	variable_padding_local-padding-medium: $local-padding-medium;
+	variable_padding_local-padding-large: $local-padding-large;
+	variable_padding_local-padding-extraLarge: $local-padding-extraLarge;
+}

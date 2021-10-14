@@ -1,0 +1,165 @@
+@use '../../_partial.module.scss' as *;
+
+.big-white-text {
+	@include mixin_color_palette("white");
+}
+
+.react-Content {
+	@include mixin_color_background-color-palette("off-white");
+}
+
+.react-Content .react-Footer {
+	@include mixin_color_background-color-palette("dark-quintenary");
+}
+
+.react-LoginPage {
+	@include mixin_color_background-linear-gradient-palette("senary", "quintenary");
+}
+
+.react-NavigationWrapper,
+.react-MenuPanel,
+.react-MenuBar {
+	@include mixin_color_background-linear-gradient-palette("quintenary", "senary", 200deg);
+}
+
+.react-MenuDrawerContents .MuiListItem-root {
+	&:hover {
+		@include mixin_color_background-color-palette-darken("quintenary", 3%);
+	}
+	&:active {
+		@include mixin_color_background-color-palette("primary");
+	}
+	&.Mui-selected {
+		@include mixin_color_background-color-palette-darken("quintenary", 3%);
+		&:hover {
+			@include mixin_color_background-color-palette-darken("quintenary", 5%);
+		}
+		&:active {
+			@include mixin_color_background-color-palette("primary");
+		}
+	}
+}
+
+.react-MenuBar .MuiBottomNavigationAction-root {
+	&:hover {
+		@include mixin_color_background-color-palette-darken("quintenary", 3%);
+	}
+	&:active {
+		@include mixin_color_background-color-palette("primary");
+	}
+	&.Mui-selected {
+		&:active {
+			@include mixin_color_background-color-palette("primary");
+		}
+	}
+}
+
+.react-DataGrid {
+	@include mixin_color_background-color-palette("white");
+	& .MuiDataGrid-row:hover {
+		@include mixin_color_background-color-palette-lighten("primary", 45%);
+	}
+	& .MuiDataGrid-cell:focus-within {
+		outline: unset;
+	}
+}
+
+button.contained {
+	&.primary {
+		$palette: function_color_palette("primary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_lighten-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette, 15%));
+		}
+	}
+	&.secondary {
+		$palette: function_color_palette("secondary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_lighten-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+	&.tertiary {
+		$palette: function_color_palette("tertiary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_darken-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+	&.quaternary {
+		$palette: function_color_palette("quaternary");
+		background-color: $palette;
+		&:hover,
+		:focus {
+			background-color: function_color_lighten-10($palette);
+		}
+		span {
+			color: function_color_contrast-text(function_color_darken($palette));
+		}
+	}
+}
+
+.MuiFilledInput-root {
+	@include mixin_color_background-color-palette("white");
+}
+
+.react-ActionsPanel .react-ButtonDefault p {
+	@include mixin_color_palette("white");
+}
+
+.react-InvokeContent {
+	@include mixin_color_background-color-palette("off-white");
+}
+
+.react-InvokeOverlay.open {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.code-container {
+	@include mixin_color_background-color-palette("white");
+}
+
+.react-InvokeContentOutputBadge .badge-icon {
+	@include mixin_color_palette("white");
+}
+
+.react-InvokeContentOutputBadge.success-synchronous,
+.react-InvokeContentOutputBadge.success-asynchronous {
+	@include mixin_color_background-color-palette("success");
+}
+
+.react-InvokeContentOutputBadge.error {
+	@include mixin_color_background-color-palette("error");
+}
+
+.react-InvokeContentOutputBadge small {
+	@include mixin_color_palette("white");
+}
+
+.error-label {
+	@include mixin_color_palette("error");
+}
+
+.file-uploader > div {
+	@include mixin_color_background-color-palette("white");
+}
+
+.Mui-checked .MuiSvgIcon-root path {
+	@include mixin_color_palette("primary");
+}
+
+div .__react_component_tooltip span {
+	@include mixin_color_palette("white");
+}

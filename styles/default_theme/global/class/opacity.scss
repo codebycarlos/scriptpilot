@@ -1,0 +1,20 @@
+@use '../../_partial.module.scss' as *;
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	nav.react-MenuResponsive:not(:hover) {
+		& .react-Logo,
+		.react-Footer,
+		span {
+			opacity: 0;
+		}
+	}
+}
+
+.MuiDataGrid-row {
+	& .MuiIconButton-sizeSmall {
+		opacity: 0;
+	}
+	&:hover .MuiIconButton-sizeSmall {
+		opacity: 100;
+	}
+}

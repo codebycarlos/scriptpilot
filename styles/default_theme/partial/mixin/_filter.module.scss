@@ -1,0 +1,4 @@
+@mixin frosted-glass-blur-cross-browser($shadow-color:rgba(55, 55, 55, 1)) {
+	filter: blur(20px) brightness(1.5) saturate(1.7) contrast(1.1)
+		drop-shadow($shadow-color 0px 0px 1px);
+}

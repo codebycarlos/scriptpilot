@@ -1,0 +1,31 @@
+@use '../../_partial.module.scss' as *;
+
+.big-white-text {
+	@include mixin_shadow_text-shadow-barely-dark;
+}
+
+@media (max-width: function_breakpoint_breakpoint("M")) {
+	.react-ActionsPanel button {
+		@include mixin_shadow_box-shadow-barely-dark;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-MenuResponsive:hover {
+		@include mixin_shadow_box-shadow-very-dark;
+	}
+}
+
+.react-MenuBar {
+	@include mixin_shadow_box-shadow-regular-dark;
+}
+
+.react-InvokeContent {
+    box-shadow: 10px 0px 30px 5px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
+    .react-InvokeContent {
+        box-shadow: unset;
+    }
+}

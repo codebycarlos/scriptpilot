@@ -1,0 +1,11 @@
+@mixin quick-ease-in-out {
+	transition: all ease-in-out 0.2s;
+}
+
+@mixin regular-ease-in-out {
+	transition: all ease-in-out 0.8s;
+}
+
+@mixin slow-ease-in-out {
+	transition: all ease-in-out 1.5s;
+}

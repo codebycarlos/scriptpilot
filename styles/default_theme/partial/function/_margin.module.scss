@@ -1,0 +1,9 @@
+@use "../variable/_margin.module.scss" as variable_margin_;
+
+@function global-margin($target-size) {
+	@return map-get(variable_margin_.$global-margin, $target-size);
+}
+
+@function local-margin($target-size) {
+	@return map-get(variable_margin_.$local-margin, $target-size);
+}

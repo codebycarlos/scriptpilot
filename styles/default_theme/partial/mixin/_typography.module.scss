@@ -1,0 +1,24 @@
+@use "../variable/_typography.module.scss" as variable_typography_;
+@use "../function/_typography.module.scss" as function_typography_;
+@use "../function/_math.module.scss" as function_math_;
+
+@mixin responsive-font-size(
+	$multiplier: 1,
+	$font-size: variable_typography_.$base-font-size,
+	$multiplier-factor: variable_typography_.$base-scale-ratio
+) {
+	$unresponsive-font-size: $font-size * function_math_.pow($multiplier-factor, $multiplier);
+	$min-max-variance-multiplier: 0.05;
+	$min: $unresponsive-font-size * (1 - $min-max-variance-multiplier);
+	$max: $unresponsive-font-size * (1 + $min-max-variance-multiplier);
+	$responsive-factor: 3vw;
+	font-size: clamp(#{$min}, #{$responsive-factor}, #{$max});
+}
+
+@mixin font-size-root {
+	font-size: variable_typography_.$root-font-size;
+}
+
+@mixin font-family($font) {
+	font-family: function_typography_.fonts("primary"), function_typography_.fonts("backup");
+}

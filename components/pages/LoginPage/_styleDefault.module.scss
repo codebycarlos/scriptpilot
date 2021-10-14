@@ -1,0 +1,14 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+
+.Root {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	min-height: 350px;
+	height:100%;
+}

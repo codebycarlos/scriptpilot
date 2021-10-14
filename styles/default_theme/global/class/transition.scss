@@ -1,0 +1,32 @@
+@use '../../_partial.module.scss' as *;
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-Content,
+	.react-Content:hover {
+		transition: border-color ease-in-out 0.5s;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	nav.react-MenuResponsive {
+		& .react-Logo,
+		.react-Footer,
+		span {
+			@include mixin_transition_quick-ease-in-out;
+		}
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-MenuResponsive {
+		@include mixin_transition_quick-ease-in-out;
+	}
+}
+
+.react-InvokeOverlay {
+    @include mixin_transition_quick-ease-in-out;
+}
+
+.react-InvokeContent {
+    @include mixin_transition_quick-ease-in-out;
+}

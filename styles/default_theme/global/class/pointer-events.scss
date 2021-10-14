@@ -1,0 +1,13 @@
+@use '../../_partial.module.scss' as *;
+
+.react-InvokeOverlay.open {
+	pointer-events: unset;
+}
+
+.react-ActionsPanel {
+	pointer-events: none;
+}
+
+.react-ActionsPanel button {
+	pointer-events: all;
+}

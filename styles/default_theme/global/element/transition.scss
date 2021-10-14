@@ -1,0 +1,9 @@
+@use '../../_partial.module.scss' as *;
+
+p,
+a {
+	@include mixin_transition_quick-ease-in-out;
+	&:hover {
+		@include mixin_transition_quick-ease-in-out;
+	}
+}

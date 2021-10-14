@@ -1,0 +1,49 @@
+$global-margin-unit: rem;
+$local-margin-unit: em;
+
+$extraSmall: 1;
+$small: 2;
+$medium: 5;
+$large: 10;
+$extraLarge: 20;
+
+$global-margin-extraSmall: $extraSmall + $global-margin-unit;
+$global-margin-small: $small + $global-margin-unit;
+$global-margin-medium: $medium + $global-margin-unit;
+$global-margin-large: $large + $global-margin-unit;
+$global-margin-extraLarge: $extraLarge + $global-margin-unit;
+
+$local-margin-extraSmall: $extraSmall + $local-margin-unit;
+$local-margin-small: $small + $local-margin-unit;
+$local-margin-medium: $medium + $local-margin-unit;
+$local-margin-large: $large + $local-margin-unit;
+$local-margin-extraLarge: $extraLarge + $local-margin-unit;
+
+$global-margin: (
+	"extraSmall": $global-margin-extraSmall,
+	"small": $global-margin-small,
+	"medium": $global-margin-medium,
+	"large": $global-margin-large,
+	"extraLarge": $global-margin-extraLarge,
+);
+
+$local-margin: (
+	"extraSmall": $local-margin-extraSmall,
+	"small": $local-margin-small,
+	"medium": $local-margin-medium,
+	"large": $local-margin-large,
+	"extraLarge": $local-margin-extraLarge,
+);
+
+:export {
+	variable_margin_global-margin-extraSmall: $global-margin-extraSmall;
+	variable_margin_global-margin-small: $global-margin-small;
+	variable_margin_global-margin-medium: $global-margin-medium;
+	variable_margin_global-margin-large: $global-margin-large;
+	variable_margin_global-margin-extraLarge: $global-margin-extraLarge;
+	variable_margin_local-margin-extraSmall: $local-margin-extraSmall;
+	variable_margin_local-margin-small: $local-margin-small;
+	variable_margin_local-margin-medium: $local-margin-medium;
+	variable_margin_local-margin-large: $local-margin-large;
+	variable_margin_local-margin-extraLarge: $local-margin-extraLarge;
+}

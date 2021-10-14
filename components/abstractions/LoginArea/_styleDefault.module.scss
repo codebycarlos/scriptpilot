@@ -1,0 +1,10 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	justify-content: center;
+}
+
+.ButtonDefault {
+	width: 100%;
+}

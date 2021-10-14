@@ -1,0 +1,10 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	width: 100%;
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	margin: unset;
+}

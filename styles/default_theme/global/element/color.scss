@@ -1,0 +1,17 @@
+@use '../../_partial.module.scss' as *;
+
+p,
+a,
+span,
+small,
+textarea {
+	@include mixin_color_palette("off-black");
+}
+
+a:hover {
+	@include mixin_color_palette("primary");
+}
+
+select {
+	@include mixin_color_background-color-palette("white");
+}

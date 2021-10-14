@@ -1,0 +1,13 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+    right: 0;
+	z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+}

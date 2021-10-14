@@ -1,0 +1,21 @@
+@use '../../_partial.module.scss' as *;
+
+$scrollbar-thumb-color: function_color_lighten-10(function_color_palette("quintenary"));
+$scrollbar-track-color: transparent;
+$scrollbar-width-name: thin;
+$scrollbar-width-pixels: 10px;
+
+* {
+	scrollbar-width: function_scrollbar_default("width-name");
+	scrollbar-color: function_scrollbar_default("thumb-color")
+		function_scrollbar_default("track-color");
+}
+*::-webkit-scrollbar {
+	width: $scrollbar-width-pixels;
+}
+*::-webkit-scrollbar-track {
+	background: $scrollbar-track-color;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: $scrollbar-thumb-color;
+}

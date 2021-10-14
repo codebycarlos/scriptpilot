@@ -1,0 +1,124 @@
+@use '../../_partial.module.scss' as *;
+
+.react-App > * {
+	@include mixin_dimension_height-width-100;
+}
+
+.react-Page .react-PageDescription {
+	height: -webkit-max-content;
+	height: -moz-max-content;
+	height: max-content;
+}
+
+.react-ButtonDefault {
+	&.icon-only {
+		min-width: unset;
+	}
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
+	.react-LoginPanel,
+	.react-LoginPanel > * {
+		width: 100%;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("L")) {
+	.react-Page .react-PageDescription {
+		max-width: function_breakpoint_breakpoint("L");
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) {
+	.react-FlexPanel {
+		min-width: 220px;
+	}
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-MenuResponsive {
+		height: 100%;
+		max-width: max(7vw, 75px);
+	}
+}
+
+.MuiBottomNavigationAction-root {
+	max-width: none;
+}
+
+.MuiListItemIcon-root {
+	min-width: 60px;
+}
+
+.MuiSvgIcon-root {
+	height: 0.9em;
+}
+
+@media (max-width: function_breakpoint_breakpoint("M")) and (hover: hover) {
+	.react-ButtonDefault:not(.primary) {
+		min-width: unset;
+	}
+}
+
+.react-ButtonDefault p {
+	width: 100%;
+}
+
+@media (max-width: function_breakpoint_breakpoint("M")) and (hover: hover) {
+	.react-ButtonDefault:not(.primary) p {
+		width: 0;
+	}
+}
+
+.react-ButtonDefault {
+	min-width: -webkit-max-content;
+	min-width: -moz-max-content;
+	min-width: max-content;
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
+	.react-InvokeOverlay.open .react-InvokeContent {
+		width: 100%;
+	}
+	.react-Content .react-InvokeOverlay {
+		height: calc(100% - 54.8px);
+	}
+}
+
+.code-container code {
+	height: 100%;
+	max-height: clamp(300px, 70vh, 800px);
+	max-width: unset;
+}
+
+.code-container code {
+	height: 100%;
+}
+
+.react-InvokeContent {
+	width: calc(100vw - 217px);
+}
+
+.react-InvokeContentOutputBadge .badge-icon {
+	height: 15px;
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")) {
+	.react-InvokeContentOutput .react-InvokeContentOutputBadge {
+		width: 100%;
+	}
+}
+
+.react-InvokeContentInput .MuiIconButton-root,
+fieldset.environment-variable .MuiIconButton-root {
+	height: 35px;
+	width: 35px;
+}
+
+.field {
+	height: 76px;
+}
+
+.invocation-type-label-with-help-icon svg {
+	height: 40%;
+}

@@ -1,0 +1,29 @@
+.react-App {
+	overflow: auto;
+}
+
+.react-Page {
+	overflow: visible;
+}
+
+.react-DataGrid .MuiDataGrid-viewport {
+	overflow: unset;
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-MenuResponsive * {
+		overflow: hidden;
+	}
+}
+
+.react-ButtonDefault:not(.primary) p {
+	overflow: hidden;
+}
+
+.react-ActionsPanel {
+	overflow-x: scroll;
+}
+
+.code-container code {
+	overflow: scroll;
+}

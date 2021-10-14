@@ -1,0 +1,57 @@
+@use '../../_partial.module.scss' as *;
+
+.react-MenuDrawerContents .MuiListItem-root {
+	&.Mui-selected {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "right");
+	}
+}
+
+.react-MenuBar .MuiBottomNavigationAction-root {
+	border-bottom: transparent 3px solid;
+	&.Mui-selected {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "bottom");
+	}
+}
+
+.react-HorizontalSeparator {
+	border-color: function_color_palette("light-gray");
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-Content {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "left");
+	}
+	.react-MenuResponsive:hover ~ .react-Content {
+		border-left: solid 3px transparent;
+	}
+}
+
+@media (max-width: function_breakpoint_breakpoint("S")), (hover: none) {
+	.react-Footer {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "top");
+	}
+}
+
+.code-container {
+	border: 1px solid rgba(224, 224, 224, 1);
+	border-radius: 4px;
+}
+
+@media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
+	.react-InvokeContent {
+		@include mixin_border_solid-with-color-palette("primary", 3px, "left");
+	}
+}
+
+.react-InvokeContentOutputBadge {
+	border-radius: 4px;
+}
+
+.linenumber {
+	border-right: 1px solid rgba(224, 224, 224, 1);
+}
+
+div .__react_component_tooltip.place-right::before,
+div .__react_component_tooltip.place-right::after {
+	border: unset;
+}

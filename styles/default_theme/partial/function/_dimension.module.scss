@@ -1,0 +1,5 @@
+@use "../variable/_dimension.module.scss" as variable_dimension_;
+
+@function preset-heights($target-size) {
+	@return map-get(variable_dimension_.$preset-heights, $target-size);
+}

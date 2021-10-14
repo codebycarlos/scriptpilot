@@ -1,0 +1,14 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+
+.Paper {
+	position: relative;
+	height: auto;
+	width: 100%;
+	& > ul {
+		padding-top: 0px;
+	}
+	border: unset;
+	background: transparent;
+}

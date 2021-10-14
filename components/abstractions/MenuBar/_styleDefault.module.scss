@@ -1,0 +1,19 @@
+// Advice: do not use any css imports here.
+// Default styles should be encapsulated to each component.
+// To expand styles use classes and/or in-line declarations.
+.Root {
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	& * {
+		color: white;
+	}
+	& span:first-letter {
+		text-transform: capitalize;
+	}
+	& * {
+		transition: all ease-in-out 0.2s;
+	}
+	overflow: visible;
+	justify-content: space-between;
+}

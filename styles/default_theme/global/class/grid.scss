@@ -1,0 +1,60 @@
+@use '../../_partial.module.scss' as *;
+
+.react-ScriptDetails {
+	grid-template-columns: auto;
+}
+
+@media (min-width: function_breakpoint_breakpoint("M")) {
+	.react-ScriptDetails {
+		grid-template-columns: auto auto;
+	}
+
+	.script-description {
+		grid-column: span 2;
+	}
+}
+
+fieldset.configuration {
+	grid-template-columns: auto;
+}
+
+@media (min-width: function_breakpoint_breakpoint("M")) {
+	fieldset.configuration {
+		grid-template-columns: auto auto;
+	}
+}
+
+.react-InvokeContentInput fieldset,
+fieldset.environment-variable {
+	grid-template-columns: auto auto;
+}
+
+@media (min-width: function_breakpoint_breakpoint("M")) {
+	.react-InvokeContentInput fieldset,
+	fieldset.environment-variable {
+		grid-template-columns: auto auto -webkit-min-content -webkit-min-content;
+		grid-template-columns: auto auto min-content min-content;
+	}
+}
+
+.react-InvokeContentInput form {
+	grid-template-rows: auto;
+}
+
+fieldset.configuration {
+	grid-gap: function_margin_global-margin("extraSmall");
+}
+
+.react-ScriptDetails {
+	grid-gap: function_margin_global-margin("extraSmall");
+}
+
+.react-InvokeContentInput form {
+	grid-gap: function_margin_global-margin("extraSmall");
+}
+
+.react-InvokeContentInput fieldset,
+.environment-variables,
+.environment-variable {
+	grid-gap: function_margin_global-margin("extraSmall");
+}

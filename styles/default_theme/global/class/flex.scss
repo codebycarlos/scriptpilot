@@ -1,0 +1,27 @@
+@use '../../_partial.module.scss' as *;
+
+@media (max-width: function_breakpoint_breakpoint("M")) {
+	.react-ActionsPanel {
+		flex-direction: row-reverse;
+		order: 1;
+	}
+	.react-ScriptsPage .react-ScriptsListAndActions {
+		flex-direction: column;
+	}
+}
+
+.react-ActionsPanel {
+	gap: 0.7rem;
+}
+
+fieldset .field {
+	flex-direction: column;
+}
+
+.MuiFormGroup-root {
+	flex-direction: row;
+}
+
+.invocation-type-label-with-help-icon {
+	align-items: baseline;
+}
