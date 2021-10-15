@@ -4,15 +4,25 @@ import { Settings } from "models/server/Settings"
 import { NextAuthCallbacks } from "models/server/NextAuthCallbacks"
 
 async function options() {
-	const zohoSettings = await Settings.ZohoAsync()
 	const mongoDBSettings = await Settings.MongoDBAsync()
 	const nextAuthSettings = await Settings.NextAuthAsync()
 
 	return {
 		providers: [
-			Providers.Zoho({
-				clientId: zohoSettings.appId,
-				clientSecret: zohoSettings.appSecret,
+			Providers.LinkedIn({
+				clientId: nextAuthSettings.linkedIn.clientId,
+				clientSecret: nextAuthSettings.linkedIn.clientSecret,
+			}),
+			Providers.Email({
+				server: {
+					host: nextAuthSettings.email.serverHost,
+					port: nextAuthSettings.email.serverPort,
+					auth: {
+						user: nextAuthSettings.email.serverUser,
+						pass: nextAuthSettings.email.serverPassword,
+					},
+				},
+				from: nextAuthSettings.email.fromEmail,
 			}),
 		],
 		database: {
