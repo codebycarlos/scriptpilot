@@ -51,7 +51,7 @@ async function options() {
 		pages: {
 			signIn: "/login",
 		},
-		debug: true,
+		debug: false,
 	}
 }
 

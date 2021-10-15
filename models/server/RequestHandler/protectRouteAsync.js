@@ -4,13 +4,13 @@ export async function protectRouteAsync(route, context, accessRightsLevel) {
 	ArgumentValidator.check([context, accessRightsLevel])
 	if (!route) throw Error("No route provided.")
 
-	const [accessGranted, errorWithErrorGranted] = await Try(() =>
+	const [accessGranted, errorWithAccessGranted] = await Try(() =>
 		AccessRights(context?.req?.headers?.authorization).meetsAccessRightsLevelAsync(
 			accessRightsLevel,
 		),
 	)
 
-	if (errorWithErrorGranted)
+	if (errorWithAccessGranted)
 		return JSend(context.res).error({ message: "Unable to assess access rights." })
 
 	if (accessGranted !== true)
