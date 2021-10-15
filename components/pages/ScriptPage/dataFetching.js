@@ -7,7 +7,7 @@ export async function dataFetching(context) {
 	const pagePreparer = PagePreparer(context)
 	const query = context?.query
 
-	const [meetsAccessRights] = await Try(() => accessRights.meetsAccessRightsLevelAsync(2))
+	const [meetsAccessRights] = await Try(() => accessRights.meetsAccessRightsLevelAsync(1))
 	if (meetsAccessRights !== true) return pagePreparer.getRedirect("/login")
 
 	const { ScriptsAPI } = await API.loadScriptsAPIAsync(context)

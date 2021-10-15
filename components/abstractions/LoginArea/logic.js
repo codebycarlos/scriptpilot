@@ -4,7 +4,8 @@ export function logic(imports, props, styleDefault) {
 
 	const byLineText = "companyName" in pageProps.Brand ? `by ${pageProps.Brand.companyName}` : ""
 
-	props.loginCallbackUrl = "loginCallbackUrl" in pageProps ? pageProps.loginCallbackUrl : ""
+	props.nextAuthCallbackUrl =
+		"nextAuthCallbackUrl" in pageProps ? pageProps.nextAuthCallbackUrl : ""
 	props.src = "logoPath" in pageProps.Brand ? pageProps.Brand.logoPath : ""
 	props.byLine = {
 		text: byLineText,

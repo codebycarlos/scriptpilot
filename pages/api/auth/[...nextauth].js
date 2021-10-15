@@ -23,6 +23,7 @@ async function options() {
 					},
 				},
 				from: nextAuthSettings.email.fromEmail,
+				maxAge: 24 * 60 * 60,
 			}),
 		],
 		database: {

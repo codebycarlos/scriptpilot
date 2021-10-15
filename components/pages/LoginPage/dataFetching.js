@@ -6,11 +6,11 @@ export async function dataFetching(context) {
 	const accessRights = AccessRights(context)
 	const pagePreparer = PagePreparer(context)
 
-	const [meetsAccessRights] = await Try(() => accessRights.meetsAccessRightsLevelAsync(2))
+	const [meetsAccessRights] = await Try(() => accessRights.meetsAccessRightsLevelAsync(1))
 	if (meetsAccessRights === true) return pagePreparer.getRedirect("/scripts")
 
-	const zohoSettings = await Settings.ZohoAsync()
-	const { loginCallbackUrl } = zohoSettings
+	const nextAuthSettings = await Settings.NextAuthAsync()
+	const { nextAuthCallbackUrl } = nextAuthSettings
 
-	return await pagePreparer.withDefaultPropsAsync({ loginCallbackUrl })
+	return await pagePreparer.withDefaultPropsAsync({ nextAuthCallbackUrl })
 }

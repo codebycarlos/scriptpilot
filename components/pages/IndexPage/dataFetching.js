@@ -5,7 +5,7 @@ export async function dataFetching(context) {
 	const accessRights = AccessRights(context)
 	const pagePreparer = PagePreparer(context)
 
-	const [meetsAccessRights] = await Try(() => accessRights.meetsAccessRightsLevelAsync(2))
+	const [meetsAccessRights] = await Try(() => accessRights.meetsAccessRightsLevelAsync(1))
 	if (meetsAccessRights === true) return pagePreparer.getRedirect("/scripts")
 
 	return pagePreparer.getRedirect("/login")
