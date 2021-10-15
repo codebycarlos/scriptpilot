@@ -1,4 +1,4 @@
-@use '../../_partial.module.scss' as *;
+@use "../../_partial.module.scss" as *;
 
 button.contained {
 	@include mixin_margin_local-vertical("extraSmall");
@@ -83,4 +83,8 @@ fieldset.configuration {
 
 .react-InvokeContentOutputBadge {
 	@include mixin_margin_global-vertical("extraSmall");
+}
+
+.react-ButtonDefault.login {
+	margin-bottom: 0;
 }

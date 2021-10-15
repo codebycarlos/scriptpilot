@@ -1,5 +1,5 @@
 export function body(imports, props, styleDefault, Root = "div") {
-	const { ContentGroup, LogoWithByline, ButtonDefault, styles } = imports
+	const { ContentGroup, LogoWithByline, ButtonDefault } = imports
 	return (
 		<ContentGroup {...props.DOMAttributes}>
 			<LogoWithByline src={props.src} byLine={props.byLine} />
@@ -11,7 +11,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 					value={`${props.nextAuthCallbackUrl}/linkedin`}
 				/>
 				<ButtonDefault
-					className={`${styleDefault.ButtonDefault} contained primary`}
+					className={`${styleDefault.ButtonDefault} contained primary login`}
 					type="submit"
 				>
 					Log In with LinkedIn
@@ -25,7 +25,7 @@ export function body(imports, props, styleDefault, Root = "div") {
 					value={`${props.nextAuthCallbackUrl}/email`}
 				/>
 				<ButtonDefault
-					className={`${styleDefault.ButtonDefault} contained primary`}
+					className={`${styleDefault.ButtonDefault} contained primary login`}
 					type="submit"
 				>
 					Log In with Email
