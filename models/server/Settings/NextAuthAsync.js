@@ -8,11 +8,8 @@ export async function NextAuthAsync() {
 			clientSecret: process.env.NEXTAUTH_LINKEDIN_CLIENTSECRET,
 		},
 		email: {
-			serverUser: process.env.NEXTAUTH_EMAIL_SERVER_USER,
-			serverPassword: process.env.NEXTAUTH_EMAIL_SERVER_PASSWORD,
-			serverHost: process.env.NEXTAUTH_EMAIL_SERVER_HOST,
-			serverPort: process.env.NEXTAUTH_EMAIL_SERVER_PORT,
-			fromEmail: process.env.NEXTAUTH_EMAIL_FROMEMAIL,
+			server: process.env.NEXTAUTH_EMAIL_SERVER,
+			from: process.env.NEXTAUTH_EMAIL_FROM,
 		},
 	}
 }

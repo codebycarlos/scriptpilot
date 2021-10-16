@@ -14,15 +14,8 @@ async function options() {
 				clientSecret: nextAuthSettings.linkedIn.clientSecret,
 			}),
 			Providers.Email({
-				server: {
-					host: nextAuthSettings.email.serverHost,
-					port: nextAuthSettings.email.serverPort,
-					auth: {
-						user: nextAuthSettings.email.serverUser,
-						pass: nextAuthSettings.email.serverPassword,
-					},
-				},
-				from: nextAuthSettings.email.fromEmail,
+				server: nextAuthSettings.email.server,
+				from: nextAuthSettings.email.from,
 				maxAge: 24 * 60 * 60,
 			}),
 		],
@@ -48,10 +41,10 @@ async function options() {
 		callbacks: {
 			session: NextAuthCallbacks.sessionAsync,
 		},
-		pages: {
+        pages: {
 			signIn: "/login",
 		},
-		debug: false,
+		debug: true,
 	}
 }
 
