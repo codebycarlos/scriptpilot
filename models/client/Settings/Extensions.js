@@ -1,4 +1,4 @@
-export async function Extensions() {
+export function Extensions() {
 	return {
 		logRocketId: process.env.NEXT_PUBLIC_LOGROCKET_ID,
 	}
