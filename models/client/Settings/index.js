@@ -1,9 +1,9 @@
 import { BrandAsync } from "./BrandAsync"
 import { CoreAsync } from "./CoreAsync"
-import { ExtensionsAsync } from "./ExtensionsAsync"
+import { Extensions } from "./Extensions"
 
 export const Settings = {
 	BrandAsync,
 	CoreAsync,
-	ExtensionsAsync,
+	Extensions,
 }
