@@ -1,4 +1,4 @@
-@use '../../_partial.module.scss' as *;
+@use "../../_partial.module.scss" as *;
 
 .MuiTypography-body1,
 .MuiTypography-body2 {
@@ -66,4 +66,8 @@ p {
 
 .__react_component_tooltip span {
 	@include mixin_typography_responsive-font-size(-2);
+}
+
+.react-ButtonDefault.login * {
+	@include mixin_typography_responsive-font-size(-1);
 }

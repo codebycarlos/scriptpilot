@@ -1,4 +1,4 @@
-@use '../../_partial.module.scss' as *;
+@use "../../_partial.module.scss" as *;
 
 .big-white-text {
 	@include mixin_color_palette("white");
@@ -111,8 +111,15 @@ button.contained {
 	}
 }
 
-.MuiFilledInput-root {
+.MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline,
+.Mui-focused,
+.MuiInputBase-formControl {
 	@include mixin_color_background-color-palette("white");
+	&:hover,
+	&:focus,
+	&:active {
+		@include mixin_color_background-color-palette("white");
+	}
 }
 
 .react-ActionsPanel .react-ButtonDefault p {
@@ -150,6 +157,10 @@ button.contained {
 
 .error-label {
 	@include mixin_color_palette("error");
+}
+
+.react-LoginArea .error-label {
+	@include mixin_color_palette("white");
 }
 
 .file-uploader > div {

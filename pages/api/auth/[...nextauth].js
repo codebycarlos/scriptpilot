@@ -41,10 +41,10 @@ async function options() {
 		callbacks: {
 			session: NextAuthCallbacks.sessionAsync,
 		},
-        pages: {
+		pages: {
 			signIn: "/login",
 		},
-		debug: true,
+		debug: false,
 	}
 }
 

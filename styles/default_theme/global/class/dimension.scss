@@ -1,4 +1,4 @@
-@use '../../_partial.module.scss' as *;
+@use "../../_partial.module.scss" as *;
 
 .react-App > * {
 	@include mixin_dimension_height-width-100;
@@ -31,7 +31,7 @@
 
 @media (min-width: function_breakpoint_breakpoint("S")) {
 	.react-FlexPanel {
-		min-width: 220px;
+		min-width: 400px;
 	}
 }
 
@@ -117,6 +117,10 @@ fieldset.environment-variable .MuiIconButton-root {
 
 .field {
 	height: 76px;
+}
+
+.field.small {
+	height: 70px;
 }
 
 .invocation-type-label-with-help-icon svg {

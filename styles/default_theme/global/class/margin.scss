@@ -4,12 +4,6 @@ button.contained {
 	@include mixin_margin_local-vertical("extraSmall");
 }
 
-@media (max-width: function_breakpoint_breakpoint("S")) {
-	.react-LoginPage button.contained {
-		@include mixin_margin_local("small");
-	}
-}
-
 .react-Page .react-PageDescription {
 	@include mixin_margin_global-vertical("extraSmall");
 }
@@ -87,4 +81,16 @@ fieldset.configuration {
 
 .react-ButtonDefault.login {
 	margin-bottom: 0;
+}
+
+.react-LoginArea fieldset {
+	margin: 0;
+}
+
+.react-LogoWithByline a {
+	@include mixin_margin_global("extraSmall", "bottom");
+}
+
+.react-ButtonDefault.login:first-of-type {
+	margin-top: 0;
 }

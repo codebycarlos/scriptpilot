@@ -9,7 +9,9 @@ export function body(imports, props, styleDefault, Root = "div") {
 				width={props.width}
 				layout="responsive"
 			/>
-			<p style={props.byLine.style}>{props.byLine.text}</p>
+			<a href={props.byLineLink}>
+				<p style={props.byLine.style}>{props.byLine.text}</p>
+			</a>
 		</ContentGroup>
 	)
 }
