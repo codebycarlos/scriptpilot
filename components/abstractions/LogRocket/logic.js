@@ -1,5 +1,5 @@
 export function logic(imports, props, styleDefault) {
-	const { useSession, LogRocket } = imports
+	const { useSession, LogRocket, Settings } = imports
 	const [session] = useSession()
 
 	const extensionsSettings = Settings.Extensions()
