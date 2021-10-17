@@ -10,7 +10,7 @@ export function propsDefinition(PropTypes) {
 		},
 		welcomeText: {
 			propType: PropTypes.string.isRequired,
-			defaultProp: "CLOUD POWERED SCRIPTS",
+			defaultProp: "CLOUD POWERED COMPUTING",
 		},
 	}
 }
