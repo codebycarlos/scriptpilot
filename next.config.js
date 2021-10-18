@@ -1,6 +1,13 @@
 const CircularDependencyPlugin = require("circular-dependency-plugin")
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 
+const securityHeaders = [
+	{
+		key: "Strict-Transport-Security",
+		value: "max-age=63072000; includeSubDomains; preload",
+	},
+]
+
 module.exports = {
 	reactStrictMode: true,
 	webpack: (config, options) => {
@@ -31,5 +38,14 @@ module.exports = {
 		)
 		if (!options.isServer) config.resolve.fallback.fs = false
 		return config
+	},
+	async headers() {
+		return [
+			{
+				// Apply these headers to all routes in your application.
+				source: "/(.*)",
+				headers: securityHeaders,
+			},
+		]
 	},
 }
