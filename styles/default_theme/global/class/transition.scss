@@ -1,4 +1,4 @@
-@use '../../_partial.module.scss' as *;
+@use "../../_partial.module.scss" as *;
 
 @media (min-width: function_breakpoint_breakpoint("S")) and (hover: hover) {
 	.react-Content,
@@ -24,9 +24,13 @@
 }
 
 .react-InvokeOverlay {
-    @include mixin_transition_quick-ease-in-out;
+	@include mixin_transition_quick-ease-in-out;
 }
 
 .react-InvokeContent {
-    @include mixin_transition_quick-ease-in-out;
+	@include mixin_transition_quick-ease-in-out;
+}
+
+.react-BackgroundImage {
+	@include mixin_transition_regular-ease-in-out;
 }
