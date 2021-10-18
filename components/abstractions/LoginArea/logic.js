@@ -19,9 +19,10 @@ export function logic(imports, props, styleDefault) {
 		async (data) => {
 			const CoreAsyncSettings = await Settings.CoreAsync()
 			const axios = await CustomAxiosAsync()
-			await axios.post(`${CoreAsyncSettings.host}/api/auth/signin/email`, {
+			const response = await axios.post(`${CoreAsyncSettings.host}/api/auth/signin/email`, {
 				...data,
 			})
+			if (response?.status !== 200) throw Error("Unable to send login link.")
 		},
 		{
 			messages: {
