@@ -27,7 +27,7 @@ export function logic(imports, props, styleDefault) {
 			messages: {
 				initial: "Sending email.",
 				success: "Done. Please follow the link in the email to log in.",
-				error: "Unable to send login link.",
+				error: "Unable to send login link. Please try another method.",
 			},
 		},
 	)
