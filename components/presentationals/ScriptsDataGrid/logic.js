@@ -14,14 +14,13 @@ export function logic(imports, props, styleDefault) {
 			{
 				field: "FunctionName",
 				headerName: "Script Name",
-				width: 500,
+				width: 250,
 				renderCell: ({ value }) => <ScriptNameGridCell value={value} />,
 			},
 			{
-				field: "CodeSize",
-				headerName: "Code Size",
-				width: 130,
-				valueFormatter: ({ value }) => `${value} byte`,
+				field: "Description",
+				headerName: "Description",
+				width: 600,
 			},
 			{
 				field: "Runtime",
@@ -45,8 +44,8 @@ export function logic(imports, props, styleDefault) {
 				sort: "desc",
 			},
 		],
-		pageSize: 5,
-		rowsPerPageOptions: [5, 10, 25, 50, 100],
+		pageSize: 10,
+		rowsPerPageOptions: [10, 25, 50, 100],
 		components: {
 			ErrorOverlay: () => (
 				<p className="error-message">
