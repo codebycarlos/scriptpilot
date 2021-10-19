@@ -10,6 +10,17 @@ API keys. The app was designed exclusively for the use of
 [IndigoZest](https://www.indigozest.co.uk/). This repo is meant as a public
 showcase for demo purposes.
 
+# Contents  
+- [How it works](#how-it-works)  
+- [Demo](#demo)
+- [Documentation](#documentation)
+- [Screenshots](#screenshots)
+  - [Desktop](#desktop)
+  - [Mobile](#mobile)
+- [Used by](#used-by)
+- [Support](#support)
+- [Authors](#authors)
+
 ## How It Works
 
 At the core of ScriptPilot's backend, it utilises the
