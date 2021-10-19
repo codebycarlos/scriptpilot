@@ -30,7 +30,3 @@
 .react-InvokeContent {
 	@include mixin_transition_quick-ease-in-out;
 }
-
-.react-BackgroundImage {
-	@include mixin_transition_regular-ease-in-out;
-}
