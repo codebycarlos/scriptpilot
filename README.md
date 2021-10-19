@@ -110,4 +110,4 @@ For support and to report issues, email hello@codebycarlos.co.uk.
 
 ## Authors
 
--   [@codebycarlos](https://www.linkedin.com/in/codebycarlos/)
+-   [@codebycarlos](https://github.com/codebycarlos)
