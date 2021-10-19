@@ -14,7 +14,7 @@ export function logic(imports, props, styleDefault) {
 		text: "CodebyCarlos",
 		style: { color: "white", fontSize: "0.7rem", margin: "unset", paddingLeft: "50px" },
 	}
-	props.byLineLink = "https://www.linkedin.com/in/codebycarlos"
+	props.byLineLink = "https://github.com/codebycarlos/scriptpilot"
 	props.onSubmit = useWithSnackbar(
 		async (data) => {
 			const CoreAsyncSettings = await Settings.CoreAsync()
