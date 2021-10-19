@@ -57,42 +57,42 @@ https://www.scriptpilot.codebycarlos.co.uk
 
 ### Desktop
 
-![Login Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Login%20Page.png?raw=true)
+![Login Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Login%20Page.png?raw=true)  
 Login Page
 
-![Scripts Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Scripts%20Page.png?raw=true)
+![Scripts Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Scripts%20Page.png?raw=true)  
 Scripts Page
 
-![Script Details Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Details%20Page.png?raw=true)
+![Script Details Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Details%20Page.png?raw=true)  
 Scripts Details Page
 
-![Script Invocation Panel](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Invocation%20Panel.png?raw=true)
+![Script Invocation Panel](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Invocation%20Panel.png?raw=true)  
 Script Invocation Panel
 
-![New Script Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Add%20Script%20Page.png?raw=true)
+![New Script Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Add%20Script%20Page.png?raw=true)  
 New Script Page
 
-![Invoking a Script](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/gifs/Invoking%20a%20script.gif?raw=true)
+![Invoking a Script](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/gifs/Invoking%20a%20script.gif?raw=true)  
 Invoking a Script
 
-![Genering a Script's API key](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/gifs/Genering%20a%20script's%20API%20key.gif?raw=true)
+![Genering a Script's API key](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/gifs/Genering%20a%20script's%20API%20key.gif?raw=true)  
 Genering a Script's API key
 
-![Deleting a Script](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/gifs/Deleting%20a%20script.gif?raw=true)
+![Deleting a Script](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/gifs/Deleting%20a%20script.gif?raw=true)  
 Deleting a Script
 
 ### Mobile
 
-![Login Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Login%20Page%20(Mobile).png?raw=true)
+![Login Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Login%20Page%20(Mobile).png?raw=true)  
 Login Page
 
-![Scripts Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Scripts%20Page%20(Mobile).png?raw=true)
+![Scripts Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Scripts%20Page%20(Mobile).png?raw=true)  
 Scripts Page
 
-![Script Details Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Details%20Page%20(Mobile).png?raw=true)
+![Script Details Page](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Details%20Page%20(Mobile).png?raw=true)  
 Script Details Page
 
-![Script Invocation Panel](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Invocation%20Panel%20(Mobile).png?raw=true)
+![Script Invocation Panel](https://github.com/codebycarlos/scriptpilot/blob/master/public/assets/images/screenshots/Script%20Invocation%20Panel%20(Mobile).png?raw=true)  
 Script Invocation Panel
 ## Used By
 
