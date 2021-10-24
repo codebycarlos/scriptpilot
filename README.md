@@ -7,7 +7,7 @@ ScriptPilot provides a simple, user-friendly platform for managing scripts
 hosted in the cloud for various computing purposes. Scripts can be invoked
 synchronously and asynchronously within the app or externally via encrypted
 API keys. The app was designed exclusively for the use of
-[IndigoZest](https://www.indigozest.co.uk/). This repo is meant as a public
+[IndigoZest](https://www.indigozest.co.uk/). This repo is a public
 showcase for demo purposes.
 
 # Contents  
