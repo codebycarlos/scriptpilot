@@ -2,6 +2,7 @@ import { AccessRights } from "models/client/AccessRights"
 import { PagePreparer } from "models/client/PagePreparer"
 import { Settings } from "models/server/Settings"
 import { Try } from "indigozest_modules/models/client/Try"
+import { providers } from "next-auth/client"
 export async function dataFetching(context) {
 	const accessRights = AccessRights(context)
 	const pagePreparer = PagePreparer(context)
@@ -12,5 +13,8 @@ export async function dataFetching(context) {
 	const nextAuthSettings = await Settings.NextAuthAsync()
 	const { nextAuthCallbackUrl } = nextAuthSettings
 
-	return await pagePreparer.withDefaultPropsAsync({ nextAuthCallbackUrl })
+	return await pagePreparer.withDefaultPropsAsync({
+		nextAuthCallbackUrl,
+		providers: await providers(context),
+	})
 }

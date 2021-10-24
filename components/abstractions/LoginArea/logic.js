@@ -3,7 +3,7 @@ export function logic(imports, props, styleDefault) {
 		imports
 	const [emailToggled, setEmailToggled] = useState(false)
 	const pageProps = usePageContext()
-
+	props.providers = pageProps?.providers
 	props.methods = useForm()
 	props.emailToggled = emailToggled
 	props.setEmailToggled = setEmailToggled

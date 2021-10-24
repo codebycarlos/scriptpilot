@@ -13,6 +13,7 @@ import { ErrorMessage } from "@hookform/error-message"
 import { CustomAxiosAsync } from "models/client/CustomAxiosAsync"
 import { Settings } from "models/client/Settings"
 import { useWithSnackbar } from "indigozest_modules/hooks/extender/useWithSnackbar"
+import { signIn } from "next-auth/client"
 export const imports = {
 	LogoWithByline,
 	ContentGroup,
@@ -27,4 +28,5 @@ export const imports = {
 	CustomAxiosAsync,
 	Settings,
 	useWithSnackbar,
+	signIn,
 }
