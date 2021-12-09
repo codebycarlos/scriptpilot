@@ -47,12 +47,14 @@ small-sized organisation, such as [IndigoZest](https://www.indigozest.co.uk/).
 
 **Hosting:** [Heroku](https://www.heroku.com/home), [GoDaddy](https://uk.godaddy.com/)
 
+**API:** [SendGrid](https://app.sendgrid.com)
+
 ## Demo
 
 For security purposes, some functionality may be disabled (primarily, external invocation of scripts).
 Users require either a LinkedIn account or an email to log in:
 
-https://www.scriptpilot.codebycarlos.co.uk
+https://scriptpilot-demo.herokuapp.com
 
 ## Documentation
 
