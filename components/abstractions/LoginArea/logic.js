@@ -22,7 +22,6 @@ export function logic(imports, props, styleDefault) {
 			const response = await axios.post(`${CoreAsyncSettings.host}/api/auth/signin/email`, {
 				...data,
 			})
-			console.log(response)
 			if (response?.status !== 200) throw Error("Unable to send login link.")
 		},
 		{
