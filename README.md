@@ -54,7 +54,7 @@ small-sized organisation, such as [IndigoZest](https://www.indigozest.co.uk/).
 For security purposes, some functionality may be disabled (primarily, external invocation of scripts).
 Users require either a LinkedIn account or an email to log in:
 
-https://scriptpilot-demo.herokuapp.com (Update: offline since Heroku disabled free tier)
+https://scriptpilot-demo.herokuapp.com (Update: offline since Heroku ended support for free tier services)
 
 ## Documentation
 
